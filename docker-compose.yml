@@ -1,0 +1,12 @@
+# The configuration in this file is the basic configuration and reflects the production systems as closely as possible.
+version: "3.9"
+services:
+  landing:
+    build:
+      context: .
+      dockerfile: landing.dockerfile
+      target: production
+    environment:
+      PORT: 3001
+    ports:
+      - 3001:3001

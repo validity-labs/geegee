@@ -1,0 +1,13 @@
+node_modules
+tmp
+.tmp
+.DS_Store
+.env
+.env.backup-*
+.merge_file_*
+.terraform/
+*.tfstate
+*.tfstate.backup
+terraform.tfstate.d/
+.eslintcache
+google-credentials.json

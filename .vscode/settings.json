@@ -1,0 +1,49 @@
+{
+  "editor.rulers": [80, 120],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.probe": ["typescript", "typescriptreact", "react"],
+  "editor.formatOnSave": false,
+  // Runs Prettier, then ESLint
+  "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"],
+  "cSpell.words": [
+    "browserslist",
+    "clsx",
+    "commitlint",
+    "Fastify",
+    "formik",
+    "huskyrc",
+    "matomo",
+    "Matomo",
+    "maven pro",
+    "multiline",
+    "nestjs",
+    "prebuild",
+    "prefetch",
+    "recaptcha",
+    "Strapi",
+    "validitylabs"
+  ],
+  "cSpell.diagnosticLevel": "Hint",
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "**/package-lock.json": true,
+    "**/*.snap": true,
+    "**/.cypress": true
+  },
+  "conventionalCommits.scopes": ["landing"],
+  "conventionalCommits.gitmoji": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform"
+  },
+  "[terraform-vars]": {
+    "editor.defaultFormatter": "hashicorp.terraform"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  }
+}
