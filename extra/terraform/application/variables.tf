@@ -22,38 +22,38 @@ variable "domain" {
   type        = string
 }
 
-# -- UI -----------------------------------------
+# -- Landing page -----------------------------------------
 
-variable "ui_image" {
-  description = "The url of the ui docker image."
+variable "landing_image" {
+  description = "The url of the landing page docker image."
   type        = string
 }
 
-variable "ui_cpu_limit" {
+variable "landing_cpu_limit" {
   description = "The value of the property is converted to its millicore value and multiplied by 100. The resulting value is the total amount of CPU time that a container can use every 100ms. A container cannot use more than its share of CPU time during this interval."
   type        = string
   default     = "1000m"
 }
 
-variable "ui_memory_limit" {
+variable "landing_memory_limit" {
   description = "The maximum amout of memory an instance can use. If a Container exceeds its memory limit, it might be terminated."
   type        = string
   default     = "256Mi"
 }
 
-variable "ui_container_concurrency" {
+variable "landing_container_concurrency" {
   description = "Container concurrency specifies the maximum allowed in-flight (concurrent) requests per container of the Revision."
   type        = number
   default     = 80
 }
 
-variable "ui_min_instances" {
+variable "landing_min_instances" {
   description = "The minimum number of container instances of the Service to run."
   type        = number
   default     = 0
 }
 
-variable "ui_timeout_seconds" {
+variable "landing_timeout_seconds" {
   description = "Sets the max duration the instance is allowed for responding to a request."
   type        = number
   default     = 300

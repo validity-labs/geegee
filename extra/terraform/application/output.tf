@@ -1,5 +1,5 @@
-# -- UI -----------------------------------------
+# -- Landing page -----------------------------------------
 
-output "ui_url" {
-  value = local.ui_domain
+output "landing_url" {
+  value = local.landing_domain
 }

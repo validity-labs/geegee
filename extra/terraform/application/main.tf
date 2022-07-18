@@ -36,7 +36,7 @@ resource "random_string" "suffix" {
 }
 
 locals {
-  ui_domain = "${trimspace(var.landing_sub_domain)}${trimspace(var.landing_sub_domain) != "" ? "." : ""}${var.domain}"
+  landing_domain = "${trimspace(var.landing_sub_domain)}${trimspace(var.landing_sub_domain) != "" ? "." : ""}${var.domain}"
 }
 
 # -- IAM ----------------------------------------
@@ -50,72 +50,72 @@ data "google_iam_policy" "noauth" {
   }
 }
 
-# -- UI -----------------------------------------
+# -- Landing page -----------------------------------------
 
-resource "google_service_account" "cloud_run_ui" {
+resource "google_service_account" "cloud_run_landing" {
   project      = var.gcp_project
-  account_id   = "cloud-run-ui"
-  display_name = "Cloud Run UI"
+  account_id   = "cloud-run-landing"
+  display_name = "Cloud Run LANDING"
 }
 
-resource "google_project_iam_member" "cloud_run_ui_logging_log_writer" {
+resource "google_project_iam_member" "cloud_run_landing_logging_log_writer" {
   project = var.gcp_project
   role    = "roles/logging.logWriter"
-  member  = "serviceAccount:${google_service_account.cloud_run_ui.email}"
+  member  = "serviceAccount:${google_service_account.cloud_run_landing.email}"
 }
 
-resource "google_cloud_run_service" "ui" {
-  name     = "ui-${random_string.suffix.result}"
+resource "google_cloud_run_service" "landing" {
+  name     = "landing-${random_string.suffix.result}"
   project  = var.gcp_project
   location = var.gcp_cloud_run_region
 
   template {
     spec {
       containers {
-        image = var.ui_image
+        image = var.landing_image
 
         # env {
         #   name  = "NEXT_PUBLIC_BASE_DOMAIN"
-        #   value = "https://${local.ui_domain}"
+        #   value = "https://${local.landing_domain}"
         # }
 
         resources {
           limits = {
-            cpu    = var.ui_cpu_limit
-            memory = var.ui_memory_limit
+            cpu    = var.landing_cpu_limit
+            memory = var.landing_memory_limit
           }
         }
       }
 
-      container_concurrency = var.ui_container_concurrency
-      timeout_seconds       = var.ui_timeout_seconds
+      container_concurrency = var.landing_container_concurrency
+      timeout_seconds       = var.landing_timeout_seconds
     }
 
     metadata {
       annotations = {
-        "autoscaling.knative.dev/minScale"      = tostring(var.ui_min_instances)
+        "autoscaling.knative.dev/minScale"      = tostring(var.landing_min_instances)
       }
     }
   }
 }
 
-resource "google_cloud_run_service_iam_policy" "ui" {
-  location = google_cloud_run_service.ui.location
-  project  = google_cloud_run_service.ui.project
-  service  = google_cloud_run_service.ui.name
+resource "google_cloud_run_service_iam_policy" "landing" {
+  location = google_cloud_run_service.landing.location
+  project  = google_cloud_run_service.landing.project
+  service  = google_cloud_run_service.landing.name
 
   policy_data = data.google_iam_policy.noauth.policy_data
 }
 
-resource "google_cloud_run_domain_mapping" "ui" {
-  location = google_cloud_run_service.ui.location
-  name     = local.ui_domain
+resource "google_cloud_run_domain_mapping" "landing" {
+  location = google_cloud_run_service.landing.location
+  name     = local.landing_domain
 
   metadata {
     namespace = var.gcp_project
   }
 
   spec {
-    route_name = google_cloud_run_service.ui.name
+    route_name = google_cloud_run_service.landing.name
   }
 }
