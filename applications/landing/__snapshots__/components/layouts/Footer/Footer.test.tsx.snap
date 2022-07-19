@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> has valid snapshot 1`] = `
+<DocumentFragment>
+  <footer>
+    <div
+      class="MuiBox-root css-0"
+    >
+      <div
+        class="MuiContainer-root MuiContainer-maxWidthLg css-1"
+      >
+        <div
+          class="css-2"
+        >
+          <div
+            style="position: relative; cursor: pointer; transition-duration: 0.2s; transition-timing-function: linear; transition-delay: 0s; opacity: 0; visibility: hidden; transition-property: opacity, visibility;"
+          >
+            <button
+              aria-label="footer.scroll-to-top"
+              class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-primary css-3"
+              tabindex="0"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-4"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M3.6,13.5l-1-1c-0.4-0.4-0.4-1.1,0-1.5c0,0,0,0,0,0l8.7-8.7c0.4-0.4,1.1-0.4,1.5,0 c0,0,0,0,0,0l8.7,8.7c0.4,0.4,0.4,1.1,0,1.5c0,0,0,0,0,0l-1,1c-0.4,0.4-1.1,0.4-1.5,0c0,0,0,0,0,0l-5.1-5.4v12.8 c0,0.6-0.5,1.1-1.1,1.1c0,0,0,0,0,0h-1.4c-0.6,0-1.1-0.5-1.1-1.1c0,0,0,0,0,0V8.1l-5.1,5.4C4.7,13.9,4,13.9,3.6,13.5 C3.6,13.5,3.6,13.5,3.6,13.5L3.6,13.5z"
+                />
+              </svg>
+              <span
+                class="MuiTouchRipple-root css-5"
+              />
+            </button>
+          </div>
+        </div>
+        <div
+          class="MuiBox-root css-6"
+        >
+          <div
+            class="MuiBox-root css-7"
+          >
+            {"src":"test-file-stub","alt":"","placeholder":"empty"}
+          </div>
+          <p
+            class="MuiTypography-root MuiTypography-body-xs css-8"
+          >
+            footer.copyright
+          </p>
+        </div>
+        <ul
+          class="css-9"
+        >
+          <li>
+            <a
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-body-xs css-10"
+              download=""
+              href="/downloads/Validity%20Labs_Privacy-policy.pdf"
+              target="_blank"
+            >
+              footer.common.privacy
+            </a>
+          </li>
+          <li>
+            <a
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-body-xs css-10"
+              download=""
+              href="/downloads/Validity%20Labs_Terms-of-conditions.pdf"
+              target="_blank"
+            >
+              footer.common.terms
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</DocumentFragment>
+`;

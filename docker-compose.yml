@@ -8,5 +8,9 @@ services:
       target: production
     environment:
       PORT: 3001
+      NEXT_PUBLIC_MATOMO_SITE_ID: "2"
+      NEXT_PUBLIC_MATOMO_BASE_URL: https://t-vl-web.validity.io
+      NEXT_PUBLIC_MATOMO_TRACKER_URL: https://analytics.validitylabs.org/matomo.php
+      NEXT_PUBLIC_MATOMO_SRC_URL: https://analytics.validitylabs.org/matomo.js
     ports:
       - 3001:3001

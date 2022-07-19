@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LanguageSwitch /> has valid snapshot 1`] = `
+<DocumentFragment>
+  <button
+    aria-controls="languageSwitchMenu"
+    aria-haspopup="true"
+    class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-disableElevation MuiButtonBase-root  css-0"
+    data-mui-internal-clone-element="true"
+    id="languageSwitchButton"
+    tabindex="0"
+    type="button"
+  >
+    language.en
+  </button>
+</DocumentFragment>
+`;

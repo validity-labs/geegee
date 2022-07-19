@@ -1,50 +1,40 @@
-const fileLoader = (nextConfig = {}) => {
-  return Object.assign({}, nextConfig, {
-    webpack(config, options) {
-      const { isServer } = options;
-      nextConfig = Object.assign({ inlineImageLimit: 8192, assetPrefix: "" }, nextConfig);
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+// const path = require('path');
+const { i18n } = require('./next-i18next.config');
 
-      if (!options.defaultLoaders) {
-        throw new Error(
-          'This plugin is not compatible with Next.js versions below 5.0.0 https://err.sh/next-plugins/upgrade'
-        )
-      }
-
-      config.module.rules.push({
-        test: /\.(jpe?g|png|svg|gif|ico|webp|jp2|pdf)$/,
-        // Next.js already handles url() in css/sass/scss files
-        issuer: /\.\w+(?<!(s?c|sa)ss)$/i,
-        exclude: nextConfig.exclude,
-        use: [
-          {
-            loader: require.resolve("url-loader"),
-            options: {
-              limit: nextConfig.inlineImageLimit,
-              fallback: require.resolve("file-loader"),
-              publicPath: `${nextConfig.assetPrefix}/_next/static/`,
-              outputPath: `${isServer ? "../" : ""}static/`,
-              name: "[name]-[hash].[ext]",
-              esModule: nextConfig.esModule || false
-            }
-          }
-        ]
-      });
-
-      if (typeof nextConfig.webpack === 'function') {
-        return nextConfig.webpack(config, options)
-      }
-
-      return config
-    }
-  })
-}
-
-module.exports = fileLoader({
-  webpackDevMiddleware: (config) => {
-    config.watchOptions = {
-      poll: 1000,
-      aggregateTimeout: 300
-    };
-    return config;
+/**
+ * @type {import('./src/typings/app').NextAppConfig}
+ */
+module.exports = {
+  i18n,
+  reactStrictMode: true,
+  images: {
+    domains: ['storage.googleapis.com'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    formats: ['image/avif', 'image/webp'],
+  },
+  serverRuntimeConfig: {},
+  publicRuntimeConfig: {
+    matomoSiteId: process.env.NEXT_PUBLIC_MATOMO_SITE_ID,
+    matomoBaseUrl: process.env.NEXT_PUBLIC_MATOMO_BASE_URL,
+    matomoTrackerUrl: process.env.NEXT_PUBLIC_MATOMO_TRACKER_URL,
+    matomoSrcUrl: process.env.NEXT_PUBLIC_MATOMO_SRC_URL
   }
-});
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: '/insights/:path*',
+  //       destination: '/blog/:path*',
+  //     }
+  //   ]
+  // },
+  // webpack: (config, options) => {
+  //   config.plugins.push(
+  //     new options.webpack.DefinePlugin({
+  //       'process.env.NEXT_PUBLIC_DYNAMIC_CMS_ENDPOINT': JSON.stringify(options.isServer ? process.env.NEXT_PRIVATE_CMS_ENDPOINT : process.env.PUBLIC_CMS_ENDPOINT),
+  //     })
+  //   )
+  //   return config
+  // },
+};

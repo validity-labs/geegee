@@ -74,10 +74,25 @@ resource "google_cloud_run_service" "landing" {
       containers {
         image = var.landing_image
 
-        # env {
-        #   name  = "NEXT_PUBLIC_BASE_DOMAIN"
-        #   value = "https://${local.landing_domain}"
-        # }
+        env {
+          name  = "NEXT_PUBLIC_MATOMO_SITE_ID"
+          value = var.landing_matomo_site_id
+        }
+
+        env {
+          name  = "NEXT_PUBLIC_MATOMO_BASE_URL"
+          value = "https://${local.landing_domain}"
+        }
+
+        env {
+          name  = "NEXT_PUBLIC_MATOMO_TRACKER_URL"
+          value = var.landing_matomo_tracker_url
+        }
+
+        env {
+          name  = "NEXT_PUBLIC_MATOMO_SRC_URL"
+          value = var.landing_matomo_src_url
+        }
 
         resources {
           limits = {

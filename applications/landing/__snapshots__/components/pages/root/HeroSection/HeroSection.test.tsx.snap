@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HeroSection /> has valid snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="MuiBox-root css-0"
+  >
+    <div
+      class="LabHero-image"
+    >
+      {"src":"test-file-stub","alt":"","layout":"fill","placeholder":"blur","blurDataURL":"/images/placeholder.svg","objectFit":"cover","objectPosition":"top"}
+    </div>
+    <div
+      class="MuiContainer-root MuiContainer-maxWidthLg css-1"
+    >
+      <h1
+        class="MuiTypography-root MuiTypography-h7 LabHeroSection-pretitle css-2"
+      >
+        pretitle
+      </h1>
+      <h2
+        class="MuiTypography-root MuiTypography-h1 LabHeroSection-title css-3"
+      >
+        title
+      </h2>
+      <button
+        class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButtonBase-root css-4"
+        tabindex="0"
+        type="button"
+      >
+        cta
+        <span
+          class="MuiTouchRipple-root css-5"
+        />
+      </button>
+    </div>
+  </section>
+</DocumentFragment>
+`;

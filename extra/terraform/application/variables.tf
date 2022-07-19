@@ -64,3 +64,21 @@ variable "landing_sub_domain" {
   type        = string
   default     = ""
 }
+
+# Matomo
+variable "landing_matomo_site_id" {
+  description = "The matomo site ID."
+  type        = number
+}
+
+variable "landing_matomo_tracker_url" {
+  description = "The matomo tracker url."
+  type        = string
+  default     = "https://analytics.validitylabs.org/matomo.php"
+}
+
+variable "landing_matomo_src_url" {
+  description = "The url of the matomo tracker script to be injected into the pages."
+  type        = string
+  default     = "https://analytics.validitylabs.org/matomo.js"
+}

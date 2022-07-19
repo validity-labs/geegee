@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BookSection /> has valid snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="MuiBox-root css-0"
+  >
+    <div
+      class="MuiContainer-root MuiContainer-maxWidthLg LabSection-container css-1"
+    >
+      <h2
+        class="MuiTypography-root MuiTypography-h2 css-2"
+      >
+        title
+      </h2>
+      <p
+        class="MuiTypography-root MuiTypography-body-xl css-3"
+      >
+        description
+      </p>
+      <button
+        class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButtonBase-root css-4"
+        tabindex="0"
+        type="button"
+      >
+        cta
+        <span
+          class="MuiTouchRipple-root css-5"
+        />
+      </button>
+    </div>
+  </section>
+</DocumentFragment>
+`;
