@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AboutSection /> has valid snapshot 1`] = `
+<DocumentFragment>
+  <h1
+    class="MuiTypography-root MuiTypography-h7 LabHeroSection-pretitle css-0"
+  >
+    ABOUT
+  </h1>
+</DocumentFragment>
+`;
