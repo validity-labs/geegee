@@ -5,6 +5,8 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Button, Typography } from '@mui/material';
 import { styled, useTheme } from '@mui/material/styles';
 
+import CardsSection from '../cards/CardsSection';
+import InfluencerSection from '../influencer/InfluencerSection';
 import Hero from '@/components/layouts/Hero/Hero';
 import { usePageTranslation } from '@/context/AppContext';
 import coverImage from '@/public/images/cover.png';
@@ -12,7 +14,7 @@ import coverImage from '@/public/images/cover.png';
 const Root = styled(Hero)(({ theme }) => ({
   textAlign: 'center',
   '.LabHeroSection-pretitle': {
-    marginBottom: theme.spacing(2.5),
+    marginBottom: theme.spacing(10),
     textTransform: 'uppercase',
   },
   '.LabHeroSection-title': {
@@ -47,6 +49,8 @@ const HeroSection = () => {
       >
         {t('cta')}
       </Button>
+      <InfluencerSection />
+      <CardsSection />
     </Root>
   );
 };

@@ -3,6 +3,7 @@ import * as React from 'react';
 import { useTranslation } from 'next-i18next';
 
 import { Grid, Typography } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 import Link from '@/components/general/Link/Link';
 import PreviousIcon from '@/components/icons/PreviousIcon';
@@ -13,6 +14,7 @@ interface Props {
 }
 const HeroSection = ({ statusCode }: Props) => {
   const { t } = useTranslation('error');
+  const theme = useTheme();
 
   return (
     <Hero>
@@ -21,7 +23,7 @@ const HeroSection = ({ statusCode }: Props) => {
           <Typography component={Link} href="/" color="inherit" sx={{ display: 'flex', alignItems: 'center', mb: 5.5 }}>
             <PreviousIcon sx={{ mr: 4 }} /> {t('hero-section.back')}
           </Typography>
-          <Typography variant="h1">
+          <Typography variant="h1" sx={{ color: theme.palette.secondary.main }}>
             {statusCode ? t('hero-section.title-server', { statusCode }) : t('hero-section.title-client')}
           </Typography>
         </Grid>
