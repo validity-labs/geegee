@@ -8,7 +8,7 @@ exports[`<HeroSection /> has valid snapshot 1`] = `
     <div
       class="LabHero-image"
     >
-      {"src":"test-file-stub","alt":"","layout":"fill","placeholder":"blur","blurDataURL":"/images/placeholder.svg","objectFit":"cover","objectPosition":"top"}
+      {"src":"test-file-stub","alt":"","layout":"fill","placeholder":"empty","objectFit":"cover","objectPosition":"top"}
     </div>
     <div
       class="MuiContainer-root MuiContainer-maxWidthLg css-1"
@@ -24,15 +24,169 @@ exports[`<HeroSection /> has valid snapshot 1`] = `
         title
       </h2>
       <button
-        class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButtonBase-root css-4"
+        class="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeSmall MuiButton-outlinedSizeSmall MuiButton-disableElevation MuiButtonBase-root css-4"
         tabindex="0"
         type="button"
       >
         cta
         <span
-          class="MuiTouchRipple-root css-5"
+          class="MuiButton-endIcon MuiButton-iconSizeSmall css-5"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-6"
+            data-testid="ArrowForwardIcon"
+            focusable="false"
+            style="color: rgb(246, 49, 246);"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTouchRipple-root css-7"
         />
       </button>
+      <div
+        class="css-8"
+      >
+        <a
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-9"
+          href="/"
+          style="margin-top: 0px;"
+          target="_blank"
+        >
+          {"alt":"Influencer","src":"test-file-stub","width":99,"height":99}
+        </a>
+        <a
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-9"
+          href="/"
+          style="margin-top: 30px;"
+          target="_blank"
+        >
+          {"alt":"Influencer","src":"test-file-stub","width":99,"height":99}
+        </a>
+        <a
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-9"
+          href="/"
+          style="margin-top: 30px;"
+          target="_blank"
+        >
+          {"alt":"Influencer","src":"test-file-stub","width":99,"height":99}
+        </a>
+        <a
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-9"
+          href="/"
+          style="margin-top: 60px;"
+          target="_blank"
+        >
+          {"alt":"Influencer","src":"test-file-stub","width":99,"height":99}
+        </a>
+        <a
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-9"
+          href="/"
+          style="margin-top: 30px;"
+          target="_blank"
+        >
+          {"alt":"Influencer","src":"test-file-stub","width":99,"height":99}
+        </a>
+        <a
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-9"
+          href="/"
+          style="margin-top: 30px;"
+          target="_blank"
+        >
+          {"alt":"Influencer","src":"test-file-stub","width":99,"height":99}
+        </a>
+        <a
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-9"
+          href="/"
+          style="margin-top: 30px;"
+          target="_blank"
+        >
+          {"alt":"Influencer","src":"test-file-stub","width":99,"height":99}
+        </a>
+        <a
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-9"
+          href="/"
+          style="margin-top: 30px;"
+          target="_blank"
+        >
+          {"alt":"Influencer","src":"test-file-stub","width":99,"height":99}
+        </a>
+        <a
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-9"
+          href="/"
+          style="margin-top: 0px;"
+          target="_blank"
+        >
+          {"alt":"Influencer","src":"test-file-stub","width":99,"height":99}
+        </a>
+        <a
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-9"
+          href="/"
+          style="margin-top: 30px;"
+          target="_blank"
+        >
+          {"alt":"Influencer","src":"test-file-stub","width":99,"height":99}
+        </a>
+        <a
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-9"
+          href="/"
+          style="margin-top: 60px;"
+          target="_blank"
+        >
+          {"alt":"Influencer","src":"test-file-stub","width":99,"height":99}
+        </a>
+      </div>
+      <div
+        class="css-20"
+      >
+        <div
+          class="MuiBox-root css-21"
+        >
+          <h1
+            class="MuiTypography-root MuiTypography-h5 css-22"
+          >
+            heading1
+          </h1>
+          <h1
+            class="MuiTypography-root MuiTypography-body css-23"
+          >
+            content1
+          </h1>
+        </div>
+        <div
+          class="MuiBox-root css-24"
+        >
+          <h1
+            class="MuiTypography-root MuiTypography-h5 css-22"
+          >
+            heading2
+          </h1>
+          <h1
+            class="MuiTypography-root MuiTypography-body css-23"
+          >
+            content2
+          </h1>
+        </div>
+        <div
+          class="MuiBox-root css-21"
+        >
+          <h1
+            class="MuiTypography-root MuiTypography-h5 css-22"
+          >
+            heading3
+          </h1>
+          <h1
+            class="MuiTypography-root MuiTypography-body css-23"
+          >
+            content3
+          </h1>
+        </div>
+      </div>
     </div>
   </section>
 </DocumentFragment>

@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InfluencerSection /> has valid snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="css-0"
+  >
+    <a
+      class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-1"
+      href="/"
+      style="margin-top: 0px;"
+      target="_blank"
+    >
+      {"alt":"Influencer","src":"test-file-stub","width":99,"height":99}
+    </a>
+    <a
+      class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-1"
+      href="/"
+      style="margin-top: 30px;"
+      target="_blank"
+    >
+      {"alt":"Influencer","src":"test-file-stub","width":99,"height":99}
+    </a>
+    <a
+      class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-1"
+      href="/"
+      style="margin-top: 30px;"
+      target="_blank"
+    >
+      {"alt":"Influencer","src":"test-file-stub","width":99,"height":99}
+    </a>
+    <a
+      class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-1"
+      href="/"
+      style="margin-top: 60px;"
+      target="_blank"
+    >
+      {"alt":"Influencer","src":"test-file-stub","width":99,"height":99}
+    </a>
+    <a
+      class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-1"
+      href="/"
+      style="margin-top: 30px;"
+      target="_blank"
+    >
+      {"alt":"Influencer","src":"test-file-stub","width":99,"height":99}
+    </a>
+    <a
+      class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-1"
+      href="/"
+      style="margin-top: 30px;"
+      target="_blank"
+    >
+      {"alt":"Influencer","src":"test-file-stub","width":99,"height":99}
+    </a>
+    <a
+      class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-1"
+      href="/"
+      style="margin-top: 30px;"
+      target="_blank"
+    >
+      {"alt":"Influencer","src":"test-file-stub","width":99,"height":99}
+    </a>
+    <a
+      class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-1"
+      href="/"
+      style="margin-top: 30px;"
+      target="_blank"
+    >
+      {"alt":"Influencer","src":"test-file-stub","width":99,"height":99}
+    </a>
+    <a
+      class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-1"
+      href="/"
+      style="margin-top: 0px;"
+      target="_blank"
+    >
+      {"alt":"Influencer","src":"test-file-stub","width":99,"height":99}
+    </a>
+    <a
+      class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-1"
+      href="/"
+      style="margin-top: 30px;"
+      target="_blank"
+    >
+      {"alt":"Influencer","src":"test-file-stub","width":99,"height":99}
+    </a>
+    <a
+      class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-1"
+      href="/"
+      style="margin-top: 60px;"
+      target="_blank"
+    >
+      {"alt":"Influencer","src":"test-file-stub","width":99,"height":99}
+    </a>
+  </div>
+</DocumentFragment>
+`;

@@ -40,25 +40,48 @@ exports[`<Footer /> has valid snapshot 1`] = `
         <div
           class="MuiBox-root css-6"
         >
-          <div
-            class="MuiBox-root css-7"
-          >
-            {"src":"test-file-stub","alt":"","placeholder":"empty"}
-          </div>
           <p
-            class="MuiTypography-root MuiTypography-body-xs css-8"
+            class="MuiTypography-root MuiTypography-body-xs css-7"
           >
             footer.copyright
           </p>
+          <div
+            class="MuiBox-root css-8"
+          >
+            <a
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-9"
+              href="/"
+              style="margin-right: 10px;"
+              target="_blank"
+            >
+              {"src":"test-file-stub","alt":"Discord","placeholder":"empty"}
+            </a>
+            <a
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-9"
+              href="/"
+              style="margin-right: 10px;"
+              target="_blank"
+            >
+              {"src":"test-file-stub","alt":"Github","placeholder":"empty"}
+            </a>
+            <a
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-9"
+              href="/"
+              style="margin-right: 10px;"
+              target="_blank"
+            >
+              {"src":"test-file-stub","alt":"Twitter","placeholder":"empty"}
+            </a>
+          </div>
         </div>
         <ul
-          class="css-9"
+          class="css-12"
         >
           <li>
             <a
-              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-body-xs css-10"
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-body-xs css-13"
               download=""
-              href="/downloads/Validity%20Labs_Privacy-policy.pdf"
+              href="/downloads/privacy-policy.pdf"
               target="_blank"
             >
               footer.common.privacy
@@ -66,9 +89,9 @@ exports[`<Footer /> has valid snapshot 1`] = `
           </li>
           <li>
             <a
-              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-body-xs css-10"
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-body-xs css-13"
               download=""
-              href="/downloads/Validity%20Labs_Terms-of-conditions.pdf"
+              href="/downloads/terms-of-conditions.pdf"
               target="_blank"
             >
               footer.common.terms

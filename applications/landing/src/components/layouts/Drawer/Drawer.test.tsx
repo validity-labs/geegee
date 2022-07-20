@@ -17,8 +17,8 @@ afterEach(cleanup);
 
 describe('<Drawer />', () => {
   it('has valid snapshot', async () => {
-    const { baseElement, findByText } = render(<Drawer open={true} toggle={() => {}} />);
-    await findByText('menu.service.title');
+    const { baseElement, findByText } = render(<Drawer open={true} toggle={() => { }} />);
+    await findByText('menu.platform.title');
     expect(baseElement).toMatchSnapshot();
   });
 });
