@@ -1,0 +1,10 @@
+{
+  "page": {
+    "title": "Error"
+  },
+  "hero-section": {
+    "back": "Back home",
+    "title-server": "An error {{statusCode}} occured!",
+    "title-client": "An error occured!"
+  }
+}

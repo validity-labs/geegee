@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Drawer /> has valid snapshot 1`] = `
+<body
+  style="padding-right: 1024px; overflow: hidden;"
+>
+  <div
+    aria-hidden="true"
+  >
+    <div
+      class="PrivateSwipeArea-root css-0"
+      style="width: 20px;"
+    />
+  </div>
+  <div
+    class="MuiModal-root MuiDrawer-root MuiDrawer-modal css-1"
+    role="presentation"
+  >
+    <div
+      aria-hidden="true"
+      class="MuiBackdrop-root css-2"
+      style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+    />
+    <div
+      data-test="sentinelStart"
+      tabindex="0"
+    />
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation16 MuiDrawer-paper MuiDrawer-paperAnchorLeft css-3"
+      tabindex="-1"
+    >
+      <div
+        class="css-4"
+      >
+        <ul
+          class="MuiList-root MuiList-padding css-5"
+        >
+          <li
+            class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-6"
+          >
+            <a
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-body css-7"
+              href="/service"
+            >
+              menu.service.title
+            </a>
+          </li>
+          <li
+            class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-6"
+          >
+            <a
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-body css-7"
+              href="/about"
+            >
+              menu.about.title
+            </a>
+          </li>
+          <li
+            class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-6"
+          >
+            <a
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-body css-7"
+              href="https://dat.ag/insights/blog"
+              rel="noreferrer"
+              target="_blank"
+            >
+              menu.blog.title
+            </a>
+          </li>
+        </ul>
+      </div>
+      <hr
+        class="MuiDivider-root MuiDivider-fullWidth css-12"
+      />
+      <div
+        class="css-13"
+      >
+        <button
+          class="MuiButton-root MuiButton-containedIcon MuiButton-containedIconSecondary MuiButton-sizeMedium MuiButton-containedIconSizeMedium MuiButton-disableElevation MuiButtonBase-root css-14"
+          tabindex="0"
+          type="button"
+        >
+          header.contact
+          <span
+            class="MuiButton-endIcon MuiButton-iconSizeMedium css-15"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-16"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M 3.014218,5.539048 6.3747544,9.1785222 4.004521,13.855527 9.0150704,12.957465 11.296014,18.460952 20.985782,5.7559996 Z M 6.6477887,11.503004 8.2055604,8.7527362 17.369922,6.6053578 6.6477887,11.502266 Z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root css-17"
+          />
+        </button>
+        <button
+          aria-label="header.close-menu"
+          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeLarge css-18"
+          tabindex="0"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-16"
+            data-testid="CloseRoundedIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M18.3 5.71a.9959.9959 0 0 0-1.41 0L12 10.59 7.11 5.7a.9959.9959 0 0 0-1.41 0c-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"
+            />
+          </svg>
+          <span
+            class="MuiTouchRipple-root css-17"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      data-test="sentinelEnd"
+      tabindex="0"
+    />
+  </div>
+</body>
+`;

@@ -1,0 +1,41 @@
+{
+  "app": {
+    "name": "Crypto Audit",
+    "description": "MISSING DESCRIPTION"
+  },
+  "language": {
+    "en": "English",
+    "de": "German"
+  },
+  "common": {},
+  "format": {
+    "date": "dd-MM-yyyy",
+    "date-pretty": "MMMM d, yyyy",
+    "date-time": "yyyy-MM-dd HH:mm"
+  },
+  "header": {
+    "search": "Your search phrase",
+    "toggle-menu": "Toggle Menu",
+    "close-menu": "Close Menu",
+    "signin": "Sign in"
+  },
+  "menu": {
+    "platform": {
+      "title": "Platform"
+    },
+    "faqs": {
+      "title": "FAQs"
+    },
+    "contact": {
+      "title": "Contact"
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} GeeGee AG",
+    "scroll-to-top": "Scroll to Top",
+    "common": {
+      "privacy": "Privacy Preserving",
+      "terms": "Terms of conditions"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ScrollUp /> has valid snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="css-0"
+  >
+    <div
+      style="position: relative; cursor: pointer; transition-duration: 0.2s; transition-timing-function: linear; transition-delay: 0s; opacity: 0; visibility: hidden; transition-property: opacity, visibility;"
+    >
+      <button
+        aria-label="footer.scroll-to-top"
+        class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-primary css-1"
+        tabindex="0"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-2"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M3.6,13.5l-1-1c-0.4-0.4-0.4-1.1,0-1.5c0,0,0,0,0,0l8.7-8.7c0.4-0.4,1.1-0.4,1.5,0 c0,0,0,0,0,0l8.7,8.7c0.4,0.4,0.4,1.1,0,1.5c0,0,0,0,0,0l-1,1c-0.4,0.4-1.1,0.4-1.5,0c0,0,0,0,0,0l-5.1-5.4v12.8 c0,0.6-0.5,1.1-1.1,1.1c0,0,0,0,0,0h-1.4c-0.6,0-1.1-0.5-1.1-1.1c0,0,0,0,0,0V8.1l-5.1,5.4C4.7,13.9,4,13.9,3.6,13.5 C3.6,13.5,3.6,13.5,3.6,13.5L3.6,13.5z"
+          />
+        </svg>
+        <span
+          class="MuiTouchRipple-root css-3"
+        />
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

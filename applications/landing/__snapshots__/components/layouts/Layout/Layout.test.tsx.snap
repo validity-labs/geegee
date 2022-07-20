@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Layout /> has valid snapshot 1`] = `
+<DocumentFragment>
+  <main
+    id="main"
+  />
+</DocumentFragment>
+`;

@@ -65,8 +65,10 @@ WORKDIR /usr/app
 COPY --from=production-build /src/package.json /usr/app/package.json
 COPY --from=production-build /src/node_modules /usr/app/node_modules
 COPY --from=production-build /src/next.config.js /usr/app/next.config.js
+COPY --from=production-build /src/next-i18next.config.js /usr/app/next-i18next.config.js
 COPY --from=production-build /src/public /usr/app/public
 COPY --from=production-build /src/.next /usr/app/.next
+COPY --from=production-build /src/scripts /usr/app/scripts
 
 # @TODO: needs to be configured to run via node directly for production
 CMD npm start -- -p $PORT

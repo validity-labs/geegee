@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<QuoteSection /> has valid snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="MuiBox-root css-0"
+  >
+    <div
+      class="MuiContainer-root MuiContainer-maxWidthLg LabSection-container css-1"
+    >
+      <div
+        class="LabQuoteSection-wrapper"
+      >
+        
+      Swiper props:
+        {"modules":[null,null,null],"thumbs":{"swiper":null},"slidesPerView":1,"navigation":{"nextEl":".swiper-next","prevEl":".swiper-prev"},"className":"swiper-main"}
+        
+          SwiperSlide 0:
+            {"item":"/image.jpg","index":0}
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-undefined css-2"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 css-3"
+          />
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-8 css-4"
+          >
+            <div
+              class="LabQuoteSection-navigation"
+            >
+              <button
+                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium swiper-prev css-5"
+                tabindex="0"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-6"
+                  data-testid="ArrowForwardOutlinedIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"
+                  />
+                </svg>
+                <span
+                  class="MuiTouchRipple-root css-7"
+                />
+              </button>
+              
+      Swiper props:
+        {"watchSlidesProgress":true,"modules":[null],"spaceBetween":30,"slidesPerView":1,"breakpoints":{"360":{"slidesPerView":2},"900":{"slidesPerView":3}}}
+        
+          SwiperSlide 0:
+            {"className":"Lab-active"}
+              <button
+                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium swiper-next css-8"
+                tabindex="0"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-9"
+                  data-testid="ArrowForwardOutlinedIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"
+                  />
+                </svg>
+                <span
+                  class="MuiTouchRipple-root css-7"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;

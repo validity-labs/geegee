@@ -1,0 +1,19 @@
+{
+  "page": {
+    "title": "Developing state of the art solutions for our clients",
+    "description": "Validity Labs is a blockchain solution provider building tools for different businesses of all sizes. Whether you're looking to create a new prototype for an idea or develop an enterprise grade solution - Validity Labs offers the easiest-to-use and most transparent products and services with the aim of increasing your efficiency through leveraging blockchain technology."
+  },
+  "hero-section": {
+    "pretitle": "THE MONETIZATION ENGINE",
+    "title": "For Creators\nAnd Their\nCommunities",
+    "cta": "Sign Up"
+  },
+  "cards-section": {
+    "heading1": "SIGN UP",
+    "content1": "Lorem ipsum dolor sit amet, consectetuer adipiscing.",
+    "heading2": "EARN INSTANTLY",
+    "content2": "Lorem ipsum dolor sit amet, consectetuer adipiscing.",
+    "heading3": "Lorem ipsum",
+    "content3": "Lorem ipsum dolor sit amet, consectetuer adipiscing."
+  }
+}
