@@ -5,11 +5,10 @@ import { useTranslation } from 'next-i18next';
 import { useMatomo } from '@datapunt/matomo-tracker-react';
 import CloseIcon from '@mui/icons-material/CloseRounded';
 import { /* Box, */ Button, Divider, IconButton, List, ListItem, SwipeableDrawer, Typography } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles';
 
 // import Search from '../Search/Search';
 import Link from '@/components/general/Link/Link';
-import SendIcon from '@/components/icons/SendIcon';
 import { headerLinks } from '@/libs/menu';
 import { MenuItemGroup, MenuItemLink, SetState } from '@/typings/app';
 
@@ -36,6 +35,7 @@ interface Props {
 }
 
 export default function Drawer({ open, toggle }: Props) {
+  const theme = useTheme();
   const { t } = useTranslation();
   // const [searchOpen, setSearchOpen] = useState(false);
   const toggleDrawer = (flag: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -68,6 +68,13 @@ export default function Drawer({ open, toggle }: Props) {
           sx: {
             display: 'flex',
             width: '90%',
+            backgroundColor: theme.palette.background.dark,
+            '& a': {
+              color: theme.palette.secondary.main,
+              '&:hover': {
+                color: theme.palette.primary.main,
+              },
+            },
           },
         }}
       >
@@ -118,17 +125,14 @@ export default function Drawer({ open, toggle }: Props) {
         <Divider />
         <Footer>
           <Button
-            variant="containedIcon"
-            color="secondary"
+            size="small"
             // component={Link}
             onClick={handleTracking}
-            // href={contactHref}
-            sx={{ fontWeight: 600, fontFamily: 'Montserrat, sans-serif' }}
-            endIcon={<SendIcon fontSize="large" />}
+          // href={contactHref}
           >
-            {t('header.contact')}
+            {t('header.signin')}
           </Button>
-          <IconButton size="large" color="inherit" aria-label={t('header.close-menu')} onClick={toggleDrawer(false)}>
+          <IconButton size="large" color="primary" aria-label={t('header.close-menu')} onClick={toggleDrawer(false)}>
             <CloseIcon fontSize="large" />
           </IconButton>
         </Footer>

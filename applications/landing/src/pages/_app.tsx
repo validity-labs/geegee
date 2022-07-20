@@ -47,7 +47,7 @@ const MyApp = (props: MyAppProps) => {
     <MatomoProvider value={matomoInstance}>
       <CacheProvider value={emotionCache}>
         <Head>
-          <title>Crypto Audit</title>
+          <title>Geegee platform</title>
           <meta name="viewport" content="initial-scale=1, width=device-width" />
         </Head>
         <ThemeProvider theme={theme}>

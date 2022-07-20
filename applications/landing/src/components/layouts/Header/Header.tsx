@@ -29,7 +29,7 @@ const StyledAppBar = styled(AppBar)({
   '&.show': {
     backdropFilter: 'blur(24px)',
     mixBlendMode: 'normal',
-    backgroundColor: 'rgba(255,255,255, 0.85)',
+    backgroundColor: 'rgba(0,0,0, 0.85)',
     '& .logo': {
       animation: 'fadeInAlt 300ms cubic-bezier(0.65, 0, 0.076, 1)',
     },
@@ -169,7 +169,8 @@ export default function Header() {
     };
   }, [colorSchema, theme]);
 
-  const isDark = colorSchema === 'dark' || !onTop;
+  // const isDark = colorSchema === 'dark' || !onTop;
+  const isDark = false;
 
   const { trackEvent } = useMatomo();
 
@@ -189,9 +190,9 @@ export default function Header() {
               </Container>
             </TopBar>
           )} */}
-          <Container sx={{ flex: 1, display: 'flex', alignItems: 'center', pt: 7, pb: 6.25 }}>
+          <Container sx={{ flex: 1, display: 'flex', alignItems: 'center', pt: 7, pb: 6.25, borderBottom: `2px solid ${theme.palette.secondary.dark}` }}>
             {/* @ts-ignore */}
-            <Logo component={Link} href="/" mr={17} isLight={!isDark} />
+            <Logo component={Link} href="/" mr={17} />
 
             <RightSide sx={{ flex: 1, display: 'flex', alignItems: 'center', ml: 6 }}>
               <Hidden mdUp implementation="css">
@@ -215,15 +216,9 @@ export default function Header() {
                   </Links>
                   <Button
                     onClick={handleTracking}
-                    // variant="containedIcon"
                     size="small"
-                    // color="secondary"
-                    // component={Link}
-                    // href={contactHref}
-                    // sx={{ fontWeight: 600 }}
-                    // endIcon={<SendIcon />}
                   >
-                    {t('header.contact')}
+                    {t('header.signin')}
                   </Button>
                 </MiddleSide>
               </Hidden>

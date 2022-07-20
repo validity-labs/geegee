@@ -1,14 +1,16 @@
 import { useCallback } from 'react';
 
 import { useMatomo } from '@datapunt/matomo-tracker-react';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Button, Typography } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles';
 
 import Hero from '@/components/layouts/Hero/Hero';
 import { usePageTranslation } from '@/context/AppContext';
-import coverImage from '@/public/images/pages/landing/cover.jpg';
+import coverImage from '@/public/images/cover.png';
 
 const Root = styled(Hero)(({ theme }) => ({
+  textAlign: 'center',
   '.LabHeroSection-pretitle': {
     marginBottom: theme.spacing(2.5),
     textTransform: 'uppercase',
@@ -19,6 +21,8 @@ const Root = styled(Hero)(({ theme }) => ({
 }));
 
 const HeroSection = () => {
+  const theme = useTheme();
+
   const t = usePageTranslation({ keyPrefix: 'hero-section' });
   const { trackEvent } = useMatomo();
 
@@ -29,13 +33,20 @@ const HeroSection = () => {
 
   return (
     <Root coverImage={coverImage}>
-      <Typography variant="h7" component="h1" color="text.contrast" className="LabHeroSection-pretitle">
+      <Typography variant="h7" component="h1" color="primary" className="LabHeroSection-pretitle">
         {t('pretitle')}
       </Typography>
       <Typography variant="h1" component="h2" color="text.contrast" className="LabHeroSection-title">
         {t('title')}
       </Typography>
-      <Button onClick={handleCTAClick}>{t('cta')}</Button>
+      <Button
+        size="small"
+        sx={{ fontWeight: 600, width: 388, justifyContent: 'space-between' }}
+        endIcon={<ArrowForwardIcon style={{ color: theme.palette.primary.main }} />}
+        onClick={handleCTAClick}
+      >
+        {t('cta')}
+      </Button>
     </Root>
   );
 };

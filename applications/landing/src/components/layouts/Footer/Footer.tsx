@@ -10,7 +10,9 @@ import { styled } from '@mui/material/styles';
 import Link from '@/components/general/Link/Link';
 import ScrollUp from '@/components/layouts/ScrollUp/ScrollUp';
 import { footerLinks } from '@/libs/menu';
-import logoImage from '@/public/images/logo-small.svg';
+import iconDiscord from '@/public/images/discord.svg';
+import iconGithub from '@/public/images/github.svg';
+import iconTwitter from '@/public/images/twitter.svg';
 
 // const TopSection = styled(Box)(({ theme }) => ({
 //   display: 'flex',
@@ -209,12 +211,15 @@ export default function Footer(): ReactElement {
               mt: 6,
             }}
           >
-            <Box sx={{ display: 'flex', alignItems: 'center', width: 25, mr: 4 }}>
-              <Image src={logoImage} alt="" placeholder="empty" />
-            </Box>
             <Typography variant="body-xs" color="inherit">
               {copyright}
             </Typography>
+
+            <Box sx={{ display: 'flex', alignItems: 'center', width: 80, ml: 10 }}>
+              <Link href="/" target="_blank" style={{ marginRight: 10 }}><Image src={iconDiscord} alt="Discord" placeholder="empty" /></Link>
+              <Link href="/" target="_blank" style={{ marginRight: 10 }}><Image src={iconGithub} alt="Github" placeholder="empty" /></Link>
+              <Link href="/" target="_blank" style={{ marginRight: 10 }}><Image src={iconTwitter} alt="Twitter" placeholder="empty" /></Link>
+            </Box>
           </Box>
           <RowList>
             {footerLinks.general.map(({ key, url }) => (
@@ -226,7 +231,7 @@ export default function Footer(): ReactElement {
             ))}
           </RowList>
         </Container>
-      </BottomSection>
-    </footer>
+      </BottomSection >
+    </footer >
   );
 }

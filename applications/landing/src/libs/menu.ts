@@ -34,18 +34,18 @@ export const headerLinks: MenuItemType[] = [
   // },
   {
     type: 'internal',
-    key: 'service',
-    url: '/service',
+    key: 'platform',
+    url: '#platform',
   },
   {
     type: 'internal',
-    key: 'about',
-    url: '/about',
+    key: 'faqs',
+    url: '#faqs',
   },
   {
-    type: 'external',
-    key: 'blog',
-    url: 'https://dat.ag/insights/blog',
+    type: 'internal',
+    key: 'contact',
+    url: '#contact',
   },
 ];
 
@@ -80,11 +80,11 @@ export const footerLinks = {
   general: [
     {
       key: 'privacy',
-      url: '/downloads/Validity Labs_Privacy-policy.pdf',
+      url: '/downloads/privacy-policy.pdf',
     },
     {
       key: 'terms',
-      url: '/downloads/Validity Labs_Terms-of-conditions.pdf',
+      url: '/downloads/terms-of-conditions.pdf',
     },
   ],
   // rest: [

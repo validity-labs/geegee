@@ -7,27 +7,7 @@
     "en": "English",
     "de": "German"
   },
-  "common": {
-    "skip-to-main": "Skip to main content",
-    "read-more": "Read more",
-    "read-less": "Read less",
-    "more": "More",
-    "no-records": "No records found.",
-    "no-translation": "Content has no translation.",
-    "copy": "Copy to Clipboard",
-    "copied": "Copied!",
-    "navigate-to": "Navigate to \"{{title}}\"",
-    "navigate-to-product": "Navigate to \"{{title}}\" product",
-    "table": {
-      "rows-per-page": "Rows per page",
-      "first-page": "First Page",
-      "previous-page": "Previous Page",
-      "next-page": "Next Page",
-      "last-page": "Last Page"
-    },
-    "video-not-supported": "Sorry, your browser doesn't support embedded videos.",
-    "author": "Crypto Audit"
-  },
+  "common": {},
   "format": {
     "date": "dd-MM-yyyy",
     "date-pretty": "MMMM d, yyyy",
@@ -37,25 +17,25 @@
     "search": "Your search phrase",
     "toggle-menu": "Toggle Menu",
     "close-menu": "Close Menu",
-    "contact": "Contact us"
+    "signin": "Sign in"
   },
   "menu": {
-    "service": {
-      "title": "Service"
+    "platform": {
+      "title": "Platform"
     },
-    "about": {
-      "title": "About"
+    "faqs": {
+      "title": "FAQs"
     },
-    "blog": {
-      "title": "Blog"
+    "contact": {
+      "title": "Contact"
     }
   },
   "footer": {
-    "copyright": "© {{year}} Digital Assets Technologies AG. All rights reserved.",
+    "copyright": "© {{year}} GeeGee AG",
     "scroll-to-top": "Scroll to Top",
     "common": {
-      "privacy": "Privacy policy",
-      "terms": "Terms of use"
+      "privacy": "Privacy Preserving",
+      "terms": "Terms of conditions"
     }
   }
 }

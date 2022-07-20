@@ -12,15 +12,17 @@ const theme = createTheme({
   spacing,
   palette: {
     primary: {
-      main: '#586CE9',
+      main: '#F631F6',
       // dark: '#065cb2',
       // contrastText: '#ffffff',
     },
-    // secondary: {
-    // light: '#F23C9E',
-    // main: '#df0e83',
-    // contrastText: '#ffffff',
-    // },
+    secondary: {
+      main: '#C4C4C4',
+      dark: '#1A1A1A',
+      // light: '#F23C9E',
+      // main: '#df0e83',
+      // contrastText: '#ffffff',
+    },
     // warning: {
     // main: '#F8B90D',
     // contrastText: '#ffffff',
@@ -36,7 +38,7 @@ const theme = createTheme({
       primary: '#000000', // '#0e193c',
       secondary: '#7d7d7d',
       contrast: '#ffffff',
-      active: '#586CE9',
+      active: '#F631F6',
     },
     background: {
       dark: '#171719',
@@ -49,9 +51,8 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: 'Montserrat, sans-serif',
-
     h1: {
-      fontFamily: 'Nunito, sans-serif',
+      fontFamily: 'Audiowide, cursive',
       fontSize: '3.125rem', // 50px
       lineHeight: '3.75rem', // 60px
       whiteSpace: 'pre-line',
@@ -61,7 +62,7 @@ const theme = createTheme({
       },
     },
     h2: {
-      fontFamily: 'Nunito, sans-serif',
+      fontFamily: 'Audiowide, cursive',
       whiteSpace: 'pre-line',
       fontSize: '1.875rem', // 30px
       lineHeight: '2.5625rem', // 41px
@@ -72,26 +73,32 @@ const theme = createTheme({
       // fontWeight: 500,
     },
     h3: {
+      fontFamily: 'Audiowide, cursive',
       fontSize: '1.875rem', // 30px
       lineHeight: '2.5625rem', // 41px
     },
     h4: {
+      fontFamily: 'Audiowide, cursive',
       fontSize: '1.5625rem', // 25px
       lineHeight: '2.125rem', // 34px
     },
     h5: {
+      fontFamily: 'Audiowide, cursive',
       fontSize: '1.25rem', // 20px
       lineHeight: '1.6875rem', // 27px
     },
     h6: {
+      fontFamily: 'Audiowide, cursive',
       fontSize: '1.125rem', // 18px
       lineHeight: '1.5rem', // 24px
     },
     h7: {
+      fontFamily: 'Audiowide, cursive',
       fontSize: '1rem', // 16px
       // lineHeight: '1.375rem', // 22px
       // lineHeight: 2.2,
       lineHeight: 1.66,
+      letterSpacing: '.4rem',
     },
     'body-xl': {
       fontSize: '1.25rem', // 20px
@@ -139,7 +146,7 @@ theme.mixins = {
   },
   font: {
     title: {
-      fontFamily: 'Nunito, sans-serif',
+      fontFamily: 'Audiowide, cursive',
     },
   },
 };
@@ -150,7 +157,7 @@ theme.components = {
           height: 100%;
         }
         body {
-          background-color: #ffffff;
+          background-color: #0D080C;
           font-family: Montserrat, sans-serif;
         }
         #__next {
@@ -170,7 +177,7 @@ theme.components = {
           list-style: none;
         }
         a {
-          color: #7294ff;
+          color: #F631F6;
           text-decoration: none;
         }
         a:hover, a:focus, a:visited: {
@@ -423,7 +430,7 @@ theme.components = {
   },
   MuiButton: {
     defaultProps: {
-      variant: 'contained',
+      variant: 'outlined',
       disableElevation: true,
     },
     variants: [
@@ -454,6 +461,13 @@ theme.components = {
               fontSize: '32px',
             },
           },
+        },
+      },
+      {
+        props: { color: 'primary' },
+        style: {
+          borderColor: theme.palette.primary.main,
+          color: theme.palette.secondary.main,
         },
       },
       {
