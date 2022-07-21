@@ -2,10 +2,129 @@
 
 exports[`<AboutSection /> has valid snapshot 1`] = `
 <DocumentFragment>
-  <h1
-    class="MuiTypography-root MuiTypography-h7 LabHeroSection-pretitle css-0"
+  <section
+    class="MuiBox-root css-0"
   >
-    ABOUT
-  </h1>
+    <div
+      class="css-1"
+    >
+      <div
+        class="LabDecoration-wrapper"
+      >
+        <div
+          class="LabDecoration-bottom"
+        />
+        <div
+          class="LabDecoration-right"
+        />
+      </div>
+      <div
+        class="LabDecoration-circles"
+      >
+        <img
+          alt=""
+          height="99"
+          src="/images/landing/circle.svg"
+          width="99"
+        />
+        <img
+          alt=""
+          height="99"
+          src="/images/landing/john-doe.jpg"
+          width="99"
+        />
+        <img
+          alt=""
+          height="99"
+          src="/images/landing/ring.svg"
+          width="99"
+        />
+      </div>
+    </div>
+    <div
+      class="MuiContainer-root MuiContainer-maxWidthLg LabSection-container css-2"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-15 css-3"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6 css-4"
+        >
+          <h2
+            class="MuiTypography-root MuiTypography-h2 LabAboutSection-title css-5"
+          >
+            title
+          </h2>
+          <p
+            class="MuiTypography-root MuiTypography-h6 LabAboutSection-description css-6"
+          >
+            description
+          </p>
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6 css-4"
+        >
+          <div
+            class="LabAboutSection-cards"
+          >
+            <div
+              class="LabAboutSection-card1 css-8"
+            >
+              <div
+                class="LabCard-wrapper"
+              >
+                <h3
+                  class="MuiTypography-root MuiTypography-h6 css-6"
+                >
+                  title
+                </h3>
+                <p
+                  class="MuiTypography-root MuiTypography-body css-10"
+                >
+                  description
+                </p>
+              </div>
+            </div>
+            <div
+              class="LabAboutSection-card2 css-8"
+            >
+              <div
+                class="LabCard-wrapper"
+              >
+                <h3
+                  class="MuiTypography-root MuiTypography-h6 css-6"
+                >
+                  title
+                </h3>
+                <p
+                  class="MuiTypography-root MuiTypography-body css-10"
+                >
+                  description
+                </p>
+              </div>
+            </div>
+            <div
+              class="LabAboutSection-card3 css-8"
+            >
+              <div
+                class="LabCard-wrapper"
+              >
+                <h3
+                  class="MuiTypography-root MuiTypography-h6 css-6"
+                >
+                  title
+                </h3>
+                <p
+                  class="MuiTypography-root MuiTypography-body css-10"
+                >
+                  description
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </DocumentFragment>
 `;
