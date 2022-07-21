@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
 import { useMatomo } from '@datapunt/matomo-tracker-react';
-import { Button, Typography } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Button, ExpandMoreIcon, Typography } from '@mui/material';
 import { styled, useTheme } from '@mui/material/styles';
 
 import { usePageTranslation } from '@/context/AppContext';
