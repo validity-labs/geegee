@@ -53,7 +53,7 @@ const Card = ({ i18nKey, className }: Props) => {
     <Root className={className}>
       <div className="LabCard-wrapper">
         <Typography variant="h6" component="h3">{t('title')}</Typography>
-        <Typography >{t('description')}</Typography>
+        <Typography>{t('description')}</Typography>
       </div>
     </Root>
   );

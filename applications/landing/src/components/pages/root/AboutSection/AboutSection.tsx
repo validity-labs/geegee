@@ -78,8 +78,8 @@ const AboutSection = () => {
             )}
           </div>
         </Grid>
-      </Grid >
-    </Root >
+      </Grid>
+    </Root>
   );
 };
 

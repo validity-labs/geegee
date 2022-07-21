@@ -33,5 +33,16 @@
         "description": "2 way dono'z - Give back to your community instantly with real- time, real world rewards"
       }
     ]
+  },
+  "info-section": {
+    "title": "Lorem ipsum",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
+    "sign-up": "Sign Up",
+    "read-docs": "Read documentation",
+    "join-community": "Be a part of our community",
+    "more": {
+      "title": "Lorem ipsum",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+    }
   }
 }

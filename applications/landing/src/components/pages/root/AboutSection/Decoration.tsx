@@ -112,7 +112,6 @@ const Root = styled('div')(({ theme }) => ({
   },
 }));
 
-
 const imagePaths = [
   '/images/landing/circle.svg',
   '/images/landing/john-doe.jpg',
@@ -138,14 +137,14 @@ const Decoration = () => {
 
   return (
     <Root ref={neonRef}>
-      <div className={clsx('LabDecoration-wrapper', { 'Lab-flicker': glanced })} >
+      <div className={clsx('LabDecoration-wrapper', { 'Lab-flicker': glanced })}>
         <div className="LabDecoration-bottom" />
         <div className="LabDecoration-right" />
       </div>
       <div className="LabDecoration-circles">
         {imagePaths.map((path) => <img key={path} alt="" src={path} width={99} height={99} />)}
       </div>
-    </Root >
+    </Root>
   );
 };
 

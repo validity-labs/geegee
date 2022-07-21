@@ -8,11 +8,14 @@ import ScrollToTop from 'react-scroll-up';
 
 import ArrowUpIcon from '@/components/icons/ArrowUpIcon';
 
-const Root = styled('div')({
+const Root = styled('div')(({ theme }) => ({
   position: 'absolute',
   top: -28,
-  right: 0,
-});
+  right: 20,
+  [theme.breakpoints.up('md')]: {
+    right: 0,
+  },
+}));
 
 const scrollToTopStyles = { position: 'relative', right: 'auto', bottom: 'auto' };
 

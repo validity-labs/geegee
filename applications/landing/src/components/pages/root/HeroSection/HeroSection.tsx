@@ -20,6 +20,14 @@ const Root = styled(Hero)(({ theme }) => ({
   '.LabHeroSection-title': {
     marginBottom: theme.spacing(10),
   },
+  '.LabHeroSection-cta': {
+    borderWidth: 2,
+    maxWidth: 388,
+    width: '100%',
+    '&:hover': {
+      borderWidth: 2,
+    },
+  },
 }));
 
 const HeroSection = () => {
@@ -43,7 +51,7 @@ const HeroSection = () => {
       </Typography>
       <Button
         size="small"
-        sx={{ fontWeight: 600, maxWidth: 388, width: '100%', justifyContent: 'space-between' }}
+        className="LabHeroSection-cta"
         endIcon={<ArrowForwardIcon style={{ color: theme.palette.primary.main }} />}
         onClick={handleCTAClick}
       >

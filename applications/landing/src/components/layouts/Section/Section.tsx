@@ -21,7 +21,7 @@ const Root = styled(Box, {
   shouldForwardProp: (prop) => prop !== 'background',
 })<RootProps>(({ background, theme }) => ({
   backgroundColor: getProp(theme.palette, backgroundMap[background], backgroundMap[background]),
-  padding: theme.spacing(63.5, 0),
+  padding: theme.spacing(30, 0),
   // '& .MuiDecoration-before, & .MuiDecoration-both': {
   //   position: 'relative',
   //   '&:before': {

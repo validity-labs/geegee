@@ -46,7 +46,6 @@ const theme = createTheme({
       light: '#7294FF',
       lighter: '#F6F6F6',
       gray: '#fafafa',
-      orange: '#ff973e',
     },
   },
   typography: {
@@ -333,8 +332,10 @@ theme.components = {
     styleOverrides: {
       root: {
         // color: theme.palette.text.primary,
+        transition: 'color 0.4s',
         '&:hover': {
           color: theme.palette.text.active,
+          transition: 'color 0.4s ease-out',
         },
       },
     },
@@ -479,163 +480,10 @@ theme.components = {
     },
     variants: [
       {
-        props: { variant: 'containedIcon' },
-        style: {
-          padding: theme.spacing(0, 0, 0, 9),
-          borderRadius: shapeBorderRadiusBase * 8,
-          overflow: 'hidden',
-          color: theme.palette.text.contrast,
-          '&:hover': {
-            color: theme.palette.text.contrast,
-            '& .MuiButton-endIcon': {
-              transition: 'background-color .1s, transform .3s',
-              transform: 'rotate(10deg)',
-            },
-          },
-          '& .MuiButton-endIcon': {
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: 54,
-            height: 54,
-            borderRadius: '100%',
-            margin: theme.spacing(0, 0, 0, 4),
-            transition: 'background-color .1s, transform .3s',
-            svg: {
-              fontSize: '32px',
-            },
-          },
-        },
-      },
-      {
         props: { color: 'primary' },
         style: {
           borderColor: theme.palette.primary.main,
           color: theme.palette.secondary.main,
-        },
-      },
-      {
-        props: { variant: 'containedIcon', color: 'primary' },
-        style: {
-          backgroundColor: theme.palette.primary.main,
-          '&:hover': {
-            backgroundColor: theme.palette.primary.dark,
-            '@media (hover: none)': {
-              backgroundColor: theme.palette.primary.main,
-            },
-            '& .MuiButton-endIcon': {
-              backgroundColor: theme.palette.primary.main,
-            },
-          },
-          '& .MuiButton-endIcon': {
-            backgroundColor: theme.palette.primary.light,
-          },
-        },
-      },
-      {
-        props: { variant: 'containedIcon', color: 'secondary' },
-        style: {
-          backgroundColor: theme.palette.secondary.main,
-          '&:hover': {
-            backgroundColor: theme.palette.secondary.dark,
-            '@media (hover: none)': {
-              backgroundColor: theme.palette.secondary.main,
-            },
-            '& .MuiButton-endIcon': {
-              backgroundColor: theme.palette.secondary.main,
-            },
-          },
-          '& .MuiButton-endIcon': {
-            backgroundColor: theme.palette.secondary.light,
-          },
-        },
-      },
-      {
-        props: { variant: 'containedIcon', color: 'info' },
-        style: {
-          backgroundColor: '#E6C301',
-          '&:hover': {
-            backgroundColor: '#b39700',
-            '@media (hover: none)': {
-              backgroundColor: '#E6C301',
-            },
-            '& .MuiButton-endIcon': {
-              backgroundColor: '#E6C301',
-            },
-          },
-          '& .MuiButton-endIcon': {
-            backgroundColor: '#EDD032',
-          },
-        },
-      },
-      {
-        props: { variant: 'containedIcon', color: 'success' },
-        style: {
-          backgroundColor: '#25AD64',
-          '&:hover': {
-            backgroundColor: '#1b894e',
-            '@media (hover: none)': {
-              backgroundColor: '#25AD64',
-            },
-            '& .MuiButton-endIcon': {
-              backgroundColor: '#25AD64',
-            },
-          },
-          '& .MuiButton-endIcon': {
-            backgroundColor: '#36C377',
-          },
-        },
-      },
-      {
-        props: { variant: 'inverted' },
-        style: {
-          borderRadius: shapeBorderRadiusBase * 8,
-        },
-      },
-      {
-        props: { variant: 'inverted', color: 'primary' },
-        style: {
-          color: theme.palette.primary.main,
-          backgroundColor: theme.palette.common.white,
-          '&:hover': {
-            color: theme.palette.primary.dark,
-            backgroundColor: theme.palette.common.white,
-            '@media (hover: none)': {
-              backgroundColor: theme.palette.common.white,
-            },
-          },
-        },
-      },
-      {
-        props: { variant: 'outlined', color: 'info' },
-        style: {
-          padding: theme.spacing(0, 0, 0, 9),
-          borderRadius: shapeBorderRadiusBase * 8,
-          overflow: 'hidden',
-          color: theme.palette.text.contrast,
-          '&:hover': {
-            border: '1px solid currentColor',
-            color: theme.palette.text.contrast,
-            '& .MuiButton-endIcon': {
-              transition: 'background-color .1s, transform .3s',
-              transform: 'rotate(10deg)',
-            },
-          },
-          '& .MuiButton-endIcon': {
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: 54,
-            height: 54,
-            border: '1px solid currentColor',
-            borderRadius: '100%',
-            margin: theme.spacing(0, '-1px', 0, 4),
-            backgroundColor: '#ffad36',
-            transition: 'background-color .1s, transform .3s',
-            svg: {
-              fontSize: '32px',
-            },
-          },
         },
       },
     ],
@@ -643,10 +491,11 @@ theme.components = {
       root: {
         minHeight: 'auto',
         borderRadius: 0,
-        // fontFamily: 'Montserrat, sans-serif',
+        fontFamily: 'Audiowide, cursive',
         fontWeight: 600,
         lineHeight: 'initial',
         textTransform: 'none',
+        justifyContent: 'space-between',
         [bp.up('sm')]: {
           whiteSpace: 'nowrap',
         },
@@ -656,14 +505,14 @@ theme.components = {
       },
       contained: {
         color: theme.palette.text.contrast,
-        borderRadius: shapeBorderRadiusBase * 8,
+        borderRadius: shapeBorderRadiusBase * 5,
         '&:hover': {
           color: theme.palette.text.contrast,
         },
       },
       outlined: {
         borderColor: 'currentcolor',
-        borderRadius: shapeBorderRadiusBase * 8,
+        borderRadius: shapeBorderRadiusBase * 5,
         '&.Mui-disabled': {
           color: theme.palette.text.secondary,
         },
@@ -675,29 +524,30 @@ theme.components = {
       startIcon: {
         marginRight: sp(6.5),
       },
+      endIcon: {
+        marginLeft: sp(8.5),
+      },
+      iconSizeSmall: {
+        '& svg:nth-of-type(1)': {
+          fontSize: '1.75rem', // 28px
+        },
+      },
       iconSizeMedium: {
-        '& svg': {
-          //, & svg:nth-of-type(1)
+        '& svg:nth-of-type(1)': {
           fontSize: '2rem', // 32px
         },
       },
       sizeSmall: {
-        padding: sp(4, 10, 4),
-        fontSize: '0.9375rem', // 15px
-        // padding: sp(2.5, 5, 3),
-        // fontSize: '0.9375rem', // 15px
-        // fontWeight: 500,
+        padding: sp(3, 10.5),
+        // padding: sp(4.5, 8.5, 4.5, 10.5),
+        fontSize: '0.75rem', // 12px
       },
       sizeMedium: {
         padding: sp(6, 12, 6),
         fontSize: '0.9375rem', // 15px
-        // fontWeight: 600,
       },
       sizeLarge: {
-        // padding: sp(4.5, 9, 5),
         fontSize: '1rem', // 16px
-        // fontSize: '1.25rem', // 20
-        // fontWeight: 600,
       },
     },
   },
@@ -912,45 +762,6 @@ theme.components = {
       },
     },
   },
-  MuiPaginationItem: {
-    styleOverrides: {
-      root: {},
-      text: {
-        borderRadius: 0,
-        fontSize: '0.875rem', // 14px
-        color: theme.palette.common.black,
-        margin: theme.spacing(0, 5),
-        '&.Mui-selected, &.Mui-selected:hover': {
-          position: 'relative',
-          color: theme.palette.background.orange,
-          backgroundColor: 'transparent',
-          '&:after': {
-            content: '""',
-            position: 'absolute',
-            bottom: 0,
-            width: '100%',
-            height: '4px',
-            borderRadius: '4px',
-            backgroundColor: theme.palette.background.orange,
-          },
-        },
-        '&:hover': {
-          color: theme.palette.background.orange,
-          backgroundColor: 'transparent',
-        },
-      },
-    },
-  },
-  MuiTableCell: {
-    styleOverrides: {
-      root: { padding: theme.spacing(9, 4, 7.5) },
-    },
-  },
-  // MuiSvgIcon: {
-  //   defaultProps: {
-  //     color: 'primary',
-  //   }
-  // }
 };
 // console.info(theme);
 
