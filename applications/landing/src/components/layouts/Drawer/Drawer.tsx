@@ -118,9 +118,6 @@ export default function Drawer({ open, toggle }: Props) {
               );
             })}
           </List>
-          {/* <Box sx={{ position: 'relative', mx: 4, my: 8 }}>
-            <Search open={searchOpen} setOpen={setSearchOpen} isDark />
-          </Box> */}
         </Content>
         <Divider />
         <Footer>

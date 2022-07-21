@@ -52,9 +52,7 @@ const RightSide = styled('div')({
   alignItems: 'center',
 });
 
-const Links = styled('ul', {
-  shouldForwardProp: (prop) => prop !== 'isDark',
-})<{ isDark: boolean }>(({ theme, isDark }) => ({
+const Links = styled('ul')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'flex-start',
@@ -62,7 +60,7 @@ const Links = styled('ul', {
   '& a, .MuiLink-root': {
     padding: theme.spacing(2, 4),
     whiteSpace: 'nowrap',
-    color: isDark ? theme.palette.text.primary : theme.palette.text.contrast,
+    color: theme.palette.text.primary,
     transition: 'color 0.4s',
     '&:hover, &.active': {
       color: theme.palette.text.active,
@@ -107,10 +105,9 @@ const Links = styled('ul', {
 
 interface MenuItemProps {
   item: MenuItemType;
-  isDark: boolean;
 }
 
-function MenuItem({ item, isDark }: MenuItemProps) {
+function MenuItem({ item }: MenuItemProps) {
   const { t } = useTranslation();
   const { type, key } = item;
   const isInternal = type === 'internal';
@@ -125,7 +122,7 @@ function MenuItem({ item, isDark }: MenuItemProps) {
   }
 
   if (type === 'group') {
-    return <Menu parentKey={key} items={(item as MenuItemGroup).items} isDark={isDark} />;
+    return <Menu parentKey={key} items={(item as MenuItemGroup).items} />;
   }
 
   return null;
@@ -169,9 +166,6 @@ export default function Header() {
     };
   }, [colorSchema, theme]);
 
-  // const isDark = colorSchema === 'dark' || !onTop;
-  const isDark = false;
-
   const { trackEvent } = useMatomo();
 
   const handleTracking = () => {
@@ -190,7 +184,7 @@ export default function Header() {
               </Container>
             </TopBar>
           )} */}
-          <Container sx={{ flex: 1, display: 'flex', alignItems: 'center', pt: 7, pb: 6.25, borderBottom: `2px solid ${theme.palette.secondary.dark}` }}>
+          <Container sx={{ flex: 1, display: 'flex', alignItems: 'center', pt: 7, pb: 6.25, borderBottom: `2px solid ${theme.palette.divider}` }}>
             {/* @ts-ignore */}
             <Logo component={Link} href="/" mr={17} />
 
@@ -207,10 +201,10 @@ export default function Header() {
               </Hidden>
               <Hidden mdDown implementation="css">
                 <MiddleSide>
-                  <Links isDark={isDark}>
+                  <Links >
                     {headerLinks.map((link) => (
                       <li key={link.key}>
-                        <MenuItem item={link} isDark={isDark} />
+                        <MenuItem item={link} />
                       </li>
                     ))}
                   </Links>

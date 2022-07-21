@@ -11,12 +11,12 @@ import TrapFocus from '@mui/material/Unstable_TrapFocus';
 import Link from '@/components/general/Link/Link';
 
 const Toggle = styled(Button, {
-  shouldForwardProp: (prop) => prop !== 'isDark' && prop !== 'isActive',
-})<{ isDark: boolean; isActive: boolean }>(({ theme, isDark, isActive }) => ({
+  shouldForwardProp: (prop) => prop !== 'isActive',
+})<{ isActive: boolean }>(({ theme, isActive }) => ({
   '&': {
     padding: theme.spacing(2, 4),
     minWidth: 0,
-    color: isActive ? theme.palette.text.active : isDark ? theme.palette.text.primary : theme.palette.text.contrast,
+    color: isActive ? theme.palette.text.active : theme.palette.text.primary,
     ...theme.typography.body,
     fontSize: '1rem',
     fontWeight: 400,
@@ -108,9 +108,8 @@ interface Props {
     key: string;
     url: string;
   }[];
-  isDark: boolean;
 }
-export default function Menu({ parentKey, items, isDark }: Props) {
+export default function Menu({ parentKey, items }: Props) {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const { pathname } = useRouter();
@@ -169,7 +168,6 @@ export default function Menu({ parentKey, items, isDark }: Props) {
         disableRipple
         onClick={handleOpen}
         variant="text"
-        isDark={isDark}
         isActive={isActive}
       >
         {t(`menu.${parentKey}.title`)}

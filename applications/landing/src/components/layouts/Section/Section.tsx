@@ -4,7 +4,7 @@ import { Box, BoxProps, Container, ContainerProps } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import getProp from 'lodash/get';
 
-export type SectionBackgroundType = 'neutral' | 'light' | 'lighter' | 'dark' | 'darker' | 'primaryDark' | 'gray';
+export type SectionBackgroundType = 'neutral' | 'light' | 'lighter' | 'dark' | 'darker' | 'primaryDark' | 'gray' | 'transparent';
 
 const backgroundMap: Record<SectionBackgroundType, string> = {
   lighter: 'background.lighter',
@@ -14,6 +14,7 @@ const backgroundMap: Record<SectionBackgroundType, string> = {
   dark: 'background.dark',
   darker: 'background.darker',
   primaryDark: 'primary.dark',
+  transparent: 'rgba(0, 0, 0, 0)',
 };
 
 const Root = styled(Box, {
@@ -55,17 +56,20 @@ export interface SectionProps extends Partial<BoxProps> {
 interface Props extends SectionProps {
   background?: SectionBackgroundType;
   children: React.ReactNode;
+  before?: React.ReactNode;
 }
 
 export default function Section({
   children,
   background = 'neutral',
   containerProps,
+  before,
   ...restOfProps
 }: Props): ReactElement {
   return (
     // @ts-ignore: proper type configuration required so Box is used as section so sx props can be passed
     <Root background={background} component="section" {...restOfProps}>
+      {before}
       <Container className="LabSection-container" {...containerProps}>
         {children}
       </Container>

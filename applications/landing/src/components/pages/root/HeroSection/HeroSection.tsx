@@ -35,15 +35,15 @@ const HeroSection = () => {
 
   return (
     <Root coverImage={coverImage}>
-      <Typography variant="h7" component="h1" color="primary" className="LabHeroSection-pretitle">
+      <Typography variant="h4" component="h1" color="primary" className="LabHeroSection-pretitle">
         {t('pretitle')}
       </Typography>
-      <Typography variant="h1" component="h2" color="text.contrast" className="LabHeroSection-title">
+      <Typography variant="h1" component="h2" className="LabHeroSection-title">
         {t('title')}
       </Typography>
       <Button
         size="small"
-        sx={{ fontWeight: 600, width: 388, justifyContent: 'space-between' }}
+        sx={{ fontWeight: 600, maxWidth: 388, width: '100%', justifyContent: 'space-between' }}
         endIcon={<ArrowForwardIcon style={{ color: theme.palette.primary.main }} />}
         onClick={handleCTAClick}
       >

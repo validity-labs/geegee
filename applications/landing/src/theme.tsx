@@ -17,8 +17,8 @@ const theme = createTheme({
       // contrastText: '#ffffff',
     },
     secondary: {
-      main: '#C4C4C4',
-      dark: '#1A1A1A',
+      main: '#B2B2B2',
+      // dark: '#1A1A1A',
       // light: '#F23C9E',
       // main: '#df0e83',
       // contrastText: '#ffffff',
@@ -33,11 +33,11 @@ const theme = createTheme({
     // success: {
     // main: '#33C7B1',
     // },
-    divider: '#1E1D20',
+    divider: '#1A1A1A',
     text: {
-      primary: '#000000', // '#0e193c',
-      secondary: '#7d7d7d',
-      contrast: '#ffffff',
+      primary: '#ffffff',
+      secondary: '#B2B2B2',
+      contrast: '#000000',
       active: '#F631F6',
     },
     background: {
@@ -54,43 +54,43 @@ const theme = createTheme({
     h1: {
       fontFamily: 'Audiowide, cursive',
       fontSize: '3.125rem', // 50px
-      lineHeight: '3.75rem', // 60px
+      lineHeight: '3.9375rem', // 63px
       whiteSpace: 'pre-line',
       [bp.up('md')]: {
-        fontSize: '5rem', // 80px
-        lineHeight: '5.625rem', // 90px
+        fontSize: '5.625rem', // 90px
+        lineHeight: '6.25rem', // 100px
       },
     },
     h2: {
       fontFamily: 'Audiowide, cursive',
       whiteSpace: 'pre-line',
-      fontSize: '1.875rem', // 30px
-      lineHeight: '2.5625rem', // 41px
+      fontSize: '1.5625rem', // 25px
+      lineHeight: '2rem', // 32px
       [bp.up('md')]: {
         fontSize: '3.125rem', // 50px
-        lineHeight: '3.75rem', // 60px
+        lineHeight: '3.9375rem', // 63px
       },
       // fontWeight: 500,
     },
     h3: {
       fontFamily: 'Audiowide, cursive',
-      fontSize: '1.875rem', // 30px
-      lineHeight: '2.5625rem', // 41px
+      fontSize: '1.5625rem', // 25px
+      lineHeight: '2rem', // 32px
     },
     h4: {
       fontFamily: 'Audiowide, cursive',
-      fontSize: '1.5625rem', // 25px
-      lineHeight: '2.125rem', // 34px
+      fontSize: '1.25rem', // 20px
+      lineHeight: '1.625rem', // 26px
     },
     h5: {
       fontFamily: 'Audiowide, cursive',
-      fontSize: '1.25rem', // 20px
-      lineHeight: '1.6875rem', // 27px
+      fontSize: '1.125rem', // 18px
+      lineHeight: '1.5rem', // 24px
     },
     h6: {
       fontFamily: 'Audiowide, cursive',
-      fontSize: '1.125rem', // 18px
-      lineHeight: '1.5rem', // 24px
+      fontSize: '1rem', // 16px
+      lineHeight: 1.66,
     },
     h7: {
       fontFamily: 'Audiowide, cursive',
@@ -192,9 +192,8 @@ theme.components = {
           -webkit-box-shadow: 'none';
         }
         ::-webkit-scrollbar-thumb {
-        border: 1px solid white;
           border-radius: 6px;
-          background-color: #b7b7b7;
+          background-color: #F631F6;
         }
         .aria {
           border: 0;
@@ -242,6 +241,51 @@ theme.components = {
           }
           100% {
             transform: translate(0, 0);
+          }
+        }
+        .Lab-flicker {
+          animation: flicker 3s ease-out 3 alternate forwards;
+        }
+        @keyframes flicker {
+          0% {
+            opacity: 0.4;
+          }
+          5% {
+            opacity: 0.5;
+          }
+          10% {
+            opacity: 0.6;
+          }
+          15% {
+            opacity: 0.85;
+          }
+          25% {
+            opacity: 0.5;
+          }
+          30% {
+            opacity: 1;
+          }
+          35% {
+            opacity: 0.3;
+          }
+          40% {
+            opacity: 4;
+          }
+          45% {
+            opacity: 0.5;
+          }
+          60% {
+            opacity: 1;
+          }
+          70% {
+            opacity: 0.85;
+          }
+          80% {
+            opacity: 0.8;
+          }
+
+          100% {
+            opacity: 1;
           }
         }
       `,
