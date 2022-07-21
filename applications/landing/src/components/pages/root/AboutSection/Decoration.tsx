@@ -11,6 +11,8 @@ const Root = styled('div')(({ theme }) => ({
   width: ['100%', 'calc(100% - 20px)'],
   height: '270px',
   overflwo: 'hidden',
+  pointerEvents: 'none',
+  userSelect: 'none',
   '.LabDecoration-wrapper': {
     position: 'relative',
     width: '100%',

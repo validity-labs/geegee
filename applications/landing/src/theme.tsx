@@ -245,6 +245,12 @@ theme.components = {
         .Lab-flicker {
           animation: flicker 3s ease-out 3 alternate forwards;
         }
+        @media (prefers-reduced-motion) {
+          .Lab-flicker {
+            animation: none !important;
+            opacity: 1 !important;
+          }
+        }
         @keyframes flicker {
           0% {
             opacity: 0.4;

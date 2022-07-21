@@ -2,12 +2,14 @@
 
 exports[`<Footer /> has valid snapshot 1`] = `
 <DocumentFragment>
-  <footer>
+  <footer
+    class="css-0"
+  >
     <div
-      class="MuiBox-root css-0"
+      class="MuiContainer-root MuiContainer-maxWidthLg css-1"
     >
       <div
-        class="MuiContainer-root MuiContainer-maxWidthLg css-1"
+        class="LabFooter-wrapper"
       >
         <div
           class="css-2"
@@ -38,48 +40,57 @@ exports[`<Footer /> has valid snapshot 1`] = `
           </div>
         </div>
         <div
-          class="MuiBox-root css-6"
+          class="LabFooter-left"
         >
           <p
-            class="MuiTypography-root MuiTypography-body-xs css-7"
+            class="MuiTypography-root MuiTypography-body-sm css-6"
           >
             footer.copyright
           </p>
           <div
-            class="MuiBox-root css-8"
+            class="LabFooter-social"
           >
             <a
-              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-9"
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium active css-7"
               href="/"
-              style="margin-right: 10px;"
+              tabindex="0"
               target="_blank"
             >
-              {"src":"test-file-stub","alt":"Discord","placeholder":"empty"}
+              {"src":"test-file-stub","alt":"Discord"}
+              <span
+                class="MuiTouchRipple-root css-5"
+              />
             </a>
             <a
-              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-9"
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium active css-7"
               href="/"
-              style="margin-right: 10px;"
+              tabindex="0"
               target="_blank"
             >
-              {"src":"test-file-stub","alt":"Github","placeholder":"empty"}
+              {"src":"test-file-stub","alt":"Github"}
+              <span
+                class="MuiTouchRipple-root css-5"
+              />
             </a>
             <a
-              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone active css-9"
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium active css-7"
               href="/"
-              style="margin-right: 10px;"
+              tabindex="0"
               target="_blank"
             >
-              {"src":"test-file-stub","alt":"Twitter","placeholder":"empty"}
+              {"src":"test-file-stub","alt":"Twitter"}
+              <span
+                class="MuiTouchRipple-root css-5"
+              />
             </a>
           </div>
         </div>
         <ul
-          class="css-12"
+          class="css-13"
         >
           <li>
             <a
-              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-body-xs css-13"
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-body-sm css-14"
               download=""
               href="/downloads/privacy-policy.pdf"
               target="_blank"
@@ -89,7 +100,7 @@ exports[`<Footer /> has valid snapshot 1`] = `
           </li>
           <li>
             <a
-              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-body-xs css-13"
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-body-sm css-14"
               download=""
               href="/downloads/terms-of-conditions.pdf"
               target="_blank"
