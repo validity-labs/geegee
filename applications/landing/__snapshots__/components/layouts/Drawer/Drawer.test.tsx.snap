@@ -40,9 +40,9 @@ exports[`<Drawer /> has valid snapshot 1`] = `
           >
             <a
               class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-body css-7"
-              href="/service"
+              href="/#platform"
             >
-              menu.service.title
+              menu.platform.title
             </a>
           </li>
           <li
@@ -50,9 +50,9 @@ exports[`<Drawer /> has valid snapshot 1`] = `
           >
             <a
               class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-body css-7"
-              href="/about"
+              href="/#faqs"
             >
-              menu.about.title
+              menu.faqs.title
             </a>
           </li>
           <li
@@ -60,11 +60,9 @@ exports[`<Drawer /> has valid snapshot 1`] = `
           >
             <a
               class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-body css-7"
-              href="https://dat.ag/insights/blog"
-              rel="noreferrer"
-              target="_blank"
+              href="/#contact"
             >
-              menu.blog.title
+              menu.contact.title
             </a>
           </li>
         </ul>
@@ -76,39 +74,24 @@ exports[`<Drawer /> has valid snapshot 1`] = `
         class="css-13"
       >
         <button
-          class="MuiButton-root MuiButton-containedIcon MuiButton-containedIconSecondary MuiButton-sizeMedium MuiButton-containedIconSizeMedium MuiButton-disableElevation MuiButtonBase-root css-14"
+          class="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeSmall MuiButton-outlinedSizeSmall MuiButton-disableElevation MuiButtonBase-root css-14"
           tabindex="0"
           type="button"
         >
-          header.contact
+          header.signin
           <span
-            class="MuiButton-endIcon MuiButton-iconSizeMedium css-15"
-          >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-16"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M 3.014218,5.539048 6.3747544,9.1785222 4.004521,13.855527 9.0150704,12.957465 11.296014,18.460952 20.985782,5.7559996 Z M 6.6477887,11.503004 8.2055604,8.7527362 17.369922,6.6053578 6.6477887,11.502266 Z"
-                fill="currentColor"
-              />
-            </svg>
-          </span>
-          <span
-            class="MuiTouchRipple-root css-17"
+            class="MuiTouchRipple-root css-15"
           />
         </button>
         <button
           aria-label="header.close-menu"
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeLarge css-18"
+          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeLarge css-16"
           tabindex="0"
           type="button"
         >
           <svg
             aria-hidden="true"
-            class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-16"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-17"
             data-testid="CloseRoundedIcon"
             focusable="false"
             viewBox="0 0 24 24"
@@ -118,7 +101,7 @@ exports[`<Drawer /> has valid snapshot 1`] = `
             />
           </svg>
           <span
-            class="MuiTouchRipple-root css-17"
+            class="MuiTouchRipple-root css-15"
           />
         </button>
       </div>

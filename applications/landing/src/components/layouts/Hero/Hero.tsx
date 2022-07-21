@@ -68,8 +68,7 @@ export default function Hero({
             src={coverImage}
             alt=""
             layout="fill"
-            placeholder="blur"
-            blurDataURL={`/images/placeholder.svg`}
+            placeholder="empty"
             objectFit="cover"
             objectPosition="top"
             {...coverImageProps}
@@ -83,8 +82,7 @@ export default function Hero({
             alt={cover.alt}
             title={cover.caption}
             layout="fill"
-            placeholder="blur"
-            blurDataURL={`/images/placeholder.svg`}
+            placeholder="empty"
             objectFit="cover"
             objectPosition="top"
           />
