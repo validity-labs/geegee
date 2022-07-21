@@ -2,8 +2,7 @@ import React from 'react';
 
 import { NextConfig } from 'next';
 export interface NextAppConfig extends NextConfig {
-  serverRuntimeConfig?: {
-  };
+  serverRuntimeConfig?: {};
   publicRuntimeConfig: {
     baseDomain: string;
     matomoSiteId: string;
@@ -111,4 +110,9 @@ export interface StaticImageData {
   height: number;
   width: number;
   blurDataURL?: string;
+}
+
+export interface FAQGroup<T = string> {
+  key: T;
+  count: number;
 }
