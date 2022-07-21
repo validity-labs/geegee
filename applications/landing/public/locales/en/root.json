@@ -15,5 +15,42 @@
     "content2": "Lorem ipsum dolor sit amet, consectetuer adipiscing.",
     "heading3": "Lorem ipsum",
     "content3": "Lorem ipsum dolor sit amet, consectetuer adipiscing."
+  },
+  "faq-section": {
+    "title": "FAQ CATEGORIES",
+    "platform": {
+      "title": "Platform",
+      "items": [
+        {
+          "title": "Id cupidatat fugiat",
+          "content": "In ex Lorem sunt eu voluptate do elit. Amet consequat elit voluptate nisi quis laboris aliqua ut ex incididunt ipsum. Ad ullamco nostrud sit consequat non exercitation enim anim mollit."
+        },
+        {
+          "title": "Id cupidatat fugiat",
+          "content": "In ex Lorem sunt eu voluptate do elit. Amet consequat elit voluptate nisi quis laboris aliqua ut ex incididunt ipsum. Ad ullamco nostrud sit consequat non exercitation enim anim mollit."
+        },
+        {
+          "title": "Id cupidatat fugiat",
+          "content": "In ex Lorem sunt eu voluptate do elit. Amet consequat elit voluptate nisi quis laboris aliqua ut ex incididunt ipsum. Ad ullamco nostrud sit consequat non exercitation enim anim mollit."
+        }
+      ]
+    },
+    "company": {
+      "title": "Company",
+      "items": [
+        {
+          "title": "Id cupidatat fugiat",
+          "content": "In ex Lorem sunt eu voluptate do elit. Amet consequat elit voluptate nisi quis laboris aliqua ut ex incididunt ipsum. Ad ullamco nostrud sit consequat non exercitation enim anim mollit."
+        },
+        {
+          "title": "Id cupidatat fugiat",
+          "content": "In ex Lorem sunt eu voluptate do elit. Amet consequat elit voluptate nisi quis laboris aliqua ut ex incididunt ipsum. Ad ullamco nostrud sit consequat non exercitation enim anim mollit."
+        },
+        {
+          "title": "Id cupidatat fugiat",
+          "content": "In ex Lorem sunt eu voluptate do elit. Amet consequat elit voluptate nisi quis laboris aliqua ut ex incididunt ipsum. Ad ullamco nostrud sit consequat non exercitation enim anim mollit."
+        }
+      ]
+    }
   }
 }

@@ -4,6 +4,7 @@
     "types": ["cypress", "@types/testing-library__jest-dom"],
     "paths": {
       "@/components/*": ["components/*"],
+      "@/typings/*": ["typings/*"],
       "@/validators/*": ["validators/*"],
       "@/interfaces/*": ["interfaces/*"],
       "@/libs/*": ["libs/*"],
