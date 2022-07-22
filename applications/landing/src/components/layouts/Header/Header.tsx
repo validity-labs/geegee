@@ -8,7 +8,7 @@ import { AppBar, Button, Container, /* Fade, */ Hidden, IconButton, Toolbar, Typ
 import { styled, useTheme } from '@mui/material/styles';
 import { DebouncedFunc, throttle } from 'lodash';
 
-import ExternalLink from '@/components/general/Link/ExternalLink';
+// import ExternalLink from '@/components/general/Link/ExternalLink';
 import Link from '@/components/general/Link/Link';
 // import SendIcon from '@/components/icons/SendIcon';
 import Drawer from '@/components/layouts/Drawer/Drawer';
@@ -20,6 +20,15 @@ import { useApp } from '@/context/AppContext';
 // import { SUPPORTED_LANGUAGES } from '@/libs/constants';
 import { headerLinks } from '@/libs/menu';
 import { MenuItemGroup, MenuItemLink, MenuItemType } from '@/typings/app';
+
+interface Document {
+  documentMode?: any;
+  getElementById: any;
+}
+
+interface Window {
+  StyleMedia?: any;
+}
 
 const Root = styled(AppBar)(({ theme }) => ({
   transition: 'all 500ms ease-in',
@@ -62,6 +71,15 @@ const Root = styled(AppBar)(({ theme }) => ({
     alignItems: 'center',
     marginLeft: theme.spacing(6),
   },
+  '.LabHeader-nav': {
+    fontSize: '1rem',
+    fontFamily: 'Audiowide, cursive',
+    padding: '8px 30px',
+    cursor: 'pointer',
+    '&:hover': {
+      color: theme.palette.primary.main,
+    },
+  },
 }));
 
 const Links = styled('ul')(({ theme }) => ({
@@ -84,6 +102,7 @@ const Links = styled('ul')(({ theme }) => ({
 
 interface MenuItemProps {
   item: MenuItemType;
+  onClick?: any;
 }
 
 function MenuItem({ item }: MenuItemProps) {
@@ -91,10 +110,34 @@ function MenuItem({ item }: MenuItemProps) {
   const { type, key } = item;
   const isInternal = type === 'internal';
   const isExternal = type === 'external';
+
+  const scrollToAnchor = (anchor: string) => {
+    const _document = document as Document;
+    const _window = window as Window;
+
+    // @see https://stackoverflow.com/a/9851769
+    // Internet Explorer 6-11
+    /* eslint-disable */
+    const isIE = /*@cc_on!@*/ false || Boolean(_document.documentMode);
+    /* eslint-enable */
+    // Edge 20+
+    const isEdge = !isIE && Boolean(_window.StyleMedia);
+
+    if (isIE || isEdge) {
+      window.location.hash = `#${anchor}`;
+    } else {
+      window.scrollTo({
+        top: _document.getElementById(anchor).offsetTop,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   if (isInternal || isExternal) {
     const { url } = item as MenuItemLink;
     return (
-      <Typography component={isInternal ? Link : ExternalLink} href={url} sx={{ fontSize: '1rem' }}>
+      // <Typography component={isInternal ? Link : ExternalLink} href={url} sx={{ fontSize: '1rem' }}>
+      <Typography className="LabHeader-nav" onClick={() => scrollToAnchor(url)}>
         <span>{t(`menu.${key}.title`)}</span>
       </Typography>
     );
@@ -161,7 +204,7 @@ export default function Header() {
             <Logo component={Link} href="/" mr={17} />
             <Hidden mdDown implementation="css">
               <div className="LabHeader-middle">
-                <Links >
+                <Links>
                   {headerLinks.map((link) => (
                     <li key={link.key}>
                       <MenuItem item={link} />

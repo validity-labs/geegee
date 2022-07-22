@@ -79,7 +79,7 @@ export default function Footer(): ReactElement {
 
   return (
     <Root>
-      <Container >
+      <Container id="contact">
         <div className="LabFooter-wrapper">
           <ScrollUp />
           <div className="LabFooter-left">

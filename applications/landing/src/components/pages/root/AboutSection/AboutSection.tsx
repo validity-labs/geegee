@@ -70,7 +70,7 @@ const AboutSection = () => {
   const t = usePageTranslation({ keyPrefix: 'about-section' });
 
   return (
-    <Root background='transparent' before={<Decoration />}>
+    <Root id="platform" background='transparent' before={<Decoration />}>
       <Grid container spacing={15}>
         <Grid item xs={12} md={6}>
           <Typography variant="h2" className="LabAboutSection-title"><span>－</span>{t('title')}</Typography>

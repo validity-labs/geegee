@@ -90,7 +90,7 @@ export default function FAQSection({ groups, ...restOfProps }: Props) {
   const [category, setCategory] = useState('platform');
 
   return (
-    <Root background='transparent' before={<Decoration />} {...restOfProps}>
+    <Root id="faq" background='transparent' before={<Decoration />} {...restOfProps}>
       <Container maxWidth="lg">
         <Typography variant="h2" className="LabFAQSection-title"><span>－</span>{t('title')}</Typography>
         <Grid container rowSpacing={{ xs: 10, md: 30 }} columnSpacing={10}>
