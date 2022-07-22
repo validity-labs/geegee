@@ -20,7 +20,7 @@ const Root = styled(Section)(({ theme }) => ({
     flexDirection: 'column',
     justifyContent: 'flex-end',
     padding: theme.spacing(13, 10.5),
-    border: '1px solid #c4c4c4',
+    border: `1px solid ${theme.palette.secondary.main}`,
     ...theme.mixins.radius(4),
   },
   '.LabInfoSection-signup': {
