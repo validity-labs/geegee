@@ -26,7 +26,7 @@ const IndexPage = () => {
       <HeroSection />
       <AboutSection />
       <InfoSection />
-      <FaqSection groups={faqGroupInfo} has={{ header: true }} />
+      <FaqSection groups={faqGroupInfo} />
     </>
   );
 };

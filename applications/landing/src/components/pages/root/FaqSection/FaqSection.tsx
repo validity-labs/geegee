@@ -4,12 +4,15 @@ import { Accordion, AccordionDetails, AccordionSummary, Container, Grid, Typogra
 import { styled } from '@mui/material/styles';
 
 import Arrow from './Arrow';
-import Header from '@/components/general/Header/Header';
+import Decoration from './Decoration';
 import Section, { SectionProps } from '@/components/layouts/Section/Section';
 import { usePageTranslation } from '@/context/AppContext';
 import { FAQGroup } from '@/typings/app';
 
 const Root = styled(Section)(({ theme }) => ({
+  marginTop: theme.spacing(42),
+  paddingTop: theme.spacing(30),
+  position: 'relative',
   '.MuiAccordion-root': {
     background: 'transparent',
   },
@@ -17,6 +20,11 @@ const Root = styled(Section)(({ theme }) => ({
     margin: 'auto',
     paddingLeft: 30,
     fontSize: 20,
+    '&.Mui-expanded': {
+      margin: 'auto',
+      paddingLeft: 30,
+      fontSize: 20,
+    },
   },
   '.MuiAccordionDetails-root': {
     padding: '30px 45px 65px 45px',
@@ -25,8 +33,9 @@ const Root = styled(Section)(({ theme }) => ({
     background: 'transparent',
     color: theme.palette.common.white,
     borderRadius: 22,
-    border: `1px solid ${theme.palette.common.white}`,
+    border: `1px solid ${theme.palette.secondary.main}`,
     height: 90,
+    margin: 'auto',
     '& .MuiAccordionSummary-expandIconWrapper': {
       width: 25,
       transform: 'rotate(180deg)',
@@ -38,46 +47,52 @@ const Root = styled(Section)(({ theme }) => ({
     },
   },
   '.LabFAQSection-title': {
+    height: '3.6em',
     color: theme.palette.common.white,
+    '> span': {
+      color: theme.palette.primary.main,
+      marginRight: 10,
+      fontWeight: 'bold',
+    },
   },
   '.LabFAQSection-content': {
     color: theme.palette.common.white,
   },
   '.LabFAQSection-faqCategories': {
-    color: theme.palette.common.white,
+    color: theme.palette.secondary.main,
     fontFamily: 'Audiowide, cursive',
     fontSize: 14,
   },
   '.LabFAQSection-groupTitle': {
-    padding: theme.spacing(7, 0, 0, 7),
+    padding: theme.spacing(7, 0, 0, 4),
     color: theme.palette.common.white,
+    fontFamily: 'Audiowide, cursive',
+    fontSize: 15,
     textTransform: 'uppercase',
     textAlign: 'start',
     cursor: 'pointer',
-  },
-  [theme.breakpoints.up('md')]: {
-    '.LabFAQSection-groupTitle': {
-      padding: theme.spacing(7, 0, 0, 0),
-      textAlign: 'end',
+    '&:hover, &:active': {
+      color: theme.palette.primary.main,
+      '&::before': {
+        content: '"|"',
+        paddingRight: 10,
+      },
     },
   },
 }));
 
 interface Props extends SectionProps {
-  has?: {
-    header?: boolean;
-  };
   groups: FAQGroup[];
 }
 
-export default function FAQSection({ has: { header = true } = {}, groups, ...restOfProps }: Props) {
+export default function FAQSection({ groups, ...restOfProps }: Props) {
   const t = usePageTranslation({ keyPrefix: 'faq-section' });
   const [category, setCategory] = useState('platform');
 
   return (
-    <Root {...restOfProps}>
+    <Root id="faq" background='transparent' before={<Decoration />} {...restOfProps}>
       <Container maxWidth="lg">
-        {header && <Header title={t('title')} className="LabFAQSection-title" />}
+        <Typography variant="h2" className="LabFAQSection-title"><span>－</span>{t('title')}</Typography>
         <Grid container rowSpacing={{ xs: 10, md: 30 }} columnSpacing={10}>
 
           <Grid item xs={12} md={2}>

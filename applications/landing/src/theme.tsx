@@ -66,7 +66,7 @@ const theme = createTheme({
       fontSize: '1.5625rem', // 25px
       lineHeight: '2rem', // 32px
       [bp.up('md')]: {
-        fontSize: '3.125rem', // 50px
+        fontSize: '2.9rem', // 50px
         lineHeight: '3.9375rem', // 63px
       },
       // fontWeight: 500,
