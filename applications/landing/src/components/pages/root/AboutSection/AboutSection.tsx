@@ -17,6 +17,11 @@ const Root = styled(Section)(({ theme }) => ({
     height: '2.6em',
     margin: theme.spacing(0, 0, 35),
     paddingRight: theme.spacing(20),
+    '> span': {
+      color: theme.palette.primary.main,
+      marginRight: 10,
+      fontWeight: 'bold',
+    },
   },
   '.LabAboutSection-cards': {
     display: 'flex',
@@ -68,7 +73,7 @@ const AboutSection = () => {
     <Root background='transparent' before={<Decoration />}>
       <Grid container spacing={15}>
         <Grid item xs={12} md={6}>
-          <Typography variant="h2" className="LabAboutSection-title">{t('title')}</Typography>
+          <Typography variant="h2" className="LabAboutSection-title"><span>－</span>{t('title')}</Typography>
           <Typography variant="h6" component="p" className="LabAboutSection-description">{t('description')}</Typography>
         </Grid>
         <Grid item xs={12} md={6}>

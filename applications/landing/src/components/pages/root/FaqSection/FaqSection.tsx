@@ -4,12 +4,15 @@ import { Accordion, AccordionDetails, AccordionSummary, Container, Grid, Typogra
 import { styled } from '@mui/material/styles';
 
 import Arrow from './Arrow';
-import Header from '@/components/general/Header/Header';
+import Decoration from './Decoration';
 import Section, { SectionProps } from '@/components/layouts/Section/Section';
 import { usePageTranslation } from '@/context/AppContext';
 import { FAQGroup } from '@/typings/app';
 
 const Root = styled(Section)(({ theme }) => ({
+  marginTop: theme.spacing(42),
+  paddingTop: theme.spacing(30),
+  position: 'relative',
   '.MuiAccordion-root': {
     background: 'transparent',
   },
@@ -44,7 +47,13 @@ const Root = styled(Section)(({ theme }) => ({
     },
   },
   '.LabFAQSection-title': {
+    height: '3.6em',
     color: theme.palette.common.white,
+    '> span': {
+      color: theme.palette.primary.main,
+      marginRight: 10,
+      fontWeight: 'bold',
+    },
   },
   '.LabFAQSection-content': {
     color: theme.palette.common.white,
@@ -81,9 +90,9 @@ export default function FAQSection({ groups, ...restOfProps }: Props) {
   const [category, setCategory] = useState('platform');
 
   return (
-    <Root {...restOfProps}>
+    <Root background='transparent' before={<Decoration />} {...restOfProps}>
       <Container maxWidth="lg">
-        <Header title={t('title')} className="LabFAQSection-title" />
+        <Typography variant="h2" className="LabFAQSection-title"><span>－</span>{t('title')}</Typography>
         <Grid container rowSpacing={{ xs: 10, md: 30 }} columnSpacing={10}>
 
           <Grid item xs={12} md={2}>
