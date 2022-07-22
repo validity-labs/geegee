@@ -1,41 +1,59 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 
-import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import { Accordion, AccordionDetails, AccordionSummary, Container, Grid, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
+import Arrow from './Arrow';
 import Header from '@/components/general/Header/Header';
 import Section, { SectionProps } from '@/components/layouts/Section/Section';
 import { usePageTranslation } from '@/context/AppContext';
 import { FAQGroup } from '@/typings/app';
 
 const Root = styled(Section)(({ theme }) => ({
+  '.MuiAccordion-root': {
+    background: 'transparent',
+  },
+  '.MuiAccordionSummary-content': {
+    margin: 'auto',
+    paddingLeft: 30,
+    fontSize: 20,
+  },
+  '.MuiAccordionDetails-root': {
+    padding: '30px 45px 65px 45px',
+  },
   '.MuiAccordionSummary-root': {
+    background: 'transparent',
+    color: theme.palette.common.white,
+    borderRadius: 22,
+    border: `1px solid ${theme.palette.common.white}`,
+    height: 90,
     '& .MuiAccordionSummary-expandIconWrapper': {
-      borderRadius: '100%',
-      transform: 'rotate(90deg)',
+      width: 25,
+      transform: 'rotate(180deg)',
       transitionTimingFunction: 'ease-in-out',
-      background: theme.palette.background.light,
-      svg: {
-        fontSize: '52px',
-        color: theme.palette.common.white,
-      },
+      margin: 20,
       '&.Mui-expanded': {
         transform: 'rotate(0deg)',
-        svg: {
-          path: {
-            // import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
-            d: 'path("M18 13H6c-.55 0-1-.45-1-1s.45-1 1-1h12c.55 0 1 .45 1 1s-.45 1-1 1z")',
-          },
-        },
       },
     },
   },
+  '.LabFAQSection-title': {
+    color: theme.palette.common.white,
+  },
+  '.LabFAQSection-content': {
+    color: theme.palette.common.white,
+  },
+  '.LabFAQSection-faqCategories': {
+    color: theme.palette.common.white,
+    fontFamily: 'Audiowide, cursive',
+    fontSize: 14,
+  },
   '.LabFAQSection-groupTitle': {
     padding: theme.spacing(7, 0, 0, 7),
-    color: theme.palette.text.contrast,
+    color: theme.palette.common.white,
     textTransform: 'uppercase',
     textAlign: 'start',
+    cursor: 'pointer',
   },
   [theme.breakpoints.up('md')]: {
     '.LabFAQSection-groupTitle': {
@@ -54,38 +72,47 @@ interface Props extends SectionProps {
 
 export default function FAQSection({ has: { header = true } = {}, groups, ...restOfProps }: Props) {
   const t = usePageTranslation({ keyPrefix: 'faq-section' });
+  const [category, setCategory] = useState('platform');
 
   return (
     <Root {...restOfProps}>
       <Container maxWidth="lg">
-        {header && <Header title={t('faq-section.title')} />}
+        {header && <Header title={t('title')} className="LabFAQSection-title" />}
         <Grid container rowSpacing={{ xs: 10, md: 30 }} columnSpacing={10}>
-          {groups.map(({ key, count }, groupIndex) => (
-            <Fragment key={key}>
-              <Grid item xs={12} md={2}>
-                <Typography variant="body-sm" component="h2" className="LabFAQSection-groupTitle">
-                  {t(`faq-section.${key}.title`)}
-                </Typography>
-              </Grid>
-              <Grid item xs={12} md={10}>
+
+          <Grid item xs={12} md={2}>
+            <Typography variant="body" className="LabFAQSection-faqCategories">
+              {t(`categories`)}
+            </Typography>
+
+            {groups.map(({ key }) => (
+              <Typography key={key} onClick={() => setCategory(key)} variant="body-sm" component="h2" className="LabFAQSection-groupTitle">
+                {t(`${key}.title`)}
+              </Typography>
+            ))}
+          </Grid>
+
+          <Grid item xs={12} md={10}>
+            {groups.map(({ key, count }, groupIndex) => (
+              <Fragment key={key}>
                 {new Array(count).fill(null).map((_id, index) => (
                   /* @ts-ignore - for some reason component prop is not defined */
-                  <Accordion key={index} component="article" defaultExpanded={groupIndex === 0 && index === 0}>
+                  <Accordion key={index} component="article" defaultExpanded={groupIndex === 0 && index === 0} style={key === category ? { display: 'inherit' } : { display: 'none' }}>
                     <AccordionSummary
                       aria-controls={`panel-content-${groupIndex + 1}-${index + 1}`}
                       id={`panel-header-${groupIndex + 1}-${index + 1}`}
-                      expandIcon={<AddRoundedIcon />}
+                      expandIcon={<Arrow />}
                     >
-                      {t(`faq-section.${key}.items.${index}.title`)}
+                      {t(`${key}.items.${index}.title`)}
                     </AccordionSummary>
                     <AccordionDetails>
-                      <Typography variant="body-sm">{t(`faq-section.${key}.items.${index}.content`)}</Typography>
+                      <Typography className="LabFAQSection-content" variant="body-sm">{t(`${key}.items.${index}.content`)}</Typography>
                     </AccordionDetails>
                   </Accordion>
                 ))}
-              </Grid>
-            </Fragment>
-          ))}
+              </Fragment>
+            ))}
+          </Grid>
         </Grid>
       </Container>
     </Root>

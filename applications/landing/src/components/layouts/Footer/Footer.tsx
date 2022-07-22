@@ -29,7 +29,7 @@ const BottomSection = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   minHeight: 70,
   color: theme.palette.text.secondary,
-  backgroundColor: theme.palette.background.darker,
+  backgroundColor: theme.palette.background.dark,
   padding: theme.spacing(0, 0, 6),
 }));
 

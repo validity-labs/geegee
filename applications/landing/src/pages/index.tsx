@@ -11,7 +11,7 @@ import InfoSection from '@/components/pages/root/InfoSection/InfoSection';
 import { FAQGroup } from '@/typings/app';
 
 const ns = 'root';
-const faqGroupInfo: FAQGroup<'pricing'>[] = [{ key: 'pricing', count: 4 }];
+const faqGroupInfo: FAQGroup<'platform' | 'company'>[] = [{ key: 'platform', count: 3 }, { key: 'company', count: 3 }];
 
 const IndexPage = () => {
   const { trackPageView } = useMatomo();
@@ -26,7 +26,7 @@ const IndexPage = () => {
       <HeroSection />
       <AboutSection />
       <InfoSection />
-      <FaqSection groups={faqGroupInfo} has={{ header: false }} />
+      <FaqSection groups={faqGroupInfo} has={{ header: true }} />
     </>
   );
 };
