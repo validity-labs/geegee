@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card /> has valid snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="css-0"
+  >
+    <div
+      class="LabCard-wrapper"
+    >
+      <h3
+        class="MuiTypography-root MuiTypography-h6 css-1"
+      >
+        title
+      </h3>
+      <p
+        class="MuiTypography-root MuiTypography-body css-2"
+      >
+        description
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;

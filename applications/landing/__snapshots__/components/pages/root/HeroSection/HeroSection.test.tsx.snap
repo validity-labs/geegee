@@ -14,7 +14,7 @@ exports[`<HeroSection /> has valid snapshot 1`] = `
       class="MuiContainer-root MuiContainer-maxWidthLg css-1"
     >
       <h1
-        class="MuiTypography-root MuiTypography-h7 LabHeroSection-pretitle css-2"
+        class="MuiTypography-root MuiTypography-h4 LabHeroSection-pretitle css-2"
       >
         pretitle
       </h1>
@@ -24,7 +24,7 @@ exports[`<HeroSection /> has valid snapshot 1`] = `
         title
       </h2>
       <button
-        class="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeSmall MuiButton-outlinedSizeSmall MuiButton-disableElevation MuiButtonBase-root css-4"
+        class="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeSmall MuiButton-outlinedSizeSmall MuiButton-disableElevation MuiButtonBase-root LabHeroSection-cta css-4"
         tabindex="0"
         type="button"
       >
@@ -147,44 +147,44 @@ exports[`<HeroSection /> has valid snapshot 1`] = `
         <div
           class="MuiBox-root css-21"
         >
-          <h1
-            class="MuiTypography-root MuiTypography-h5 css-22"
+          <h3
+            class="MuiTypography-root MuiTypography-h4 css-22"
           >
             heading1
-          </h1>
-          <h1
+          </h3>
+          <p
             class="MuiTypography-root MuiTypography-body css-23"
           >
             content1
-          </h1>
+          </p>
         </div>
         <div
           class="MuiBox-root css-24"
         >
-          <h1
-            class="MuiTypography-root MuiTypography-h5 css-22"
+          <h3
+            class="MuiTypography-root MuiTypography-h4 css-22"
           >
             heading2
-          </h1>
-          <h1
+          </h3>
+          <p
             class="MuiTypography-root MuiTypography-body css-23"
           >
             content2
-          </h1>
+          </p>
         </div>
         <div
           class="MuiBox-root css-21"
         >
-          <h1
-            class="MuiTypography-root MuiTypography-h5 css-22"
+          <h3
+            class="MuiTypography-root MuiTypography-h4 css-22"
           >
             heading3
-          </h1>
-          <h1
+          </h3>
+          <p
             class="MuiTypography-root MuiTypography-body css-23"
           >
             content3
-          </h1>
+          </p>
         </div>
       </div>
     </div>

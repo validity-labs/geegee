@@ -13,7 +13,6 @@ declare module '@mui/material/styles/createPalette' {
     main: string;
     dark: string;
     darker: string;
-    orange: string;
   }
   interface TypeText {
     contrast: string;
@@ -70,8 +69,8 @@ declare module '@mui/material/Typography' {
 
 declare module '@mui/material/Button' {
   interface ButtonPropsVariantOverrides {
-    containedIcon: true;
-    inverted: true;
+    // containedIcon: true;
+    // inverted: true;
   }
 }
 

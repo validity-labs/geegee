@@ -2,10 +2,137 @@
 
 exports[`<InfoSection /> has valid snapshot 1`] = `
 <DocumentFragment>
-  <h1
-    class="MuiTypography-root MuiTypography-h7 LabHeroSection-pretitle css-0"
+  <section
+    class="MuiBox-root css-0"
   >
-    INFO
-  </h1>
+    <div
+      class="MuiContainer-root MuiContainer-maxWidthLg LabSection-container css-1"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4.5 css-2"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-8 css-3"
+        >
+          <div
+            class="LabInfoSection-panel"
+          >
+            <div>
+              <h2
+                class="MuiTypography-root MuiTypography-h2 LabInfoSection-title css-4"
+              >
+                title
+              </h2>
+              <p
+                class="MuiTypography-root MuiTypography-body-xl css-5"
+              >
+                description
+              </p>
+              <a
+                class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeSmall MuiButton-outlinedSizeSmall MuiButton-disableElevation MuiButtonBase-root LabInfoSection-signup css-6"
+                href="/sign-up"
+                tabindex="0"
+              >
+                sign-up
+                <span
+                  class="MuiButton-endIcon MuiButton-iconSizeSmall css-7"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-8"
+                    color="#f631f6"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="m 14.480505,6.2257375 a 0.81688677,0.81688677 0 0 0 -0.0062,1.1502193 l 3.79999,3.8062132 H 3.8120883 a 0.81244233,0.81244233 0 0 0 0,1.624884 H 18.268051 l -3.79999,3.809768 a 0.82222009,0.82222009 0 0 0 0.0062,1.150219 0.80888679,0.80888679 0 0 0 1.143997,-0.0062 l 5.150209,-5.187542 v 0 a 0.91199763,0.91199763 0 0 0 0.168888,-0.255999 0.7751091,0.7751091 0 0 0 0.06222,-0.312888 0.81422011,0.81422011 0 0 0 -0.23111,-0.568888 L 15.61828,6.2479597 a 0.79999792,0.79999792 0 0 0 -1.137775,-0.022222 z"
+                      stroke-width="0.888887"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root css-9"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 css-10"
+        >
+          <div
+            class="LabInfoSection-panel"
+          >
+            <h3
+              class="MuiTypography-root MuiTypography-h6 css-11"
+            >
+              more.title
+            </h3>
+            <p
+              class="MuiTypography-root MuiTypography-body-sm css-12"
+            >
+              more.description
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="LabInfoSection-actions"
+      >
+        <a
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeSmall MuiButton-outlinedSizeSmall MuiButton-disableElevation MuiButtonBase-root css-6"
+          href="/docs"
+          tabindex="0"
+        >
+          read-docs
+          <span
+            class="MuiButton-endIcon MuiButton-iconSizeSmall css-7"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-8"
+              color="#f631f6"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M 15.375179,6.3714778 A 3.371478,3.371478 0 1 0 12.0037,9.7429558 3.371478,3.371478 0 0 0 15.375179,6.3714778 Z M 11.212637,11.46981 C 9.127254,10.198516 5.7483752,9.8482117 4.0486569,9.7511789 A 0.97279474,0.97279474 0 0 0 3.0010318,10.703416 v 7.832518 a 0.96703856,0.96703856 0 0 0 0.9308568,0.950592 18.913169,18.913169 0 0 1 6.7865384,1.456314 0.49338702,0.49338702 0 0 0 0.720345,-0.416912 v -8.644962 a 0.46789536,0.46789536 0 0 0 -0.225313,-0.402933 z m 8.739528,-1.7268542 c -1.699718,0.09621 -5.078597,0.4473372 -7.163979,1.7268542 a 0.47611848,0.47611848 0 0 0 -0.225314,0.411156 v 8.64414 a 0.49338702,0.49338702 0 0 0 0.72199,0.418557 18.918103,18.918103 0 0 1 6.783249,-1.455492 0.96703856,0.96703856 0 0 0 0.930857,-0.951415 v -7.83334 A 0.97279474,0.97279474 0 0 0 19.952165,9.7511789 Z"
+                stroke-width="0.822312"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root css-9"
+          />
+        </a>
+        <a
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeSmall MuiButton-outlinedSizeSmall MuiButton-disableElevation MuiButtonBase-root LabInfoSection-community css-6"
+          href="/join-community"
+          tabindex="0"
+        >
+          join-community
+          <span
+            class="MuiButton-endIcon MuiButton-iconSizeSmall css-7"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-8"
+              color="#8900ff"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m 18.235068,6.2796981 a 14.8363,14.8363 0 0 0 -3.662103,-1.1355892 0.0557471,0.0557471 0 0 0 -0.05919,0.027529 10.335237,10.335237 0 0 0 -0.456299,0.9366889 13.695894,13.695894 0 0 0 -4.1128978,0 9.4783839,9.4783839 0 0 0 -0.462495,-0.9360007 0.05781181,0.05781181 0 0 0 -0.05919,-0.027529 14.79707,14.79707 0 0 0 -3.6621027,1.1355891 0.05230592,0.05230592 0 0 0 -0.024088,0.020647 15.184547,15.184547 0 0 0 -2.6579667,10.2402608 0.06194123,0.06194123 0 0 0 0.0234,0.04198 14.919577,14.919577 0 0 0 4.4928003,2.271174 0.05850005,0.05850005 0 0 0 0.063318,-0.02065 10.663526,10.663526 0 0 0 0.9208596,-1.494848 0.05712358,0.05712358 0 0 0 -0.030971,-0.07915 9.8252547,9.8252547 0 0 1 -1.4033129,-0.668966 0.05781181,0.05781181 0 0 1 -0.011012,-0.09635 c 0.094288,-0.06882 0.1885767,-0.144529 0.2752943,-0.218171 a 0.0557471,0.0557471 0 0 1 0.057812,-0.0076 10.640126,10.640126 0 0 0 9.0420429,0 0.0557471,0.0557471 0 0 1 0.05919,0.0069 c 0.09016,0.07433 0.184448,0.148659 0.279424,0.218859 a 0.05781181,0.05781181 0 0 1 -0.0049,0.09567 9.2223597,9.2223597 0 0 1 -1.404001,0.668276 0.05712358,0.05712358 0 0 0 -0.03028,0.07984 11.975303,11.975303 0 0 0 0.923612,1.492784 0.05712358,0.05712358 0 0 0 0.06332,0.02134 14.870023,14.870023 0 0 0 4.499686,-2.271179 0.05781181,0.05781181 0 0 0 0.0234,-0.04129 15.084752,15.084752 0 0 0 -2.660032,-10.2381963 0.04542356,0.04542356 0 0 0 -0.0234,-0.022024 z M 9.0168368,14.495169 a 1.7295366,1.7295366 0 0 1 -1.616666,-1.813501 1.7205895,1.7205895 0 0 1 1.616666,-1.811437 1.710266,1.710266 0 0 1 1.6166662,1.813502 1.7205895,1.7205895 0 0 1 -1.6166662,1.811436 z m 5.9780152,0 a 1.7295366,1.7295366 0 0 1 -1.616665,-1.813501 1.7205895,1.7205895 0 0 1 1.616665,-1.813502 1.710266,1.710266 0 0 1 1.616666,1.813502 1.7150836,1.7150836 0 0 1 -1.616666,1.813501 z"
+                stroke-width="0.688236"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root css-9"
+          />
+        </a>
+      </div>
+    </div>
+  </section>
 </DocumentFragment>
 `;

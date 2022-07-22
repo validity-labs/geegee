@@ -9,7 +9,7 @@ exports[`<Header /> has valid snapshot 1`] = `
       class="MuiToolbar-root MuiToolbar-regular css-1"
     >
       <div
-        class="MuiContainer-root MuiContainer-maxWidthLg css-2"
+        class="MuiContainer-root MuiContainer-maxWidthLg LabHeader-container css-2"
       >
         <a
           class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiBox-root active css-3"
@@ -18,20 +18,76 @@ exports[`<Header /> has valid snapshot 1`] = `
           {"src":"test-file-stub","alt":"","placeholder":"empty"}
         </a>
         <div
-          class="css-4"
+          class="PrivateHiddenCss-root PrivateHiddenCss-mdDown css-4"
         >
           <div
-            class="PrivateHiddenCss-root PrivateHiddenCss-mdUp css-5"
+            class="LabHeader-middle"
+          >
+            <ul
+              class="css-5"
+            >
+              <li>
+                <a
+                  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-body css-6"
+                  href="/#platform"
+                >
+                  <span>
+                    menu.platform.title
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-body css-6"
+                  href="/#faqs"
+                >
+                  <span>
+                    menu.faqs.title
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-body css-6"
+                  href="/#contact"
+                >
+                  <span>
+                    menu.contact.title
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="LabHeader-right"
+        >
+          <div
+            class="PrivateHiddenCss-root PrivateHiddenCss-mdDown css-4"
+          >
+            <button
+              class="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeSmall MuiButton-outlinedSizeSmall MuiButton-disableElevation MuiButtonBase-root LabHeader-signin css-10"
+              tabindex="0"
+              type="button"
+            >
+              header.signin
+              <span
+                class="MuiTouchRipple-root css-11"
+              />
+            </button>
+          </div>
+          <div
+            class="PrivateHiddenCss-root PrivateHiddenCss-mdUp css-12"
           >
             <button
               aria-label="header.toggle-menu"
-              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-6"
+              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-13"
               tabindex="0"
               type="button"
             >
               <svg
                 aria-hidden="true"
-                class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-7"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-14"
                 data-testid="MenuIcon"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -41,61 +97,9 @@ exports[`<Header /> has valid snapshot 1`] = `
                 />
               </svg>
               <span
-                class="MuiTouchRipple-root css-8"
+                class="MuiTouchRipple-root css-11"
               />
             </button>
-          </div>
-          <div
-            class="PrivateHiddenCss-root PrivateHiddenCss-mdDown css-9"
-          >
-            <div
-              class="css-10"
-            >
-              <ul
-                class="css-11"
-              >
-                <li>
-                  <a
-                    class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-body css-12"
-                    href="/#platform"
-                  >
-                    <span>
-                      menu.platform.title
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-body css-12"
-                    href="/#faqs"
-                  >
-                    <span>
-                      menu.faqs.title
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-body css-12"
-                    href="/#contact"
-                  >
-                    <span>
-                      menu.contact.title
-                    </span>
-                  </a>
-                </li>
-              </ul>
-              <button
-                class="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeSmall MuiButton-outlinedSizeSmall MuiButton-disableElevation MuiButtonBase-root css-15"
-                tabindex="0"
-                type="button"
-              >
-                header.signin
-                <span
-                  class="MuiTouchRipple-root css-8"
-                />
-              </button>
-            </div>
           </div>
         </div>
       </div>

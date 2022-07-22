@@ -52,5 +52,34 @@
         }
       ]
     }
+  },
+  "about-section": {
+    "title": "What is GeeGee",
+    "description": "Geegee is a monetization platform designed to change the game for creators and content based communities.\n\n By combining an intelligent overlay (HUD) with blockchain technology and banking regulations we are able to deliver a truly Peer2Peer community-centric financial network geared towards Creators and their Communities.",
+    "items": [
+      {
+        "title": "Lorem ipsum",
+        "description": "No Revenue Share - Keep ALL you Earn and get paid instantly"
+      },
+      {
+        "title": "Lorem ipsum",
+        "description": "Monetize all of your content - Create revenue from and engage with all your followers, across all platforms, at the same time"
+      },
+      {
+        "title": "Lorem ipsum",
+        "description": "2 way dono'z - Give back to your community instantly with real- time, real world rewards"
+      }
+    ]
+  },
+  "info-section": {
+    "title": "Lorem ipsum",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
+    "sign-up": "Sign Up",
+    "read-docs": "Read documentation",
+    "join-community": "Be a part of our community",
+    "more": {
+      "title": "Lorem ipsum",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+    }
   }
 }

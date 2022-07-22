@@ -8,44 +8,44 @@ exports[`<CardsSection /> has valid snapshot 1`] = `
     <div
       class="MuiBox-root css-1"
     >
-      <h1
-        class="MuiTypography-root MuiTypography-h5 css-2"
+      <h3
+        class="MuiTypography-root MuiTypography-h4 css-2"
       >
         heading1
-      </h1>
-      <h1
+      </h3>
+      <p
         class="MuiTypography-root MuiTypography-body css-3"
       >
         content1
-      </h1>
+      </p>
     </div>
     <div
       class="MuiBox-root css-4"
     >
-      <h1
-        class="MuiTypography-root MuiTypography-h5 css-2"
+      <h3
+        class="MuiTypography-root MuiTypography-h4 css-2"
       >
         heading2
-      </h1>
-      <h1
+      </h3>
+      <p
         class="MuiTypography-root MuiTypography-body css-3"
       >
         content2
-      </h1>
+      </p>
     </div>
     <div
       class="MuiBox-root css-1"
     >
-      <h1
-        class="MuiTypography-root MuiTypography-h5 css-2"
+      <h3
+        class="MuiTypography-root MuiTypography-h4 css-2"
       >
         heading3
-      </h1>
-      <h1
+      </h3>
+      <p
         class="MuiTypography-root MuiTypography-body css-3"
       >
         content3
-      </h1>
+      </p>
     </div>
   </div>
 </DocumentFragment>
