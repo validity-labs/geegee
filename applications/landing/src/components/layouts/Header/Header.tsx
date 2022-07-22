@@ -21,7 +21,7 @@ import { useApp } from '@/context/AppContext';
 import { headerLinks } from '@/libs/menu';
 import { MenuItemGroup, MenuItemLink, MenuItemType } from '@/typings/app';
 
-const StyledAppBar = styled(AppBar)({
+const Root = styled(AppBar)(({ theme }) => ({
   transition: 'all 500ms ease-in',
   '& .logo': {
     animation: 'fadeIn 300ms cubic-bezier(0.65, 0, 0.076, 1)',
@@ -34,83 +34,59 @@ const StyledAppBar = styled(AppBar)({
       animation: 'fadeInAlt 300ms cubic-bezier(0.65, 0, 0.076, 1)',
     },
   },
-});
+  '.LabHeader-signin': {
+    borderWidth: 2,
+    '&:hover': {
+      borderWidth: 2,
+    },
+  },
+  '.LabHeader-container': {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingTop: theme.spacing(7),
+    paddingBottom: theme.spacing(6.25),
+    borderBottom: `2px solid ${theme.palette.divider}`,
+  },
+  '.LabHeader-middle': {
+    position: 'relative',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  '.LabHeader-right': {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    marginLeft: theme.spacing(6),
+  },
+}));
 
-const MiddleSide = styled('div')({
-  position: 'relative',
-  flexGrow: 1,
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-});
-
-const RightSide = styled('div')({
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'flex-end',
-  alignItems: 'center',
-});
-
-const Links = styled('ul', {
-  shouldForwardProp: (prop) => prop !== 'isDark',
-})<{ isDark: boolean }>(({ theme, isDark }) => ({
+const Links = styled('ul')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'flex-start',
   alignItems: 'center',
   '& a, .MuiLink-root': {
-    padding: theme.spacing(2, 4),
+    padding: theme.spacing(2, 7.5),
     whiteSpace: 'nowrap',
-    color: isDark ? theme.palette.text.primary : theme.palette.text.contrast,
+    ...theme.typography.h6,
+    fontSize: '0.875rem', // 14px
     transition: 'color 0.4s',
     '&:hover, &.active': {
       color: theme.palette.text.active,
-      // textShadow: `0px 0px 1px currentColor`,
       transition: 'color 0.4s ease-out',
-    },
-    span: {
-      position: 'relative',
-      '&:after': {
-        content: '""',
-        position: 'absolute',
-        bottom: -4,
-        right: 0,
-        width: 0,
-        height: 2,
-        borderRadius: 2,
-        backgroundColor: 'transparent',
-        transition: 'width 0.2s',
-      },
-    },
-    '&.active': {
-      span: {
-        position: 'relative',
-        '&:after': {
-          width: ['80%', 'calc(100% - 1ch)'],
-          backgroundColor: theme.palette.text.active,
-          transition: 'width 0.4s ease-out',
-        },
-      },
     },
   },
 }));
 
-// const TopBar = styled(Box)(({ theme }) => ({
-//   display: 'flex',
-//   flexDirection: 'row',
-//   alignItems: 'center',
-//   height: 40,
-//   color: theme.palette.primary.contrastText,
-//   backgroundColor: theme.palette.background.main,
-// }));
-
 interface MenuItemProps {
   item: MenuItemType;
-  isDark: boolean;
 }
 
-function MenuItem({ item, isDark }: MenuItemProps) {
+function MenuItem({ item }: MenuItemProps) {
   const { t } = useTranslation();
   const { type, key } = item;
   const isInternal = type === 'internal';
@@ -125,7 +101,7 @@ function MenuItem({ item, isDark }: MenuItemProps) {
   }
 
   if (type === 'group') {
-    return <Menu parentKey={key} items={(item as MenuItemGroup).items} isDark={isDark} />;
+    return <Menu parentKey={key} items={(item as MenuItemGroup).items} />;
   }
 
   return null;
@@ -169,9 +145,6 @@ export default function Header() {
     };
   }, [colorSchema, theme]);
 
-  // const isDark = colorSchema === 'dark' || !onTop;
-  const isDark = false;
-
   const { trackEvent } = useMatomo();
 
   const handleTracking = () => {
@@ -181,20 +154,32 @@ export default function Header() {
 
   return (
     <>
-      <StyledAppBar className={onTop /* && !fixedDark */ ? '' : 'show'}>
+      <Root className={onTop /* && !fixedDark */ ? '' : 'show'}>
         <Toolbar>
-          {/* {SUPPORTED_LANGUAGES.length > 1 && (
-            <TopBar>
-              <Container sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-                <LanguageSwitch />
-              </Container>
-            </TopBar>
-          )} */}
-          <Container sx={{ flex: 1, display: 'flex', alignItems: 'center', pt: 7, pb: 6.25, borderBottom: `2px solid ${theme.palette.secondary.dark}` }}>
+          <Container className="LabHeader-container">
             {/* @ts-ignore */}
             <Logo component={Link} href="/" mr={17} />
-
-            <RightSide sx={{ flex: 1, display: 'flex', alignItems: 'center', ml: 6 }}>
+            <Hidden mdDown implementation="css">
+              <div className="LabHeader-middle">
+                <Links >
+                  {headerLinks.map((link) => (
+                    <li key={link.key}>
+                      <MenuItem item={link} />
+                    </li>
+                  ))}
+                </Links>
+              </div>
+            </Hidden>
+            <div className="LabHeader-right">
+              <Hidden mdDown implementation="css">
+                <Button
+                  onClick={handleTracking}
+                  size="small"
+                  className="LabHeader-signin"
+                >
+                  {t('header.signin')}
+                </Button>
+              </Hidden>
               <Hidden mdUp implementation="css">
                 <IconButton
                   size="medium"
@@ -205,27 +190,10 @@ export default function Header() {
                   <MenuIcon fontSize="large" />
                 </IconButton>
               </Hidden>
-              <Hidden mdDown implementation="css">
-                <MiddleSide>
-                  <Links isDark={isDark}>
-                    {headerLinks.map((link) => (
-                      <li key={link.key}>
-                        <MenuItem item={link} isDark={isDark} />
-                      </li>
-                    ))}
-                  </Links>
-                  <Button
-                    onClick={handleTracking}
-                    size="small"
-                  >
-                    {t('header.signin')}
-                  </Button>
-                </MiddleSide>
-              </Hidden>
-            </RightSide>
+            </div>
           </Container>
         </Toolbar>
-      </StyledAppBar>
+      </Root>
       <Drawer open={drawer} toggle={setDrawer} />
     </>
   );

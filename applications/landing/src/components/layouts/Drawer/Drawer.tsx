@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next';
 
 import { useMatomo } from '@datapunt/matomo-tracker-react';
 import CloseIcon from '@mui/icons-material/CloseRounded';
-import { /* Box, */ Button, Divider, IconButton, List, ListItem, SwipeableDrawer, Typography } from '@mui/material';
+import { /* Box, */ Button, Divider, IconButton, List, ListItem as MuiListItem, SwipeableDrawer, Typography } from '@mui/material';
 import { styled, useTheme } from '@mui/material/styles';
 
 // import Search from '../Search/Search';
@@ -28,6 +28,16 @@ const Footer = styled('div')(({ theme }) => ({
   padding: theme.spacing(4),
   color: theme.palette.text.primary,
 }));
+
+const ListItem = styled(MuiListItem)(({ theme }) => ({
+  ...theme.typography.h6,
+  fontSize: '0.875rem', // 14px
+  a: {
+    padding: theme.spacing(2),
+    width: '100%',
+  },
+
+}))
 
 interface Props {
   open: boolean;
@@ -57,6 +67,8 @@ export default function Drawer({ open, toggle }: Props) {
     trackEvent({ category: 'drawer', action: 'contact' });
   };
 
+  //   ...theme.typography.h6,
+  // fontSize: '0.875rem', // 14px
   return (
     <>
       <SwipeableDrawer
@@ -86,7 +98,7 @@ export default function Drawer({ open, toggle }: Props) {
                 <React.Fragment key={key}>
                   <ListItem {...(isURL ? {} : { button: false })}>
                     <Typography
-                      sx={{ fontSize: '1rem', color: isURL ? 'text.primary' : 'text.secondary' }}
+                      sx={{ color: isURL ? 'text.primary' : 'text.secondary' }}
                       {...(isURL ? { component: Link, href: (link as MenuItemLink).url } : {})}
                       onClick={toggleDrawer(false)}
                     >
@@ -97,14 +109,13 @@ export default function Drawer({ open, toggle }: Props) {
                     <List sx={{ ml: 6 }}>
                       {(link as MenuItemGroup).items.map(({ key: itemKey, url: itemUrl }) => (
                         <ListItem
-                          button
                           key={itemKey}
                           sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}
                         >
                           <Typography
                             component={Link}
                             href={itemUrl}
-                            sx={{ fontSize: '1rem', color: 'text.primary', mb: 2 }}
+                            sx={{ color: 'text.primary', mb: 2 }}
                             onClick={toggleDrawer(false)}
                           >
                             {t(`menu.${key}.${itemKey}.title`)}
@@ -118,9 +129,6 @@ export default function Drawer({ open, toggle }: Props) {
               );
             })}
           </List>
-          {/* <Box sx={{ position: 'relative', mx: 4, my: 8 }}>
-            <Search open={searchOpen} setOpen={setSearchOpen} isDark />
-          </Box> */}
         </Content>
         <Divider />
         <Footer>
