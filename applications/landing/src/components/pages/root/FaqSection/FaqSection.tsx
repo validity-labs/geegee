@@ -93,7 +93,7 @@ export default function FAQSection({ groups, ...restOfProps }: Props) {
     <Root id="faq" background='transparent' before={<Decoration />} {...restOfProps}>
       <Container maxWidth="lg">
         <Typography variant="h2" className="LabFAQSection-title"><span>－</span>{t('title')}</Typography>
-        <Grid container rowSpacing={{ xs: 10, md: 30 }} columnSpacing={10}>
+        <Grid container rowSpacing={{ xs: 10, md: 30 }} columnSpacing={10} sx={{ pt: 20 }}>
 
           <Grid item xs={12} md={2}>
             <Typography variant="body" className="LabFAQSection-faqCategories">
