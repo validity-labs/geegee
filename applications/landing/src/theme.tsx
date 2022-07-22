@@ -41,7 +41,7 @@ const theme = createTheme({
       active: '#F631F6',
     },
     background: {
-      dark: '#171719',
+      dark: '#0D080D',
       darker: '#0F0F0F',
       light: '#7294FF',
       lighter: '#F6F6F6',
