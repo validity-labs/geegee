@@ -1,5 +1,6 @@
 import { ReactElement, ReactNode } from 'react';
 
+import coverImage from '@/public/images/account/onboarding/cover.svg';
 interface IProps {
   children: ReactNode;
 }

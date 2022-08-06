@@ -1,8 +1,11 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
+import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 
+import { useUser } from '@auth0/nextjs-auth0';
 import { useMatomo } from '@datapunt/matomo-tracker-react';
+import { ExitToAppRounded } from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { AppBar, Button, Container, /* Fade, */ Hidden, IconButton, Toolbar, Typography } from '@mui/material';
 import { styled, useTheme } from '@mui/material/styles';
@@ -155,6 +158,13 @@ export default function Header() {
   const {
     header: { colorSchema = 'light' },
   } = useApp();
+  const { pathname } = useRouter();
+  const isUserArea = pathname.indexOf('/account/') !== -1;
+
+  const { user, error, isLoading } = useUser();
+  console.log('useUser', user, error, isLoading);
+  const isUserIn = !isLoading && !error && user;
+
   const [drawer, setDrawer] = useState(false);
   const theme = useTheme();
   // const [searchOpen, setSearchOpen] = useState(false);
@@ -189,12 +199,16 @@ export default function Header() {
   }, [colorSchema, theme]);
 
   const { trackEvent } = useMatomo();
+  const router = useRouter();
 
   const handleTracking = () => {
     console.log('TODO Open contact form');
     trackEvent({ category: 'header', action: 'contact' });
+    router.push('/login');
+
   };
 
+  /* @TODO update drawer to include all changes related to user state */
   return (
     <>
       <Root className={onTop /* && !fixedDark */ ? '' : 'show'}>
@@ -214,15 +228,32 @@ export default function Header() {
               </div>
             </Hidden>
             <div className="LabHeader-right">
-              <Hidden mdDown implementation="css">
-                <Button
-                  onClick={handleTracking}
-                  size="small"
-                  className="LabHeader-signin"
-                >
-                  {t('header.signin')}
-                </Button>
-              </Hidden>
+              {!isUserArea && (
+                <Hidden mdDown implementation="css">
+                  {isUserIn ? (
+                    <Button
+                      // onClick={handleTracking}
+                      component="a"
+                      href="/api/auth/logout"
+                      size="small"
+                      className="LabHeader-logout"
+                      endIcon={<ExitToAppRounded />}
+                    >
+                      {t('header.logout')}
+                    </Button>
+                  ) : (
+                    <Button
+                      // onClick={handleTracking}
+                      component="a"
+                      href="/api/auth/login"
+                      size="small"
+                      className="LabHeader-signin"
+                    >
+                      {t('header.signin')}
+                    </Button>
+                  )}
+                </Hidden>
+              )}
               <Hidden mdUp implementation="css">
                 <IconButton
                   size="medium"

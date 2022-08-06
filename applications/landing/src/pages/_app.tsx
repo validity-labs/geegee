@@ -2,6 +2,7 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { appWithTranslation, useTranslation } from 'next-i18next';
 
+import { UserProvider } from '@auth0/nextjs-auth0';
 import { createInstance, MatomoProvider } from '@datapunt/matomo-tracker-react';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import { Typography } from '@mui/material';
@@ -50,23 +51,25 @@ const MyApp = (props: MyAppProps) => {
           <title>Geegee platform</title>
           <meta name="viewport" content="initial-scale=1, width=device-width" />
         </Head>
-        <ThemeProvider theme={theme}>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-          <CssBaseline />
-          <AppProvider value={{ /* common: pageProps.common, */ ns: pageProps.ns, config: pageProps.config }}>
-            <SnackbarProvider>
-              <Typography component="a" className="aria" href="#main">
-                {t('common.skip-to-main')}
-              </Typography>
-              <Header />
-              <Layout>
-                {/* @ts-ignore */}
-                <Component {...pageProps} />
-              </Layout>
-              <Footer />
-            </SnackbarProvider>
-          </AppProvider>
-        </ThemeProvider>
+        <UserProvider>
+          <ThemeProvider theme={theme}>
+            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+            <CssBaseline />
+            <AppProvider value={{ /* common: pageProps.common, */ ns: pageProps.ns, config: pageProps.config }}>
+              <SnackbarProvider>
+                <Typography component="a" className="aria" href="#main">
+                  {t('common.skip-to-main')}
+                </Typography>
+                <Header />
+                <Layout>
+                  {/* @ts-ignore */}
+                  <Component {...pageProps} />
+                </Layout>
+                <Footer />
+              </SnackbarProvider>
+            </AppProvider>
+          </ThemeProvider>
+        </UserProvider>
       </CacheProvider>
     </MatomoProvider>
   );

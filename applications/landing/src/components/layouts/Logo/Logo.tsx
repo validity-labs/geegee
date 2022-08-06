@@ -5,8 +5,6 @@ import Image from 'next/image';
 import { Box, BoxProps } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-import logo from '@/public/images/logo.png';
-
 const Root = styled(Box, {
   shouldForwardProp: (prop) => prop !== 'size',
 })<Props>((/* { size } */) => ({
@@ -25,7 +23,7 @@ interface Props extends BoxProps {
 export default function Logo({ size = 'md', ...restOfProps }: Props): ReactElement {
   return (
     <Root size={size} {...restOfProps}>
-      <Image src={logo} alt="" placeholder="empty" />
+      <Image src="/images/logo.svg" alt="" width={188} height={47} placeholder="empty" />
     </Root>
   );
 }
