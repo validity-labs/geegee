@@ -43,6 +43,7 @@ const theme = createTheme({
     background: {
       dark: '#171719',
       darker: '#0F0F0F',
+      main: '#231B30',
       light: '#7294FF',
       lighter: '#F6F6F6',
       gray: '#fafafa',
@@ -156,13 +157,17 @@ theme.components = {
           height: 100%;
         }
         body {
-          background-color: #0D080C;
           font-family: Montserrat, sans-serif;
         }
         #__next {
-          height: 100%;
+          display: flex;
+          flex-direction: column;
+          // height: 100%;
+          background: #1F1F21;
+          background: linear-gradient(123deg, #1F1F21 0%, #140816 53%, #31105C 100%) no-repeat;
         }
         main {
+          flex: 1;
           display: flex;
           flex-direction: column;
         }

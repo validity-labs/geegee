@@ -17,7 +17,8 @@
     "search": "Your search phrase",
     "toggle-menu": "Toggle Menu",
     "close-menu": "Close Menu",
-    "signin": "Sign in"
+    "signin": "Sign in",
+    "logout": "Logout"
   },
   "menu": {
     "platform": {
@@ -28,6 +29,9 @@
     },
     "contact": {
       "title": "Contact"
+    },
+    "onboarding": {
+      "title": "Onboarding"
     }
   },
   "footer": {

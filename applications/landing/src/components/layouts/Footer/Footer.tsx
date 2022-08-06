@@ -19,7 +19,7 @@ const Root = styled('footer')(({ theme }) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     gap: theme.spacing(14),
-    padding: theme.spacing(15, 0, 15),
+    padding: theme.spacing(13, 0, 13),
     color: '#c4c4c4',
   },
   '.LabFooter-left': {

@@ -61,7 +61,7 @@ interface Props extends SectionProps {
 
 export default function Section({
   children,
-  background = 'neutral',
+  background = 'transparent',
   containerProps,
   before,
   ...restOfProps

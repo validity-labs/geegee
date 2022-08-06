@@ -47,6 +47,11 @@ export const headerLinks: MenuItemType[] = [
     key: 'contact',
     url: '#contact',
   },
+  {
+    type: 'internal',
+    key: 'onboarding',
+    url: '/account/onboarding',
+  },
 ];
 
 export const footerLinks = {
