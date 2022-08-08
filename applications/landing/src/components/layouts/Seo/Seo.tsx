@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next';
 
 import { NextSeo, NextSeoProps } from 'next-seo';
 
-export type I18nPageNamespace = 'root' | 'about' | 'service' | 'error' | 'login' | 'logout' | 'profile';
+export type I18nPageNamespace = 'root' | 'about' | 'service' | 'error' | 'account-onboarding';
 
 interface Props extends NextSeoProps {
   ns?: I18nPageNamespace;

@@ -9,6 +9,7 @@ export interface NextAppConfig extends NextConfig {
     matomoBaseUrl: string;
     matomoTrackerUrl: string;
     matomoSrcUrl: string;
+    auth0BaseUrl: string;
   };
 }
 export type HeaderColorSchema = 'light' | 'dark';

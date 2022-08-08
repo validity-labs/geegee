@@ -43,8 +43,9 @@ const theme = createTheme({
     background: {
       dark: '#0D080D',
       darker: '#0F0F0F',
+      // #
       main: '#231B30',
-      light: '#7294FF',
+      light: '#393246',
       lighter: '#F6F6F6',
       gray: '#fafafa',
     },
@@ -554,7 +555,7 @@ theme.components = {
         fontSize: '0.75rem', // 12px
       },
       sizeMedium: {
-        padding: sp(6, 12, 6),
+        padding: sp(4, 10),
         fontSize: '0.9375rem', // 15px
       },
       sizeLarge: {
@@ -635,19 +636,19 @@ theme.components = {
       },
     },
   },
-  MuiOutlinedInput: {
-    styleOverrides: {
-      root: {
-        paddingLeft: sp(8),
-      },
-      input: {
-        // fontFamily: 'Maven Pro, sans-serif',
-        fontSize: '1rem',
-        fontWeight: 700,
-        padding: sp(5, 8, 4.5, 2.5),
-      },
-    },
-  },
+  // MuiOutlinedInput: {
+  //   styleOverrides: {
+  //     root: {
+  //       paddingLeft: sp(8),
+  //     },
+  //     input: {
+  //       // fontFamily: 'Maven Pro, sans-serif',
+  //       fontSize: '1rem',
+  //       fontWeight: 700,
+  //       padding: sp(5, 8, 4.5, 2.5),
+  //     },
+  //   },
+  // },
   MuiInputLabel: {
     styleOverrides: {
       root: {
@@ -675,9 +676,10 @@ theme.components = {
   MuiFormHelperText: {
     styleOverrides: {
       root: {
-        ...theme.typography.body,
-        position: 'absolute',
-        bottom: -31,
+        ...theme.typography['body-xs'],
+        textAlign: 'right',
+        // position: 'absolute',
+        // bottom: -31,
       },
     },
   },

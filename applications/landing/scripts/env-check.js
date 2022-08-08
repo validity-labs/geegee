@@ -56,7 +56,8 @@ const envValidator = {
       NEXT_PUBLIC_MATOMO_SITE_ID: yup.string().required(),
       NEXT_PUBLIC_MATOMO_BASE_URL: yup.string().required(),
       NEXT_PUBLIC_MATOMO_TRACKER_URL: yup.string().required(),
-      NEXT_PUBLIC_MATOMO_SRC_URL: yup.string().required()
+      NEXT_PUBLIC_MATOMO_SRC_URL: yup.string().required(),
+      NEXT_PUBLIC_AUTH0_ISSUER_BASE_URL: yup.string().customUrl().required()
     };
 
     const defaultValidator = yup.string().required();

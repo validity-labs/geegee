@@ -35,17 +35,17 @@ export const headerLinks: MenuItemType[] = [
   {
     type: 'internal',
     key: 'platform',
-    url: 'platform',
+    url: '/platform',
   },
   {
     type: 'internal',
     key: 'faqs',
-    url: 'faq',
+    url: '/#faq',
   },
   {
     type: 'internal',
     key: 'contact',
-    url: 'contact',
+    url: '/#contact',
   },
   {
     type: 'internal',

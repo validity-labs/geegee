@@ -11,7 +11,7 @@ import { AppBar, Button, Container, /* Fade, */ Hidden, IconButton, Toolbar, Typ
 import { styled, useTheme } from '@mui/material/styles';
 import { DebouncedFunc, throttle } from 'lodash';
 
-// import ExternalLink from '@/components/general/Link/ExternalLink';
+import ExternalLink from '@/components/general/Link/ExternalLink';
 import Link from '@/components/general/Link/Link';
 // import SendIcon from '@/components/icons/SendIcon';
 import Drawer from '@/components/layouts/Drawer/Drawer';
@@ -139,8 +139,8 @@ function MenuItem({ item }: MenuItemProps) {
   if (isInternal || isExternal) {
     const { url } = item as MenuItemLink;
     return (
-      // <Typography component={isInternal ? Link : ExternalLink} href={url} sx={{ fontSize: '1rem' }}>
-      <Typography className="LabHeader-nav" onClick={() => scrollToAnchor(url)}>
+      // {/* <Typography className="LabHeader-nav" /* onClick={() => scrollToAnchor(url)} */> */}
+      <Typography component={isInternal ? Link : ExternalLink} href={url} sx={{ fontSize: '1rem' }}>
         <span>{t(`menu.${key}.title`)}</span>
       </Typography>
     );
