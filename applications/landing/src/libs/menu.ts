@@ -1,4 +1,7 @@
 // import InstagramIcon from '@mui/icons-material/Instagram';
+import MonitorIcon from '@/components/icons/MonitorIcon';
+import StartIcon from '@/components/icons/StarIcon';
+import WalletIcon from '@/components/icons/WalletIcon';
 import { MenuItemType } from '@/typings/app';
 
 export const headerLinks: MenuItemType[] = [
@@ -47,11 +50,11 @@ export const headerLinks: MenuItemType[] = [
     key: 'contact',
     url: '/#contact',
   },
-  {
-    type: 'internal',
-    key: 'onboarding',
-    url: '/account/onboarding',
-  },
+  // {
+  //   type: 'internal',
+  //   key: 'onboarding',
+  //   url: '/account/onboarding',
+  // },
 ];
 
 export const footerLinks = {
@@ -132,3 +135,24 @@ export const footerLinks = {
   //   // },
   // ],
 };
+
+export const dashboardMenu: MenuItemType[] = [
+  {
+    type: 'internal',
+    key: 'overview',
+    url: '#overview',
+    Icon: MonitorIcon,
+  },
+  {
+    type: 'internal',
+    key: 'favorite',
+    url: '#favorite',
+    Icon: StartIcon,
+  },
+  {
+    type: 'internal',
+    key: 'platform',
+    url: '/platform',
+    Icon: WalletIcon,
+  },
+];

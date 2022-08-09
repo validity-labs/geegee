@@ -7,7 +7,16 @@
     "en": "English",
     "de": "German"
   },
-  "common": {},
+  "common": {
+    "logout": "Logout",
+    "symbol": "GE"
+  },
+  "currency": {
+    "geegee": "GeeBucks",
+    "usd": "USD",
+    "chf": "CHF",
+    "native": "$t(currency.geegee) / $t(currency.usd)"
+  },
   "format": {
     "date": "dd-MM-yyyy",
     "date-pretty": "MMMM d, yyyy",
@@ -32,6 +41,12 @@
     },
     "onboarding": {
       "title": "Onboarding (test)"
+    },
+    "overview": {
+      "title": "Overview"
+    },
+    "favorite": {
+      "title": "Favorite"
     }
   },
   "footer": {

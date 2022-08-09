@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { SvgIconProps } from '@mui/material';
 import { NextConfig } from 'next';
 export interface NextAppConfig extends NextConfig {
   serverRuntimeConfig?: {};
@@ -35,10 +36,21 @@ export type SetState<A> = React.Dispatch<React.SetStateAction<A>>;
 
 export type Language = 'en' /* | 'de' */;
 
+export interface Account {
+  meta?: any;
+  balance: number | null;
+  isBalanceLoading: boolean;
+  isOnline: boolean;
+  isOffline: boolean;
+  isLoading: boolean;
+  isError: boolean;
+}
+
 export interface MenuItemLink {
   type: 'internal' | 'external';
   key: string;
   url: string;
+  Icon?: React.FC<SvgIconProps>;
 }
 
 export interface MenuItemGroup {

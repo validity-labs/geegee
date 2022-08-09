@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { useUser } from '@auth0/nextjs-auth0';
+// import { useUser } from '@auth0/nextjs-auth0';
 import { useMatomo } from '@datapunt/matomo-tracker-react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -19,10 +19,10 @@ const IndexPage = () => {
   useEffect(() => {
     trackPageView({});
   }, [trackPageView]);
-  const { user, isLoading, error } = useUser();
-  const isUserIn = !isLoading && !error && user;
+  // const { user, isLoading, error } = useUser();
+  // const isUserIn = !isLoading && !error && user;
   // const { nickname = '', extra: { consent = false, interests = [] } } = user || { extra: {} };
-  console.log(isUserIn, user, user?.extra)
+  // console.log(isUserIn, user, user?.extra)
   return (
     <>
       <Seo ns={ns} />

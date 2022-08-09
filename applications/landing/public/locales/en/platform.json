@@ -1,0 +1,29 @@
+{
+  "page": {
+    "title": "Platform",
+    "description": ""
+  },
+  "info-section": {
+    "send-native": "Send GeeBucks"
+  },
+  "transaction-section": {
+    "title": "Transaction History",
+    "column": {
+      "date": "Date",
+      "asset": "Asset",
+      "from-to": "From/To",
+      "in-out": "In/Out",
+      "value": "Value",
+      "fee": "Fee",
+      "operation": "Operation"
+    },
+    "operation": {
+      "received": "Received",
+      "send": "Send"
+    },
+    "from-to": {
+      "from": "From",
+      "to": "To"
+    }
+  }
+}

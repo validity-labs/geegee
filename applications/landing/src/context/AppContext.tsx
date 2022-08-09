@@ -5,7 +5,8 @@ import { useTranslation } from 'next-i18next';
 import { UseTranslationOptions } from 'react-i18next';
 
 import { I18nPageNamespace } from '@/components/layouts/Seo/Seo';
-import { ConfigProps, /* FooterConfigProps, */ HeaderConfigProps, Language /* , Settings */ } from '@/typings/app';
+import useAccountEnhancer from '@/hooks/useAccountEnhancer';
+import { Account, ConfigProps, /* FooterConfigProps, */ HeaderConfigProps, Language /* , Settings */ } from '@/typings/app';
 export type TranslatedRoutes = Record<Language, string>;
 type TranslatedRoutesMaybe = TranslatedRoutes | undefined;
 
@@ -16,6 +17,7 @@ interface AppContextValues {
   header: HeaderConfigProps;
   // footer: FooterConfigProps;
   translatedRoutes: MutableRefObject<TranslatedRoutesMaybe>;
+  account: Account;
 }
 
 interface AppContextInterface extends AppContextValues {
@@ -37,6 +39,7 @@ const AppContext = React.createContext<AppContextInterface>({} as AppContextInte
 
 const AppProvider = ({ children, value: { ns, /* common, */ config } }: AppProviderProps) => {
   const translatedRoutes = useRef<TranslatedRoutesMaybe>(undefined);
+  const account = useAccountEnhancer();
   const ctx = useMemo(
     () => ({
       ns,
@@ -45,9 +48,10 @@ const AppProvider = ({ children, value: { ns, /* common, */ config } }: AppProvi
       header: config?.header || {},
       // footer: config?.footer || {},
       translatedRoutes,
+      account,
       // setTranslatedRoutes,
     }),
-    [translatedRoutes, /* common, */ ns, config /* , setTranslatedRoutes */],
+    [translatedRoutes, /* common, */ ns, config, account /* , setTranslatedRoutes */],
   );
 
   return <AppContext.Provider value={ctx}>{children}</AppContext.Provider>;
@@ -57,6 +61,10 @@ function useApp() {
   return React.useContext(AppContext);
 }
 
+function useAccount() {
+  return React.useContext(AppContext).account;
+}
+
 function usePageTranslation(options?: UseTranslationOptions<string>) {
   const { ns } = React.useContext(AppContext);
   const { t } = useTranslation(ns, options);
@@ -64,4 +72,4 @@ function usePageTranslation(options?: UseTranslationOptions<string>) {
   return t;
 }
 
-export { AppProvider, useApp, usePageTranslation };
+export { AppProvider, useAccount, useApp, usePageTranslation };

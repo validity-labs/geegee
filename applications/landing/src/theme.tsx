@@ -17,7 +17,7 @@ const theme = createTheme({
       // contrastText: '#ffffff',
     },
     secondary: {
-      main: '#B2B2B2',
+      main: '#8B8D97',
       // dark: '#1A1A1A',
       // light: '#F23C9E',
       // main: '#df0e83',
@@ -33,10 +33,10 @@ const theme = createTheme({
     // success: {
     // main: '#33C7B1',
     // },
-    divider: '#1A1A1A',
+    divider: '#282732',
     text: {
       primary: '#ffffff',
-      secondary: '#B2B2B2',
+      secondary: '#8B8D97',
       contrast: '#000000',
       active: '#F631F6',
     },
@@ -48,6 +48,7 @@ const theme = createTheme({
       light: '#393246',
       lighter: '#F6F6F6',
       gray: '#fafafa',
+      transparent: 'rgba(255, 255, 255, 0.1)',
     },
   },
   typography: {
@@ -299,6 +300,10 @@ theme.components = {
             opacity: 1;
           }
         }
+        .Lab-divider {
+          width: 100%;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
       `,
   },
   MuiAppBar: {
@@ -495,7 +500,10 @@ theme.components = {
         props: { color: 'primary' },
         style: {
           borderColor: theme.palette.primary.main,
-          color: theme.palette.secondary.main,
+          color: theme.palette.text.secondary,
+          '&:hover': {
+            color: theme.palette.text.active,
+          },
         },
       },
     ],
@@ -504,7 +512,7 @@ theme.components = {
         minHeight: 'auto',
         borderRadius: 0,
         fontFamily: 'Audiowide, cursive',
-        fontWeight: 600,
+        fontWeight: 400,
         lineHeight: 'initial',
         textTransform: 'none',
         justifyContent: 'space-between',
@@ -524,9 +532,13 @@ theme.components = {
       },
       outlined: {
         borderColor: 'currentcolor',
+        borderWidth: 2,
         borderRadius: shapeBorderRadiusBase * 5,
         '&.Mui-disabled': {
           color: theme.palette.text.secondary,
+        },
+        '&:hover': {
+          borderWidth: 2,
         },
       },
       text: {
@@ -534,14 +546,14 @@ theme.components = {
         minWidth: 0,
       },
       startIcon: {
-        marginRight: sp(6.5),
+        marginRight: sp(5),
       },
       endIcon: {
-        marginLeft: sp(8.5),
+        marginLeft: sp(5),
       },
       iconSizeSmall: {
         '& svg:nth-of-type(1)': {
-          fontSize: '1.75rem', // 28px
+          fontSize: '1.5rem', // 24px
         },
       },
       iconSizeMedium: {
@@ -550,12 +562,11 @@ theme.components = {
         },
       },
       sizeSmall: {
-        padding: sp(3, 10.5),
-        // padding: sp(4.5, 8.5, 4.5, 10.5),
+        padding: sp(3, 6),
         fontSize: '0.75rem', // 12px
       },
       sizeMedium: {
-        padding: sp(4, 10),
+        padding: sp(4, 10.5),
         fontSize: '0.9375rem', // 15px
       },
       sizeLarge: {
