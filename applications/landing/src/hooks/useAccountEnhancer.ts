@@ -11,7 +11,7 @@ const useAccountEnhancer = (): Account => {
 
   const { isOnline, isOffline, isLoading, isError/* , meta */ } = useMemo(() => {
     const isOnline = !isAuthLoading && !authError && !!id;
-    console.log('useAccountEnhancer, change flags', id, authError, isAuthLoading, isOnline);
+    // console.log('useAccountEnhancer, change flags', id, authError, isAuthLoading, isOnline);
     return {
       isOnline,
       isOffline: !isOnline,
@@ -27,7 +27,7 @@ const useAccountEnhancer = (): Account => {
       setBalance(0.1372);
     }
     if (isOnline && id) {
-      console.log('useAccountEnhancer, fetch balance for', id);
+      // console.log('useAccountEnhancer, fetch balance for', id);
       fetchBalance();
     }
   }, [id, isOnline]);

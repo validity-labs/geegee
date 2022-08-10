@@ -304,6 +304,10 @@ theme.components = {
           width: 100%;
           border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         }
+        .Lab-row {
+          display: flex;
+          align-items: center;
+        }
       `,
   },
   MuiAppBar: {

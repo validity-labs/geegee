@@ -28,7 +28,7 @@ const Root = styled(Section)(({ theme }) => ({
     backgroundColor: theme.palette.background.main,
     borderRadius: +theme.shape.borderRadius * 4,
     boxShadow: '0px 3px 6px #FD00FD',
-    padding: theme.spacing(18.5, 17, 11),
+    padding: theme.spacing(18.5, 6, 11),
   },
   '.LabProfileSection-sticker': {
     marginBottom: theme.spacing(7.5),
@@ -46,6 +46,11 @@ const Root = styled(Section)(({ theme }) => ({
     borderWidth: 2,
     '&:hover': {
       borderWidth: 2,
+    },
+  },
+  [theme.breakpoints.up('md')]: {
+    '.LabProfileSection-panel': {
+      padding: theme.spacing(18.5, 17, 11),
     },
   },
 }));

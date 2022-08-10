@@ -60,7 +60,7 @@ const FormControl = styled(MuiFormControl)(({ theme }) => ({
     // },
   },
   '.MuiInputBase-input': {
-    minWidth: '160px',
+    // minWidth: '160px',
     padding: theme.spacing(0, 6, 0, 0),
     ...theme.typography.body,
     fontSize: '0.75rem', // 12px

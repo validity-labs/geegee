@@ -18,8 +18,8 @@
       "operation": "Operation"
     },
     "operation": {
-      "received": "Received",
-      "send": "Send"
+      "in": "Received",
+      "out": "Send"
     },
     "from-to": {
       "from": "From",

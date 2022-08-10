@@ -31,13 +31,23 @@ interface MyAppProps extends AppProps {
 }
 
 const MyApp = (props: MyAppProps) => {
-  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+  const { Component, emotionCache = clientSideEmotionCache, pageProps/* , router: { locale } */ } = props;
   const matomoInstance = createInstance({
     urlBase: MATOMO_BASE_URL,
     siteId: Number(MATOMO_SITE_ID),
     trackerUrl: MATOMO_TRACKER_URL,
     srcUrl: MATOMO_SRC_URL,
   });
+
+  // rerender tree so on language change date-io locale is applied properly
+  // const [, setDateLocale] = useState<Language | undefined>();
+
+  // useEffect(() => {
+  //   // on language change, change date-io locale with dynamic load
+  //   changeDateIOLocale(locale as Language).then(() => {
+  //     setDateLocale(locale as Language);
+  //   });
+  // }, [locale]);
 
   return (
     <MatomoProvider value={matomoInstance}>

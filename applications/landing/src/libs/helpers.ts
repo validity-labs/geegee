@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { TFunction } from 'next-i18next';
 
 import { setLocale } from 'yup';
@@ -23,3 +25,13 @@ export const setYupLocale = (t: TFunction) => {
 export const sleep = (s: number) => {
   return new Promise((resolve) => setTimeout(resolve, s * 1000));
 };
+
+/**
+ * Wrap callback method, with event stop propagation
+ */
+export const stopPropagation =
+  (callback: () => void) =>
+    (event: React.SyntheticEvent): void => {
+      event.stopPropagation();
+      callback();
+    };

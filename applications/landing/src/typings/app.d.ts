@@ -61,6 +61,11 @@ export interface MenuItemGroup {
 
 export type MenuItemType = MenuItemLink | MenuItemGroup;
 
+export interface RowsState {
+  page: number;
+  pageSize: number;
+}
+
 export interface Product {
   // id: ID;
   url?: string;

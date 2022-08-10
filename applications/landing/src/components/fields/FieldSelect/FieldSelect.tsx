@@ -42,7 +42,7 @@ const FormControl = styled(MuiFormControl)(({ theme }) => ({
       boxShadow: `0px 0 3px 1px ${theme.palette.error.main}`,
     },
     '.MuiSelect-select': {
-      minWidth: '160px',
+      // minWidth: '160px',
       padding: theme.spacing(5.5, 19, 5.5, 5),
       border: `1px solid ${theme.palette.divider}`,
       borderRadius: +theme.shape.borderRadius * 3,
