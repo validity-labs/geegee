@@ -189,7 +189,33 @@ package-landing-prod:
 
 ##
 # Deploy stage
-deploy-test:
+deploy-auth0-test:
+  stage: deploy
+  environment:
+    name: test
+    action: start
+  resource_group: test
+  script:
+    - npm ci
+    - npm run auth0:import:test
+  allow_failure: false
+  only:
+    <<: *only-test
+
+deploy-auth0-prod:
+  stage: deploy
+  environment:
+    name: prod
+    action: start
+  resource_group: prod
+  script:
+    - npm ci
+    - npm run auth0:import:prod
+  allow_failure: false
+  only:
+    <<: *only-prod
+
+deploy-app-test:
   stage: deploy
   variables:
     <<: *deployment-variables
@@ -205,7 +231,7 @@ deploy-test:
   only:
     <<: *only-test
 
-deploy-staging:
+deploy-app-staging:
   stage: deploy
   variables:
     <<: *deployment-variables
@@ -221,7 +247,7 @@ deploy-staging:
   only:
     <<: *only-staging
 
-deploy-prod:
+deploy-app-prod:
   stage: deploy
   variables:
     <<: *deployment-variables

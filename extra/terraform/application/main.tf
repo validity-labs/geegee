@@ -52,6 +52,16 @@ data "google_iam_policy" "noauth" {
 
 # -- Landing page -----------------------------------------
 
+data "google_secret_manager_secret" "landing_auth0_client_secret" {
+  project = var.landing_auth0_client_secret_secret_project
+  secret_id = var.landing_auth0_client_secret_secret_id
+}
+
+data "google_secret_manager_secret" "landing_auth0_secret" {
+  project = var.landing_auth0_secret_secret_project
+  secret_id = var.landing_auth0_secret_secret_id
+}
+
 resource "google_service_account" "cloud_run_landing" {
   project      = var.gcp_project
   account_id   = "cloud-run-landing"
@@ -92,6 +102,47 @@ resource "google_cloud_run_service" "landing" {
         env {
           name  = "NEXT_PUBLIC_MATOMO_SRC_URL"
           value = var.landing_matomo_src_url
+        }
+
+        # Auth0
+        env {
+          name  = "AUTH0_ISSUER_BASE_URL"
+          value = var.landing_auth0_issuer_base_url
+        }
+
+        env {
+          name  = "NEXT_PUBLIC_AUTH0_ISSUER_BASE_URL"
+          value = var.landing_auth0_issuer_base_url
+        }
+
+        env {
+          name  = "AUTH0_CLIENT_ID"
+          value = var.landing_auth0_client_id
+        }
+
+        env {
+          name = "AUTH0_CLIENT_SECRET"
+          value_from {
+            secret_key_ref {
+              name = data.google_secret_manager_secret.landing_auth0_client_secret.secret_id
+              key = var.landing_auth0_client_secret_secret_version
+            }
+          }
+        }
+
+        env {
+          name = "AUTH0_SECRET"
+          value_from {
+            secret_key_ref {
+              name = data.google_secret_manager_secret.landing_auth0_secret.secret_id
+              key = var.landing_auth0_secret_secret_version
+            }
+          }
+        }
+
+        env {
+          name  = "AUTH0_BASE_URL"
+          value = "https://${local.landing_domain}"
         }
 
         resources {

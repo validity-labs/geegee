@@ -1,0 +1,13 @@
+{
+  "AUTH0_DOMAIN": "geegee-p.eu.auth0.com",
+  "AUTH0_CLIENT_ID": "kIuZF9mFE4HlACjfTjoSwZHLbZZcCkL8",
+  "AUTH0_ALLOW_DELETE": true,
+  "AUTH0_KEYWORD_REPLACE_MAPPINGS": {
+    "AUTH0_DOMAIN": "geegee-p.eu.auth0.com",
+    "APP_BASE_URL": "p-geegee-landing.validity.io"
+  },
+  "EXCLUDED_PROPS": {
+    "clients": ["client_secret"],
+    "connections": ["options.client_secret"]
+  }
+}
