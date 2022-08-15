@@ -1,13 +1,11 @@
 import React from 'react';
 
-import { loadDataSync } from '@/app/data';
-import getColumns from '@/components/pages/market/AssetSection/columns';
+import GridPagination from '../GridPagination/GridPagination';
+import DataGrid from './DataGrid';
+import getColumns from '@/components/pages/platform/TransactionSection/columns';
+import fetchData from '@/components/pages/platform/TransactionSection/fetchData';
 import nextUseRouterMock from '@/mocks/nextUseRouterMock';
 import { cleanup, render } from '@/testing/utils';
-
-import GridPagination from '../GridPagination/GridPagination';
-
-import DataGrid from './DataGrid';
 
 beforeAll(() => {
   nextUseRouterMock({
@@ -21,15 +19,15 @@ beforeAll(() => {
 afterEach(cleanup);
 
 describe('<DataGrid />', () => {
-  it('has valid snapshot', () => {
-    const data = loadDataSync('market', { page: 1, pageSize: 10, sort: [], term: null });
+  it('has valid snapshot', async () => {
+    const { total, records } = await fetchData();
     const { asFragment } = render(
       <DataGrid
         columns={getColumns((k: string) => k)}
-        rows={data.records}
-        rowCount={data.total}
+        rows={records}
+        rowCount={total}
         components={{ Pagination: GridPagination }}
-      />
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });

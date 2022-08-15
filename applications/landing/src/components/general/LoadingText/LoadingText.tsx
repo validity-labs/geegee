@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 
 import { styled } from '@mui/material/styles';
-import { isEmpty } from 'lodash';
 
 interface LoadingTextProps {
   loading: boolean;

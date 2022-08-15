@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-// import { withPageAuthRequired } from '@auth0/nextjs-auth0';
+import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 import { useMatomo } from '@datapunt/matomo-tracker-react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -35,5 +35,5 @@ export const getServerSideProps = async ({ locale }: any) => {
   };
 };
 
-// export default withPageAuthRequired(PlatformPage);
-export default PlatformPage;
+export default withPageAuthRequired(PlatformPage);
+// export default PlatformPage;

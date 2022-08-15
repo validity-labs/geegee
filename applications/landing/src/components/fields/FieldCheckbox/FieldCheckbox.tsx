@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { CheckRounded } from '@mui/icons-material';
-import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';
 import {
   Checkbox,
   CheckboxProps,

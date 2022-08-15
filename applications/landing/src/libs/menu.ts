@@ -2,7 +2,7 @@
 import MonitorIcon from '@/components/icons/MonitorIcon';
 import StartIcon from '@/components/icons/StarIcon';
 import WalletIcon from '@/components/icons/WalletIcon';
-import { MenuItemType } from '@/typings/app';
+import { MenuItemLink, MenuItemType } from '@/typings/app';
 
 export const headerLinks: MenuItemType[] = [
   // {
@@ -136,7 +136,7 @@ export const footerLinks = {
   // ],
 };
 
-export const dashboardMenu: MenuItemType[] = [
+export const dashboardMenu: Required<MenuItemLink>[] = [
   {
     type: 'internal',
     key: 'overview',

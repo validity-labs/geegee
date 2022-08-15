@@ -64,7 +64,7 @@ const GridPagination = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTM
   );
 
   const handlePageChange = React.useCallback<TablePaginationProps['onPageChange']>(
-    (event, page) => {
+    (_event, page) => {
       apiRef.current.setPage(page);
     },
     [apiRef],

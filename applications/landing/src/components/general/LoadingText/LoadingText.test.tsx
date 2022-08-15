@@ -1,9 +1,8 @@
 import React from 'react';
 
+import LoadingText from './LoadingText';
 import nextUseRouterMock from '@/mocks/nextUseRouterMock';
 import { cleanup, render } from '@/testing/utils';
-
-import LoadingText from './LoadingText';
 
 beforeAll(() => {
   nextUseRouterMock({
