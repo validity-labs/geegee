@@ -190,6 +190,7 @@ package-landing-prod:
 ##
 # Deploy stage
 deploy-auth0-test:
+  image: node:16.16.0-alpine
   stage: deploy
   environment:
     name: test
@@ -203,6 +204,7 @@ deploy-auth0-test:
     <<: *only-test
 
 deploy-auth0-prod:
+  image: node:16.16.0-alpine
   stage: deploy
   environment:
     name: prod
