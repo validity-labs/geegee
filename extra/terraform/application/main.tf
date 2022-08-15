@@ -52,16 +52,6 @@ data "google_iam_policy" "noauth" {
 
 # -- Landing page -----------------------------------------
 
-data "google_secret_manager_secret" "landing_auth0_client_secret" {
-  project = var.landing_auth0_client_secret_secret_project
-  secret_id = var.landing_auth0_client_secret_secret_id
-}
-
-data "google_secret_manager_secret" "landing_auth0_secret" {
-  project = var.landing_auth0_secret_secret_project
-  secret_id = var.landing_auth0_secret_secret_id
-}
-
 resource "google_service_account" "cloud_run_landing" {
   project      = var.gcp_project
   account_id   = "cloud-run-landing"
@@ -72,6 +62,28 @@ resource "google_project_iam_member" "cloud_run_landing_logging_log_writer" {
   project = var.gcp_project
   role    = "roles/logging.logWriter"
   member  = "serviceAccount:${google_service_account.cloud_run_landing.email}"
+}
+
+data "google_secret_manager_secret" "landing_auth0_client_secret" {
+  project = var.landing_auth0_client_secret_secret_project
+  secret_id = var.landing_auth0_client_secret_secret_id
+}
+
+resource "google_secret_manager_secret_iam_member" "landing_auth0_client_secret" {
+  secret_id = data.google_secret_manager_secret.landing_auth0_client_secret.id
+  role      = "roles/secretmanager.secretAccessor"
+  member    = "serviceAccount:${google_service_account.cloud_run_landing.email}"
+}
+
+data "google_secret_manager_secret" "landing_auth0_secret" {
+  project = var.landing_auth0_secret_secret_project
+  secret_id = var.landing_auth0_secret_secret_id
+}
+
+resource "google_secret_manager_secret_iam_member" "landing_auth0_secret" {
+  secret_id = data.google_secret_manager_secret.landing_auth0_secret.id
+  role      = "roles/secretmanager.secretAccessor"
+  member    = "serviceAccount:${google_service_account.cloud_run_landing.email}"
 }
 
 resource "google_cloud_run_service" "landing" {
@@ -155,6 +167,7 @@ resource "google_cloud_run_service" "landing" {
 
       container_concurrency = var.landing_container_concurrency
       timeout_seconds       = var.landing_timeout_seconds
+      service_account_name = google_service_account.cloud_run_landing.email
     }
 
     metadata {
