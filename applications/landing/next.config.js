@@ -19,7 +19,8 @@ module.exports = {
     matomoSiteId: process.env.NEXT_PUBLIC_MATOMO_SITE_ID,
     matomoBaseUrl: process.env.NEXT_PUBLIC_MATOMO_BASE_URL,
     matomoTrackerUrl: process.env.NEXT_PUBLIC_MATOMO_TRACKER_URL,
-    matomoSrcUrl: process.env.NEXT_PUBLIC_MATOMO_SRC_URL
+    matomoSrcUrl: process.env.NEXT_PUBLIC_MATOMO_SRC_URL,
+    auth0BaseUrl: process.env.NEXT_PUBLIC_AUTH0_ISSUER_BASE_URL
   }
   // async rewrites() {
   //   return [

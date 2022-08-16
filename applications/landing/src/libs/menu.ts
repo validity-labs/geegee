@@ -1,5 +1,8 @@
 // import InstagramIcon from '@mui/icons-material/Instagram';
-import { MenuItemType } from '@/typings/app';
+import MonitorIcon from '@/components/icons/MonitorIcon';
+import StartIcon from '@/components/icons/StarIcon';
+import WalletIcon from '@/components/icons/WalletIcon';
+import { MenuItemLink, MenuItemType } from '@/typings/app';
 
 export const headerLinks: MenuItemType[] = [
   // {
@@ -35,18 +38,23 @@ export const headerLinks: MenuItemType[] = [
   {
     type: 'internal',
     key: 'platform',
-    url: 'platform',
+    url: '/platform',
   },
   {
     type: 'internal',
     key: 'faqs',
-    url: 'faq',
+    url: '/#faq',
   },
   {
     type: 'internal',
     key: 'contact',
-    url: 'contact',
+    url: '/#contact',
   },
+  // {
+  //   type: 'internal',
+  //   key: 'onboarding',
+  //   url: '/account/onboarding',
+  // },
 ];
 
 export const footerLinks = {
@@ -127,3 +135,24 @@ export const footerLinks = {
   //   // },
   // ],
 };
+
+export const dashboardMenu: Required<MenuItemLink>[] = [
+  {
+    type: 'internal',
+    key: 'overview',
+    url: '#overview',
+    Icon: MonitorIcon,
+  },
+  {
+    type: 'internal',
+    key: 'favorite',
+    url: '#favorite',
+    Icon: StartIcon,
+  },
+  {
+    type: 'internal',
+    key: 'platform',
+    url: '/platform',
+    Icon: WalletIcon,
+  },
+];

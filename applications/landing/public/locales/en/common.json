@@ -7,17 +7,38 @@
     "en": "English",
     "de": "German"
   },
-  "common": {},
+  "common": {
+    "logout": "Logout",
+    "copy": "Copy to Clipboard",
+    "copied": "Copied!"
+  },
+  "currency": {
+    "geegee": "GeeBucks",
+    "usd": "USD",
+    "chf": "CHF",
+    "native": "$t(currency.geegee) / $t(currency.usd)"
+  },
+  "table": {
+    "sort": "Sort",
+    "rows-per-page": "Rows per page",
+    "first-page": "First Page",
+    "previous-page": "Previous Page",
+    "next-page": "Next Page",
+    "last-page": "Last Page",
+    "rows-out-of": "{{from}} of {{count}}"
+  },
   "format": {
     "date": "dd-MM-yyyy",
     "date-pretty": "MMMM d, yyyy",
-    "date-time": "yyyy-MM-dd HH:mm"
+    "date-time": "yyyy-MM-dd HH:mm",
+    "date-time-pretty": "MMMM d, yyyy 'at' h:mm:ssaaa"
   },
   "header": {
     "search": "Your search phrase",
     "toggle-menu": "Toggle Menu",
     "close-menu": "Close Menu",
-    "signin": "Sign in"
+    "signin": "Sign in",
+    "logout": "Logout"
   },
   "menu": {
     "platform": {
@@ -28,6 +49,15 @@
     },
     "contact": {
       "title": "Contact"
+    },
+    "onboarding": {
+      "title": "Onboarding (test)"
+    },
+    "overview": {
+      "title": "Overview"
+    },
+    "favorite": {
+      "title": "Favorite"
     }
   },
   "footer": {

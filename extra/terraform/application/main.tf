@@ -64,6 +64,28 @@ resource "google_project_iam_member" "cloud_run_landing_logging_log_writer" {
   member  = "serviceAccount:${google_service_account.cloud_run_landing.email}"
 }
 
+data "google_secret_manager_secret" "landing_auth0_client_secret" {
+  project = var.landing_auth0_client_secret_secret_project
+  secret_id = var.landing_auth0_client_secret_secret_id
+}
+
+resource "google_secret_manager_secret_iam_member" "landing_auth0_client_secret" {
+  secret_id = data.google_secret_manager_secret.landing_auth0_client_secret.id
+  role      = "roles/secretmanager.secretAccessor"
+  member    = "serviceAccount:${google_service_account.cloud_run_landing.email}"
+}
+
+data "google_secret_manager_secret" "landing_auth0_secret" {
+  project = var.landing_auth0_secret_secret_project
+  secret_id = var.landing_auth0_secret_secret_id
+}
+
+resource "google_secret_manager_secret_iam_member" "landing_auth0_secret" {
+  secret_id = data.google_secret_manager_secret.landing_auth0_secret.id
+  role      = "roles/secretmanager.secretAccessor"
+  member    = "serviceAccount:${google_service_account.cloud_run_landing.email}"
+}
+
 resource "google_cloud_run_service" "landing" {
   name     = "landing-${random_string.suffix.result}"
   project  = var.gcp_project
@@ -94,6 +116,47 @@ resource "google_cloud_run_service" "landing" {
           value = var.landing_matomo_src_url
         }
 
+        # Auth0
+        env {
+          name  = "AUTH0_ISSUER_BASE_URL"
+          value = var.landing_auth0_issuer_base_url
+        }
+
+        env {
+          name  = "NEXT_PUBLIC_AUTH0_ISSUER_BASE_URL"
+          value = var.landing_auth0_issuer_base_url
+        }
+
+        env {
+          name  = "AUTH0_CLIENT_ID"
+          value = var.landing_auth0_client_id
+        }
+
+        env {
+          name = "AUTH0_CLIENT_SECRET"
+          value_from {
+            secret_key_ref {
+              name = data.google_secret_manager_secret.landing_auth0_client_secret.secret_id
+              key = var.landing_auth0_client_secret_secret_version
+            }
+          }
+        }
+
+        env {
+          name = "AUTH0_SECRET"
+          value_from {
+            secret_key_ref {
+              name = data.google_secret_manager_secret.landing_auth0_secret.secret_id
+              key = var.landing_auth0_secret_secret_version
+            }
+          }
+        }
+
+        env {
+          name  = "AUTH0_BASE_URL"
+          value = "https://${local.landing_domain}"
+        }
+
         resources {
           limits = {
             cpu    = var.landing_cpu_limit
@@ -104,6 +167,7 @@ resource "google_cloud_run_service" "landing" {
 
       container_concurrency = var.landing_container_concurrency
       timeout_seconds       = var.landing_timeout_seconds
+      service_account_name = google_service_account.cloud_run_landing.email
     }
 
     metadata {
