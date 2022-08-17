@@ -11,6 +11,7 @@ export interface NextAppConfig extends NextConfig {
     matomoTrackerUrl: string;
     matomoSrcUrl: string;
     auth0BaseUrl: string;
+    geebuckAddress: string;
   };
 }
 export type HeaderColorSchema = 'light' | 'dark';

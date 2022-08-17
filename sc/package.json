@@ -1,0 +1,22 @@
+{
+  "name": "geegee",
+  "version": "1.0.0",
+  "license": "(MIT AND Apache-2.0)",
+  "scripts": {
+    "deploy": "npm run deploy:ft && npm run deploy:geegee",
+    "deploy:ft": "npm run build:contract:ft && cd contract-ft && near dev-deploy --wasmFile ./target/wasm32-unknown-unknown/release/hello_near.wasm",
+    "deploy:geegee": "npm run build:contract:geegee && cd contract-geegee && near dev-deploy --wasmFile ./target/wasm32-unknown-unknown/release/hello_near.wasm",
+    "build": "npm run build:contract",
+    "build:contract": "npm run build:contract:ft && npm run build:contract:geegee",
+    "build:contract:ft": "cd contract-ft && rustup target add wasm32-unknown-unknown && cargo build --all --target wasm32-unknown-unknown --release",
+    "build:contract:geegee": "cd contract-geegee && rustup target add wasm32-unknown-unknown && cargo build --all --target wasm32-unknown-unknown --release",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "cd contract-geegee && cargo test",
+    "test:integration": "npm run build:contract && cd integration-tests && npm test  -- -- \"./contract-geegee/target/wasm32-unknown-unknown/release/hello_near.wasm\"",
+    "deps-install": "npm install && cd ./integration-tests && npm install && cd .."
+  },
+  "devDependencies": {
+    "near-cli": "^3.3.0"
+  },
+  "dependencies": {}
+}

@@ -12,7 +12,7 @@ module.exports = {
     domains: ['storage.googleapis.com'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    formats: ['image/avif', 'image/webp'],
+    formats: ['image/avif', 'image/webp']
   },
   serverRuntimeConfig: {},
   publicRuntimeConfig: {
@@ -20,7 +20,8 @@ module.exports = {
     matomoBaseUrl: process.env.NEXT_PUBLIC_MATOMO_BASE_URL,
     matomoTrackerUrl: process.env.NEXT_PUBLIC_MATOMO_TRACKER_URL,
     matomoSrcUrl: process.env.NEXT_PUBLIC_MATOMO_SRC_URL,
-    auth0BaseUrl: process.env.NEXT_PUBLIC_AUTH0_ISSUER_BASE_URL
+    auth0BaseUrl: process.env.NEXT_PUBLIC_AUTH0_ISSUER_BASE_URL,
+    geebuckAddress: process.env.NEXT_GEEBUCK_ADDRESS
   }
   // async rewrites() {
   //   return [

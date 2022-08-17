@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { appWithTranslation } from 'next-i18next';
@@ -9,6 +11,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 
 import createEmotionCache from '../createEmotionCache';
+import { initContract } from '../libs/near-api';
 import theme from '../theme';
 import Layout from '@/components/layouts/Layout/Layout';
 import { I18nPageNamespace } from '@/components/layouts/Seo/Seo';
@@ -38,6 +41,13 @@ const MyApp = (props: MyAppProps) => {
     trackerUrl: MATOMO_TRACKER_URL,
     srcUrl: MATOMO_SRC_URL,
   });
+
+  useEffect(() => {
+    (async () => {
+      await initContract();
+      console.log(window.accountId);
+    })();
+  }, []);
 
   // rerender tree so on language change date-io locale is applied properly
   // const [, setDateLocale] = useState<Language | undefined>();
