@@ -87,37 +87,52 @@ On Windows, if you're seeing an error containing `EPERM` it may be related to sp
 npm run deploy:ft
 
 # step 2. link to source
-source contract-ft/neardev/dev-account.env
+export GEEBUCK=dev-1660653164460-71532761219946
 
 # step 3. deploy geebuck token
-near call $CONTRACT_NAME new '{"owner_id": "'$CONTRACT_NAME'", "total_supply": "1000000000000000000", "metadata": { "spec": "ft-1.0.0", "name": "GeeBuck Token", "symbol": "GBK", "decimals": 9 }}' --accountId $CONTRACT_NAME
+near call $GEEBUCK new '{"owner_id": "'$GEEBUCK'", "total_supply": "1000000000000000000", "metadata": { "spec": "ft-1.0.0", "name": "GeeBuck Token", "symbol": "GBK", "decimals": 9 }}' --accountId $GEEBUCK
 
 # step 4. get fungible token metadata
-near view $CONTRACT_NAME ft_metadata
+near view $GEEBUCK ft_metadata
 ```
 
 ## Play with GeeBuck
 
-Assume that **$ACCOUNT_ID** is user's account id.
-
 ```bash
-near view $CONTRACT_NAME ft_balance_of '{"account_id": "'$CONTRACT_NAME'"}'
+near view $GEEBUCK ft_balance_of '{"account_id": "'$GEEBUCK'"}'
 
 near login # to login with $ACCOUNT_ID on browser
 
-near call $CONTRACT_NAME storage_deposit '' --accountId '$ACCOUNT_ID' --amount 0.00125
+near call $GEEBUCK storage_deposit '' --accountId '$ACCOUNT_ID' --amount 0.00125
 
-near call $CONTRACT_NAME ft_transfer '{"receiver_id": "'$ACCOUNT_ID'", "amount": "10000000000"}' --accountId $CONTRACT_NAME --amount 0.000000000000000000000001
+near call $GEEBUCK ft_transfer '{"receiver_id": "'$ACCOUNT_ID'", "amount": "10000000000"}' --accountId $GEEBUCK --amount 0.000000000000000000000001
 
-near view $CONTRACT_NAME ft_balance_of '{"account_id": "'$ACCOUNT_ID'"}'
+near view $GEEBUCK ft_balance_of '{"account_id": "'$ACCOUNT_ID'"}'
 ```
 
 # Deploy GeeGee
 
 ```bash
-# step 1. deploy ft contract
+# step 1. deploy geegee contract
 npm run deploy:geegee
 
-# step 2. link to source
-source contract-geegee/neardev/dev-account.env
+# step 2. export geegee address
+export GEEGEE=dev-1660898675615-74930465017377
+
+near view $GEEBUCK ft_balance_of '{"account_id": "'$GEEBUCK'"}'
+
+near call $GEEGEE new '{"geebuck_account_id": "'$GEEBUCK'"}' --accountId $GEEGEE --amount 0.01
+
+near call $GEEBUCK ft_transfer '{"receiver_id": "'$GEEGEE'", "amount": "100000000000000000"}' --accountId $GEEBUCK --amount 0.000000000000000000000001
+
+export TEST_USER=testuser
+
+near call $GEEGEE register_user '{"user_id": "'$TEST_USER'"}' --accountId $GEEGEE --amount 0.001000000000000000000002
+
+near view $GEEBUCK ft_balance_of '{"account_id": "'$TEST_USER'.'$GEEGEE'"}'
 ```
+
+# Deployed addresses
+
+GeeBuck: dev-1660653164460-71532761219946
+GeeGee: dev-1660898675615-74930465017377

@@ -5,63 +5,66 @@ use near_contract_standards::fungible_token::receiver::FungibleTokenReceiver;
 use near_sdk::borsh::{self, BorshDeserialize, BorshSerialize};
 use near_sdk::json_types::U128;
 use near_sdk::{
-    env, ext_contract, log, near_bindgen, AccountId, Balance, PanicOnDefault, PromiseOrValue,
+    env, ext_contract, log, near_bindgen, AccountId, Gas, Promise, Balance, PanicOnDefault, PromiseOrValue
 };
+use near_sdk::collections::{UnorderedMap};
+
+pub const INIT_GAS: u64 = 10_000_000_000_000;
+pub const INITIAL_DEPOSIT_AMOUNT: U128 = U128(9_000_000_000_000_000_000_000);
+const MIN_STORAGE: Balance = 1_000_000_000_000_000_000_000;
 
 #[near_bindgen]
 #[derive(BorshDeserialize, BorshSerialize, PanicOnDefault)]
 pub struct GeeGee {
-    fungible_token_account_id: AccountId,
+    pub geebuck_account_id: AccountId,
+    pub registered_users: UnorderedMap<AccountId, bool>,
 }
 
-#[ext_contract(ext_self)]
-pub trait ValueReturnTrait {
-    fn value_please(&self, amount_to_return: String) -> PromiseOrValue<U128>;
+#[ext_contract(ext_tf)]
+pub trait GeeBuckToken {
+    fn ft_transfer(
+        &mut self,
+        receiver_id: AccountId,
+        amount: U128,
+    );
+    fn storage_deposit(
+        &mut self,
+        account_id: Option<AccountId>,
+        registeration_only: Option<bool>,
+    );
 }
 
 #[near_bindgen]
 impl GeeGee {
     #[init]
-    pub fn new(fungible_token_account_id: AccountId) -> Self {
+    #[payable]
+    pub fn new(geebuck_account_id: AccountId) -> Self {
         assert!(!env::state_exists(), "Already initialized");
-        Self { fungible_token_account_id: fungible_token_account_id.into() }
-    }
-}
-
-#[near_bindgen]
-impl FungibleTokenReceiver for GeeGee {
-    /// If given `msg: "take-my-money", immediately returns U128::From(0)
-    /// Otherwise, makes a cross-contract call to own `value_please` function, passing `msg`
-    /// value_please will attempt to parse `msg` as an integer and return a U128 version of it
-    fn ft_on_transfer(
-        &mut self,
-        sender_id: AccountId,
-        amount: U128,
-        msg: String,
-    ) -> PromiseOrValue<U128> {
-        // Verifying that we were called by fungible token contract that we expect.
-        assert_eq!(
-            &env::predecessor_account_id(),
-            &self.fungible_token_account_id,
-            "Only supports the one fungible token contract"
-        );
-        log!("in {} tokens from @{} ft_on_transfer, msg = {}", amount.0, sender_id.as_ref(), msg);
-        match msg.as_str() {
-            "take-my-money" => PromiseOrValue::Value(U128::from(0)),
-            _ => {
-                // Call ok_go with no attached deposit and all unspent GAS (weight of 1)
-                Self::ext(env::current_account_id())
-                    .value_please(msg).into()
-            }
+        let promise = ext_tf::ext(geebuck_account_id.clone())
+            .with_attached_deposit(INITIAL_DEPOSIT_AMOUNT.into())
+            .storage_deposit(Some(env::current_account_id()), None);
+        
+        Self {
+            geebuck_account_id: geebuck_account_id.into(),
+            registered_users: UnorderedMap::new(b"d"),
         }
     }
-}
 
-#[near_bindgen]
-impl ValueReturnTrait for GeeGee {
-    fn value_please(&self, amount_to_return: String) -> PromiseOrValue<U128> {
-        log!("in value_please, amount_to_return = {}", amount_to_return);
-        let amount: Balance = amount_to_return.parse().expect("Not an integer");
-        PromiseOrValue::Value(amount.into())
+    #[private]
+    pub fn register_user(&self, user_id: String) {
+        let account_id = user_id + "." + &env::current_account_id().to_string();
+        
+        let promise = Promise::new(account_id.parse().unwrap()).create_account().transfer(MIN_STORAGE);
+        let user_account: AccountId = account_id.parse().unwrap();
+        
+        promise.then(
+            ext_tf::ext(self.geebuck_account_id.clone())
+            .with_attached_deposit(INITIAL_DEPOSIT_AMOUNT.into())
+            .storage_deposit(Some(user_account.clone()), None)
+        ).then(
+            ext_tf::ext(self.geebuck_account_id.clone())
+            .with_attached_deposit(1)
+            .ft_transfer(user_account, U128(50_000_000_000))
+        );
     }
 }
