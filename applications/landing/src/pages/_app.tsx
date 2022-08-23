@@ -17,6 +17,7 @@ import Layout from '@/components/layouts/Layout/Layout';
 import { I18nPageNamespace } from '@/components/layouts/Seo/Seo';
 import { AppProvider } from '@/context/AppContext';
 import { SnackbarProvider } from '@/context/SnackbarContext';
+import { WalletSelectorContextProvider } from '@/context/WalletSelectorContext';
 import { MATOMO_BASE_URL, MATOMO_SITE_ID, MATOMO_SRC_URL, MATOMO_TRACKER_URL } from '@/libs/constants';
 import { ConfigProps /* Language  , Settings  */ } from '@/typings/app';
 
@@ -70,14 +71,16 @@ const MyApp = (props: MyAppProps) => {
           <ThemeProvider theme={theme}>
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
-            <AppProvider value={{ /* common: pageProps.common, */ ns: pageProps.ns, config: pageProps.config }}>
-              <SnackbarProvider>
-                <Layout>
-                  {/* @ts-ignore */}
-                  <Component {...pageProps} />
-                </Layout>
-              </SnackbarProvider>
-            </AppProvider>
+            <WalletSelectorContextProvider>
+              <AppProvider value={{ /* common: pageProps.common, */ ns: pageProps.ns, config: pageProps.config }}>
+                <SnackbarProvider>
+                  <Layout>
+                    {/* @ts-ignore */}
+                    <Component {...pageProps} />
+                  </Layout>
+                </SnackbarProvider>
+              </AppProvider>
+            </WalletSelectorContextProvider>
           </ThemeProvider>
         </UserProvider>
       </CacheProvider>

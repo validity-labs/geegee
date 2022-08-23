@@ -2,7 +2,7 @@ import getConfig from './env';
 import { Language } from '@/typings/app';
 
 const {
-  publicRuntimeConfig: { matomoSiteId, matomoBaseUrl, matomoTrackerUrl, matomoSrcUrl, auth0BaseUrl, geebuckAddress },
+  publicRuntimeConfig: { matomoSiteId, matomoBaseUrl, matomoTrackerUrl, matomoSrcUrl, auth0BaseUrl, geebuckAddress, geegeeAddress },
 } = getConfig();
 
 export const MATOMO_SITE_ID = matomoSiteId;
@@ -31,6 +31,8 @@ export const DEFAULT_DATE_TIME_PRETTY_FORMAT = `MMMM d, yyyy 'at' h:mm:ssaaa`;
 export const AUTH0_BASE_URL = auth0BaseUrl;
 
 export const GEEBUCK_ADDRESS = geebuckAddress;
+
+export const GEEGEE_ADDRESS = geegeeAddress;
 
 export const PHONE_REGEX_EXP =
   /^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,3})|(\(?\d{2,3}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$/;

@@ -5,6 +5,7 @@ import { useTranslation } from 'next-i18next';
 import { Button, Typography } from '@mui/material';
 import { styled } from "@mui/material/styles";
 
+import ConnectButton from '@/components/general/ConnectButton/ConnectButton';
 import LoadingText from '@/components/general/LoadingText/LoadingText';
 import Section from '@/components/layouts/Section/Section';
 import { useAccount, usePageTranslation } from '@/context/AppContext';
@@ -73,6 +74,7 @@ const InfoSection = () => {
         >
           {t('send-native')}
         </Button>
+        <ConnectButton />
       </div>
     </Root>
   );
