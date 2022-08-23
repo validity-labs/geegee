@@ -11,7 +11,7 @@ use near_sdk::{
 };
 
 pub const INIT_GAS: Balance = 10_000_000_000_000;
-pub const INITIAL_ATTACHED_AMOUNT: Balance = 9_000_000_000_000_000_000_000;
+pub const INITIAL_ATTACHED_AMOUNT: Balance = 8_000_000_000_000_000_000_000;
 pub const STORAGE_COST: Balance = 1_000_000_000_000_000_000_000;
 pub const GEEBUCK_STARTING_AMOUNT: Balance = 50_000_000_000;
 
@@ -47,8 +47,7 @@ impl GeeGee {
     #[private]
     #[payable]
     pub fn register_user(&mut self, user_id: String) {
-        let total_required_cost =
-            STORAGE_COST * 2 + INITIAL_ATTACHED_AMOUNT + GEEBUCK_STARTING_AMOUNT;
+        let total_required_cost = STORAGE_COST * 2 + INITIAL_ATTACHED_AMOUNT + 1;
         let attached_amount: Balance = env::attached_deposit();
 
         assert!(
@@ -80,10 +79,10 @@ impl GeeGee {
             );
     }
 
-    #[private]
+    // #[private]
     #[payable]
     pub fn register_account(&mut self, user_account: AccountId) {
-        let total_required_cost = STORAGE_COST + INITIAL_ATTACHED_AMOUNT + GEEBUCK_STARTING_AMOUNT;
+        let total_required_cost = STORAGE_COST + INITIAL_ATTACHED_AMOUNT + 1;
         let attached_amount: Balance = env::attached_deposit();
 
         assert!(
