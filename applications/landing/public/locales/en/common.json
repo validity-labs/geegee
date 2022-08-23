@@ -10,7 +10,10 @@
   "common": {
     "logout": "Logout",
     "copy": "Copy to Clipboard",
-    "copied": "Copied!"
+    "copied": "Copied!",
+    "connect-wallet": "Connect wallet",
+    "disconnect-wallet": "Disconnect wallet",
+    "connect-prompot": "Please connect your wallet to proceed"
   },
   "currency": {
     "geegee": "GeeBucks",

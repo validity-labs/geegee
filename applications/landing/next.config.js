@@ -21,7 +21,8 @@ module.exports = {
     matomoTrackerUrl: process.env.NEXT_PUBLIC_MATOMO_TRACKER_URL,
     matomoSrcUrl: process.env.NEXT_PUBLIC_MATOMO_SRC_URL,
     auth0BaseUrl: process.env.NEXT_PUBLIC_AUTH0_ISSUER_BASE_URL,
-    geebuckAddress: process.env.NEXT_GEEBUCK_ADDRESS
+    geebuckAddress: process.env.NEXT_PUBLIC_GEEBUCK_ADDRESS,
+    geegeeAddress: process.env.NEXT_PUBLIC_GEEGEE_ADDRESS,
   }
   // async rewrites() {
   //   return [
