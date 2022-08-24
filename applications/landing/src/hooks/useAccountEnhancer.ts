@@ -14,6 +14,7 @@ const useAccountEnhancer = (): Account => {
   // eslint-disable-next-line no-unused-vars
   const [balance, setBalance] = useState<number | null>(null);
   const { accountId, selector } = useWalletSelector();
+
   const { isOnline, isOffline, isLoading, isError /* , meta */ } = useMemo(() => {
     const isOnline = !isAuthLoading && !authError && !!id;
     // console.log('useAccountEnhancer, change flags', id, authError, isAuthLoading, isOnline);
@@ -25,6 +26,20 @@ const useAccountEnhancer = (): Account => {
       // meta: user?.extra || {},
     };
   }, [id, authError, isAuthLoading]);
+
+  useEffect(() => {
+    const signOut = async () => {
+      const wallet = await selector.wallet();
+
+      wallet.signOut().catch((err) => {
+        console.log("Failed to sign out from wallet");
+        console.error(err);
+      });
+    }
+    if (!isAuthLoading && id === null && accountId) {
+      signOut();
+    }
+  }, [id, accountId, selector, isAuthLoading])
 
   useEffect(() => {
     const fetchBalance = async () => {

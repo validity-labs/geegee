@@ -13,7 +13,7 @@
     "copied": "Copied!",
     "connect-wallet": "Connect wallet",
     "disconnect-wallet": "Disconnect wallet",
-    "connect-prompot": "Please connect your wallet to proceed"
+    "connect-prompt": "Please connect your wallet to proceed"
   },
   "currency": {
     "geegee": "GeeBucks",

@@ -9,6 +9,7 @@ import ConnectButton from '@/components/general/ConnectButton/ConnectButton';
 import LoadingText from '@/components/general/LoadingText/LoadingText';
 import Section from '@/components/layouts/Section/Section';
 import { useAccount, usePageTranslation } from '@/context/AppContext';
+import { useWalletSelector } from '@/context/WalletSelectorContext';
 
 const Root = styled(Section)(({ theme }) => ({
   paddingTop: theme.spacing(5.5),
@@ -41,6 +42,10 @@ const Root = styled(Section)(({ theme }) => ({
   '.LabInfoSection-send': {
     color: theme.palette.text.active,
   },
+  '.LabInfoSection-actions': {
+    display: 'flex',
+    gap: theme.spacing(10),
+  },
 
 
 
@@ -52,6 +57,8 @@ const InfoSection = () => {
   const { t: tRaw } = useTranslation();
   const { isBalanceLoading, balance } = useAccount();
 
+  const { accountId } = useWalletSelector();
+
   return (
     <Root className="Lab-divider">
       <div className="LabInfoSection-content">
@@ -59,22 +66,27 @@ const InfoSection = () => {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/images/logo-small.svg" width="42" height="42" alt="" />
           <div className="LabInfoSection-infoText">
-            <Typography className="LabInfoSection-infoBalance" >
-              <LoadingText loading={isBalanceLoading} text={balance || '0.0000'} />
-            </Typography>
-            <Typography variant="body-xs" fontWeight={600}>
-              {tRaw('currency.native')}
-            </Typography>
+            {accountId ? (
+              <>
+                <Typography className="LabInfoSection-infoBalance" >
+                  <LoadingText loading={isBalanceLoading} text={balance || '0.0000'} />
+                </Typography>
+                <Typography variant="body-xs" fontWeight={600}>
+                  {tRaw('currency.native')}
+                </Typography>
+              </>
+            ) : (<Typography variant="body-md" sx={{ color: "text.primary" }}>{tRaw('common.connect-prompt')}</Typography>)}
           </div>
         </div>
-        <Button
-
-          className="LabInfoSection-send"
-        // startIcon={isSubmitting && <CircularProgress color="success" size={24} />}
-        >
-          {t('send-native')}
-        </Button>
-        <ConnectButton />
+        <div className="LabInfoSection-actions">
+          {accountId && <Button
+            className="LabInfoSection-send"
+          // startIcon={isSubmitting && <CircularProgress color="success" size={24} />}
+          >
+            {t('send-native')}
+          </Button>}
+          <ConnectButton />
+        </div>
       </div>
     </Root>
   );
