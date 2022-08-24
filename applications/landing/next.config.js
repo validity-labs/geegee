@@ -14,7 +14,12 @@ module.exports = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     formats: ['image/avif', 'image/webp']
   },
-  serverRuntimeConfig: {},
+  serverRuntimeConfig: {
+    adminWalletId: process.env.NEXT_PRIVATE_ADMIN_WALLET_ID,
+    adminWalletPrivateKey: process.env.NEXT_PRIVATE_ADMIN_WALLET_PRIVATE_KEY,
+    nearNetwork: process.env.NEXT_PRIVATE_NEAR_NETWORK,
+
+  },
   publicRuntimeConfig: {
     matomoSiteId: process.env.NEXT_PUBLIC_MATOMO_SITE_ID,
     matomoBaseUrl: process.env.NEXT_PUBLIC_MATOMO_BASE_URL,

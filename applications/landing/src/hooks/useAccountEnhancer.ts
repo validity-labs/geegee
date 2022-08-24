@@ -1,14 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import { useUser } from '@auth0/nextjs-auth0';
-import { providers, utils } from "near-api-js";
 
 import { useWalletSelector } from '@/context/WalletSelectorContext';
-// import { GEEBUCK_ADDRESS, GEEGEE_ADDRESS } from '@/libs/constants';
-// import { getGeebuckBalance } from '@/libs/near-api';
 import { Account } from '@/typings/app';
-
-const GAS = utils.format.parseNearAmount("0.009000000000000000000002")!;
 
 const useAccountEnhancer = (): Account => {
   const {
@@ -16,6 +11,7 @@ const useAccountEnhancer = (): Account => {
     error: authError,
     isLoading: isAuthLoading,
   } = useUser();
+  // eslint-disable-next-line no-unused-vars
   const [balance, setBalance] = useState<number | null>(null);
   const { accountId, selector } = useWalletSelector();
   const { isOnline, isOffline, isLoading, isError /* , meta */ } = useMemo(() => {
@@ -37,54 +33,23 @@ const useAccountEnhancer = (): Account => {
         return null;
       }
 
-      const { network } = selector.options;
-      const provider = new providers.JsonRpcProvider({ url: network.nodeUrl });
+      const params = new URLSearchParams();
+      params.append('id', accountId);
 
-      const { contract } = selector.store.getState();
-      const wallet = await selector.wallet();
-      wallet
-        .signAndSendTransaction({
-          signerId: accountId!,
-          receiverId: contract!.contractId,
-          actions: [
-            {
-              type: "FunctionCall",
-              params: {
-                methodName: "register_account",
-                args: { user_account: accountId },
-                gas: GAS!,
-                deposit: utils.format.parseNearAmount('0')!,
-              },
-            },
-          ],
-        })
-        .catch((err) => {
-          console.log("Failed to register account");
-          throw err;
-        });
+      let response = await fetch(`/api/grant?${params.toString()}`);
 
+      if (response.ok) { // if HTTP-status is 200-299
+        // get the response body (the method explained below)
+        let { result } = await response.json();
+        if (result) {
+          console.log('grant result true', result);
+        } else {
+          console.log('grant result false');
 
-      // const balanceData = await provider
-      //   .query<any>({
-      //     request_type: "call_function",
-      //     finality: "final",
-      //     account_id: GEEBUCK_ADDRESS,
-      //     method_name: 'ft_balance_of',
-      //     args_base64: btoa(JSON.stringify({ account_id: accountId })),
-      //   });
-
-      // const balance = +JSON.parse(Buffer.from(balanceData.result).toString());
-
-      // const metadata = await provider
-      //   .query<any>({
-      //     request_type: "call_function",
-      //     finality: "final",
-      //     account_id: GEEBUCK_ADDRESS,
-      //     method_name: 'ft_metadata',
-      //     args_base64: btoa(JSON.stringify({})),
-      //   });
-
-      // const { decimals } = JSON.parse(Buffer.from(metadata.result).toString());
+        }
+      } else {
+        console.log('grant not ok');
+      }
 
       // setBalance(await getGeebuckBalance(accountId)); // TODO: pass user's address
     };

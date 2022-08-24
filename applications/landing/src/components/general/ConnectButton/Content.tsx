@@ -9,7 +9,6 @@ import type {
 
 import Form from "./Form";
 import Messages from "./Messages";
-import SignIn from "./SignIn";
 import Section from "@/components/layouts/Section/Section";
 import { useWalletSelector } from "@/context/WalletSelectorContext";
 import { GEEBUCK_ADDRESS } from "@/libs/constants";
@@ -232,7 +231,6 @@ const Content: React.FC = () => {
         <div>
           <button onClick={handleSignIn}>Log in</button>
         </div>
-        <SignIn />
       </Section>
     );
   }

@@ -3,7 +3,11 @@ import React from 'react';
 import { SvgIconProps } from '@mui/material';
 import { NextConfig } from 'next';
 export interface NextAppConfig extends NextConfig {
-  serverRuntimeConfig?: {};
+  serverRuntimeConfig?: {
+    adminWalletId: string;
+    adminWalletPrivateKey: string;
+    nearNetwork: string;
+  };
   publicRuntimeConfig: {
     baseDomain: string;
     matomoSiteId: string;

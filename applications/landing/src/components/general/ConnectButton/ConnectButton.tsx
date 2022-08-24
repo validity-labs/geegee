@@ -22,29 +22,36 @@ import type { Account/* , Message */ } from "@/typings/wallet-selector";
 
 const globalStyles = `
   :root {
-    --wallet-selector-backdrop-bg: #262626;
+    --wallet-selector-backdrop-bg: linear-gradient(123deg, #1F1F21 0%, #140816 53%, #31105C 100%) no-repeat;
+    --wallet-selector-heading-color: #ffffff;
+    --wallet-selector-text-color: #ffffff;
+    --wallet-selector-selected-wallet-bg: #393246;
+    --wallet-selector-selected-wallet-bg-hover: #393246;
+    --deprecated-wallet-bg: #393246;
+    --wallet-selector-wallet-option-border-color: #393246;
+    --wallet-selector-content-bg: #231B30;
+    // --wallet-selector-input-border-color-focus: #393246;
+    --wallet-selector-box-shadow-color: #FD00FD;
+    // --wallet-selector-dismiss-button-bg-hover: #393246;
+    // --wallet-selector-dismiss-button-border-color-hover: #393246;
+    // --wallet-selector-confirm-button-color:  #ffffff;
+    // --wallet-selector-confirm-button-bg: #393246;
+    // --wallet-selector-confirm-button-bg-hover: #393246;
+    // --wallet-selector-confirm-button-border-color: #393246;
+    // --wallet-selector-error: #b40000;
+    // --wallet-selector-close-button-color: #393246;
+    // --wallet-selector-spinner-color: #F631F6;
+  }
+  #near-wallet-selector-modal {
+    h2 {
+      font-family: Audiowide, cursive;
+      font-size: 1.5625rem; // 25px
+      text-align: center;
+    }
   }
 `;
 
-// --wallet-selector-backdrop-bg
-// --wallet-selector-heading-color
-// --wallet-selector-text-color
-// --wallet-selector-selected-wallet-bg
-// --wallet-selector-selected-wallet-bg-hover
-// --deprecated-wallet-bg
-// --wallet-selector-wallet-option-border-color
-// --wallet-selector-content-bg
-// --wallet-selector-input-border-color-focus
-// --wallet-selector-box-shadow-color
-// --wallet-selector-dismiss-button-bg-hover
-// --wallet-selector-dismiss-button-border-color-hover
-// --wallet-selector-confirm-button-color
-// --wallet-selector-confirm-button-bg
-// --wallet-selector-confirm-button-bg-hover
-// --wallet-selector-confirm-button-border-color
-// --wallet-selector-error
-// --wallet-selector-close-button-color
-// --wallet-selector-spinner-color
+
 
 const ConnectButton: React.FC = () => {
   const { t } = useTranslation();
