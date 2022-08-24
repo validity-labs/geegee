@@ -1,4 +1,4 @@
-import { connect, ConnectConfig, Contract, KeyPair, keyStores /* WalletConnection */ /* utils */ } from 'near-api-js';
+import { connect, ConnectConfig, Contract, KeyPair, keyStores /* WalletConnection */, utils } from 'near-api-js';
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 import { GEEBUCK_ADDRESS, GEEGEE_ADDRESS } from '@/libs/constants';
@@ -8,13 +8,16 @@ const { serverRuntimeConfig: { adminWalletId, adminWalletPrivateKey, nearNetwork
 
 
 /* TODO move this to environment variable */
-// const DEPOSIT = utils.format.parseNearAmount('0.009000000000000000000002');
-// const GAS = "300000000000000";
+const DEPOSIT = utils.format.parseNearAmount('0.009000000000000000000002');
+const GAS = "300000000000000";
 
 type ResponseData = {
-  result: boolean;
-  message?: string
+  result: {
+    balance: string;
+  };
+  // message?: string
   error?: string;
+
 }
 
 interface ApiRequest extends NextApiRequest {
@@ -41,7 +44,7 @@ export default async function handler(
     // creates a public / private key pair using the provided private key
     const keyPair = KeyPair.fromString(adminWalletPrivateKey);
     // adds the keyPair you created to keyStore
-    await keyStore.setKey("testnet", "antarya.testnet", keyPair);
+    await keyStore.setKey(nearNetwork, adminWalletId, keyPair);
 
 
     const connectionConfig: ConnectConfig = {
@@ -73,16 +76,16 @@ export default async function handler(
 
     if (!isRegistered) {
       /* @ts-ignore */
-      // const test = await contract.register_account({
-      //   args,
-      //   amount: DEPOSIT,
-      //   gas: GAS,
-      // });
+      /* const test =  */await geeGeeContract.register_account({
+      args,
+      amount: DEPOSIT,
+      gas: GAS,
+    });
       // console.log('register account', test);
 
       /* @ts-ignore */
-      isRegistered = await geeGeeContract.check_registered(args);
-      console.log('isRegistered', isRegistered);
+      // isRegistered = await geeGeeContract.check_registered(args);
+      // console.log('isRegistered', isRegistered);
     }
 
     const geeBuckContract = new Contract(account, GEEBUCK_ADDRESS, {
@@ -90,14 +93,18 @@ export default async function handler(
       changeMethods: [],
     });
 
-
+    // console.log(GEEBUCK_ADDRESS, GEEGEE_ADDRESS);
     /* @ts-ignore */
     const balance = await geeBuckContract.ft_balance_of({ account_id: walletId });
-    console.log(balance);
+    /* @ts-ignore */
+    const { decimals } = await geeBuckContract.ft_metadata({});
+    // console.log(balance, decimals, utils.format.formatNearAmount(balance));
 
-    res.status(200).json({ result: true })
+    const formattedBalance = balance / Math.pow(10, decimals | 0);
+
+    res.status(200).json({ result: { balance: formattedBalance.toString() } });
   } catch (err) {
     console.log(JSON.stringify(err));
-    res.status(500).json({ result: false, error: 'failed to load data' })
+    res.status(500).json({ result: { balance: '0' }, error: 'Something went wrong.' })
   }
 }

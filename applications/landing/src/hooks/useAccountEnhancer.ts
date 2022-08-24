@@ -40,12 +40,12 @@ const useAccountEnhancer = (): Account => {
 
       if (response.ok) { // if HTTP-status is 200-299
         // get the response body (the method explained below)
-        let { result } = await response.json();
-        if (result) {
-          console.log('grant result true', result);
+        let { result, error } = await response.json();
+        if (error) {
+          console.log('grant result failed with error', error);
         } else {
-          console.log('grant result false');
-
+          console.log('grant result true', result);
+          setBalance(result.balance || '0');
         }
       } else {
         console.log('grant not ok');
