@@ -117,7 +117,7 @@ near view $GEEBUCK ft_balance_of '{"account_id": "'$ACCOUNT_ID'"}'
 npm run deploy:geegee
 
 # step 2. export geegee address
-export GEEGEE=dev-1661274136234-72078379517905
+export GEEGEE=dev-1661341900746-13246297009023
 
 near view $GEEBUCK ft_balance_of '{"account_id": "'$GEEBUCK'"}'
 
@@ -130,9 +130,11 @@ export TEST_USER=testuser
 near call $GEEGEE register_account '{"user_account": "'$TEST_USER'"}' --accountId $GEEGEE --amount 0.009000000000000000000002
 
 near view $GEEBUCK ft_balance_of '{"account_id": "'$TEST_USER'"}'
+
+near view $GEEGEE check_registered '{"user_account": "'$TEST_USER'"}'
 ```
 
 # Deployed addresses
 
 GeeBuck: dev-1660653164460-71532761219946
-GeeGee: dev-1660898675615-74930465017377
+GeeGee: dev-1661341900746-13246297009023

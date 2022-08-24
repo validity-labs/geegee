@@ -75,8 +75,9 @@ impl GeeGee {
             .then(
                 ext_tf::ext(self.geebuck_account_id.clone())
                     .with_attached_deposit(1)
-                    .ft_transfer(user_account, U128(GEEBUCK_STARTING_AMOUNT)),
+                    .ft_transfer(user_account.clone(), U128(GEEBUCK_STARTING_AMOUNT)),
             );
+        self.registered_users.insert(&user_account, &true);
     }
 
     // #[private]
@@ -100,9 +101,13 @@ impl GeeGee {
         promise.then(
             ext_tf::ext(self.geebuck_account_id.clone())
                 .with_attached_deposit(1)
-                .ft_transfer(user_account, U128(GEEBUCK_STARTING_AMOUNT)),
+                .ft_transfer(user_account.clone(), U128(GEEBUCK_STARTING_AMOUNT)),
         );
+        self.registered_users.insert(&user_account, &true);
     }
 
-    pub fn geebuck_transfer(&self, receiver_id: String, amount: Balance) {}
+    pub fn check_registered(&self, user_account: AccountId) -> bool {
+        let mut is_registered = self.registered_users.get(&user_account).unwrap_or(false);
+        is_registered
+    }
 }
