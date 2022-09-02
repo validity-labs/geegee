@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 
+// import { useUser } from '@auth0/nextjs-auth0';
 import { useMatomo } from '@datapunt/matomo-tracker-react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -15,14 +16,22 @@ const faqGroupInfo: FAQGroup<'platform' | 'company'>[] = [{ key: 'platform', cou
 
 const IndexPage = () => {
   const { trackPageView } = useMatomo();
-
   useEffect(() => {
     trackPageView({});
   }, [trackPageView]);
-
+  // const { user, isLoading, error } = useUser();
+  // const isUserIn = !isLoading && !error && user;
+  // const { nickname = '', extra: { consent = false, interests = [] } } = user || { extra: {} };
+  // console.log(isUserIn, user, user?.extra)
   return (
     <>
       <Seo ns={ns} />
+      {/* {isUserIn && (
+        <Section>
+          <Typography>{nickname}</Typography>
+          <Typography>Consent: {consent ? 'Yes' : 'No'}</Typography>
+          <Typography>{typeof interests === 'string' ? interests : interests.join(', ')}</Typography>
+        </Section>)} */}
       <HeroSection />
       <AboutSection />
       <InfoSection />

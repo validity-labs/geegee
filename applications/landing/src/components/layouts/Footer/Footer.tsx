@@ -13,13 +13,15 @@ import iconDiscord from '@/public/images/discord.svg';
 import iconGithub from '@/public/images/github.svg';
 import iconTwitter from '@/public/images/twitter.svg';
 
-const Root = styled('footer')(({ theme }) => ({
+const Root = styled('footer', {
+  shouldForwardProp: (prop) => prop !== 'dense',
+})<{ dense: boolean }>(({ theme, dense }) => ({
   '.LabFooter-wrapper': {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     gap: theme.spacing(14),
-    padding: theme.spacing(15, 0, 15),
+    padding: dense ? theme.spacing(3, 0) : theme.spacing(13, 0),
     color: '#c4c4c4',
   },
   '.LabFooter-left': {
@@ -73,12 +75,15 @@ const RowList = styled('ul')(({ theme }) => ({
   },
 }));
 
-export default function Footer(): ReactElement {
+interface Props {
+  dense?: boolean;
+}
+export default function Footer({ dense = false }: Props): ReactElement {
   const { t } = useTranslation();
   const copyright = t('footer.copyright', { year: new Date().getFullYear() });
 
   return (
-    <Root>
+    <Root dense={dense}>
       <Container id="contact">
         <div className="LabFooter-wrapper">
           <ScrollUp />

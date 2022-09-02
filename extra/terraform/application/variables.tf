@@ -65,7 +65,8 @@ variable "landing_sub_domain" {
   default     = ""
 }
 
-# Matomo
+# -- Landing page - Matomo ----------------------
+
 variable "landing_matomo_site_id" {
   description = "The matomo site ID."
   type        = number
@@ -81,4 +82,50 @@ variable "landing_matomo_src_url" {
   description = "The url of the matomo tracker script to be injected into the pages."
   type        = string
   default     = "https://analytics.validitylabs.org/matomo.js"
+}
+
+# -- Landing page - Auth0 -----------------------
+
+variable "landing_auth0_client_id" {
+  description = "The Client ID for your application."
+  type        = string
+}
+
+# The Client Secret for your application. Required when requesting access tokens.
+variable "landing_auth0_client_secret_secret_project" {
+  description = "The ID of the project in which the resource belongs."
+  type        = string
+}
+
+variable "landing_auth0_client_secret_secret_id" {
+  description = "The unique id of the secret."
+  type        = string
+}
+
+variable "landing_auth0_client_secret_secret_version" {
+  description = "The version of the secret which should be used."
+  type        = string
+}
+
+# The secret(s) used to derive an encryption key for the user identity in a session cookie 
+# and to sign the transient cookies used by the login callback. 
+# Use a single string key or array of keys for an encrypted session cookie.
+variable "landing_auth0_secret_secret_project" {
+  description = "The ID of the project in which the resource belongs."
+  type        = string
+}
+
+variable "landing_auth0_secret_secret_id" {
+  description = "The unique id of the secret."
+  type        = string
+}
+
+variable "landing_auth0_secret_secret_version" {
+  description = "The version of the secret which should be used."
+  type        = string
+}
+
+variable "landing_auth0_issuer_base_url" {
+  description = "The root URL for the token issuer with no trailing slash. This is https:// plus your Auth0 domain."
+  type        = string
 }

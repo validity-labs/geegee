@@ -12,14 +12,22 @@ module.exports = {
     domains: ['storage.googleapis.com'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    formats: ['image/avif', 'image/webp'],
+    formats: ['image/avif', 'image/webp']
   },
-  serverRuntimeConfig: {},
+  serverRuntimeConfig: {
+    adminWalletId: process.env.NEXT_PRIVATE_ADMIN_WALLET_ID,
+    adminWalletPrivateKey: process.env.NEXT_PRIVATE_ADMIN_WALLET_PRIVATE_KEY,
+    nearNetwork: process.env.NEXT_PRIVATE_NEAR_NETWORK,
+
+  },
   publicRuntimeConfig: {
     matomoSiteId: process.env.NEXT_PUBLIC_MATOMO_SITE_ID,
     matomoBaseUrl: process.env.NEXT_PUBLIC_MATOMO_BASE_URL,
     matomoTrackerUrl: process.env.NEXT_PUBLIC_MATOMO_TRACKER_URL,
-    matomoSrcUrl: process.env.NEXT_PUBLIC_MATOMO_SRC_URL
+    matomoSrcUrl: process.env.NEXT_PUBLIC_MATOMO_SRC_URL,
+    auth0BaseUrl: process.env.NEXT_PUBLIC_AUTH0_ISSUER_BASE_URL,
+    geebuckAddress: process.env.NEXT_PUBLIC_GEEBUCK_ADDRESS,
+    geegeeAddress: process.env.NEXT_PUBLIC_GEEGEE_ADDRESS,
   }
   // async rewrites() {
   //   return [

@@ -1,0 +1,48 @@
+{
+  "page": {
+    "title": "Onboarding",
+    "description": ""
+  },
+  "profile-section": {
+    "title": "Welcome to GeeGee!",
+    "description": "You are now ready to earn GeeGee bucks. Let's figure out first what it is you're into and setup your profile.",
+    "submit": "Update",
+    "field": {
+      "username": {
+        "label": "User name",
+        "placeholder": ""
+      },
+      "birth-date": {
+        "label": "Date of birth",
+        "placeholder": "dd-MM-yyyy"
+      },
+      "interest": {
+        "label": "Interest",
+        "placeholder": "Select one or multiple categories",
+        "value": {
+          "shooter": "Shooter",
+          "action-adventure": "Action Adventure",
+          "survival": "Survival",
+          "rp": "RP",
+          "simulation": "Simulation",
+          "irl": "IRL",
+          "sport": "Sport",
+          "moba": "MOBA"
+        }
+      },
+      "phone": {
+        "label": "Phone number",
+        "placeholder": "+1 200 555 0123",
+        "yup": {
+          "invalid-format": "Invalid phone number"
+        }
+      },
+      "consent": {
+        "label": "I agree to the <0>Terms of Service</0> and <1>Privacy Policy</1>",
+        "yup": {
+          "required": "Agree to proceed"
+        }
+      }
+    }
+  }
+}

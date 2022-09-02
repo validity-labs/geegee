@@ -1,14 +1,22 @@
 import React from 'react';
 
+import { SvgIconProps } from '@mui/material';
 import { NextConfig } from 'next';
 export interface NextAppConfig extends NextConfig {
-  serverRuntimeConfig?: {};
+  serverRuntimeConfig?: {
+    adminWalletId: string;
+    adminWalletPrivateKey: string;
+    nearNetwork: string;
+  };
   publicRuntimeConfig: {
     baseDomain: string;
     matomoSiteId: string;
     matomoBaseUrl: string;
     matomoTrackerUrl: string;
     matomoSrcUrl: string;
+    auth0BaseUrl: string;
+    geebuckAddress: string;
+    geegeeAddress: string;
   };
 }
 export type HeaderColorSchema = 'light' | 'dark';
@@ -34,10 +42,21 @@ export type SetState<A> = React.Dispatch<React.SetStateAction<A>>;
 
 export type Language = 'en' /* | 'de' */;
 
+export interface Account {
+  meta?: any;
+  balance: number | null;
+  isBalanceLoading: boolean;
+  isOnline: boolean;
+  isOffline: boolean;
+  isLoading: boolean;
+  isError: boolean;
+}
+
 export interface MenuItemLink {
   type: 'internal' | 'external';
   key: string;
   url: string;
+  Icon?: React.FC<SvgIconProps>;
 }
 
 export interface MenuItemGroup {
@@ -47,6 +66,11 @@ export interface MenuItemGroup {
 }
 
 export type MenuItemType = MenuItemLink | MenuItemGroup;
+
+export interface RowsState {
+  page: number;
+  pageSize: number;
+}
 
 export interface Product {
   // id: ID;
